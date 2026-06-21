@@ -11,6 +11,7 @@ const helmet=require('helmet');
 
 const logger = require('./utils/logger.js');
 const connectDb = require('./config/db');
+const authRoutes = require("./routes/authRoutes.js");
 
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
@@ -51,3 +52,6 @@ const startServer = async () => {
     })
 }
 startServer();
+
+//Routes
+app.use("/api/auth", authRoutes);
