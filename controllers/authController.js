@@ -54,14 +54,20 @@ const register = async (req, res) => {
         }
 
         // create user
-        const user = await User.create({
+        const userData = {
             userName,
             email,
             password,
             role,
-            ...(role === "deliveryAgent" ? { phone } : { companyName }),
-        });
-
+        };
+        if (role === "deliveryAgent") {
+            userData.phone = phone;
+        } else {
+            userData.companyName = companyName;
+        }
+        // create user
+        const user = await User.create(userData);
+               
         logger.info("User registered", { userId: user._id, email, role });
 
         const token = generateToken(user._id, role);
@@ -83,11 +89,10 @@ const register = async (req, res) => {
 // ─────────────────────────────────────────
 const login = async (req, res) => {
     try {
-        const { email, password } = req.body;          // no role needed anymore!
+        const { email, password } = req.body;          
 
         logger.debug("Login attempt", { email });
 
-        // find user
         const user = await User.findOne({ email });
         if (!user) {
             logger.warn("Login failed — user not found", { email });
@@ -101,7 +106,7 @@ const login = async (req, res) => {
         }
 
         // check lock
-        if (user.lockUntil && user.lockUntil > Date.now()) {
+        if (user.lockUntil && (user.lockUntil > Date.now())) {
             const minutesLeft = Math.ceil((user.lockUntil - Date.now()) / 1000 / 60);
             logger.warn("Login failed — account locked", { email, minutesLeft });
             return res.status(423).json({
