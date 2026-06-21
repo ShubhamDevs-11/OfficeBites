@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const bcrypt = require("bcryptjs");
 
-const deliveryAgentSchema = new mongoose.Schema(
+const userSchema = new mongoose.Schema(
     {
         userName: {
             type: String,
@@ -20,11 +20,25 @@ const deliveryAgentSchema = new mongoose.Schema(
             type: String,
             required: true,
         },
+        role: {
+            type: String,
+            enum: ["owner", "client", "deliveryAgent"],
+            required: true,
+        },
+
+        // owner + client only
+        companyName: {
+            type: String,
+            default: null,
+        },
+
+        // deliveryAgent only
         phone: {
             type: String,
-            required: true,
-            trim: true,
+            default: null,
         },
+
+        // shared
         isActive: {
             type: Boolean,
             default: true,
@@ -36,16 +50,6 @@ const deliveryAgentSchema = new mongoose.Schema(
         isAvailable: {
             type: Boolean,
             default: false,
-        },
-        assignedOwner: {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: "owner",
-            default: null,
-        },
-        currentOrder: {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: "order",
-            default: null,
         },
         loginAttempts: {
             type: Number,
@@ -60,41 +64,36 @@ const deliveryAgentSchema = new mongoose.Schema(
 );
 
 // HASHING PASSWORD
-deliveryAgentSchema.pre("save", async function (next) {
-    if (!this.isModified("password")) {
-        return next();
-    }
-    const hash = await bcrypt.hash(this.password, parseInt(process.env.BCRYPT_SALT_ROUNDS));
-    this.password = hash;
+userSchema.pre("save", async function (next) {
+    if (!this.isModified("password")) return next();
+    this.password = await bcrypt.hash(this.password, parseInt(process.env.BCRYPT_SALT_ROUNDS));
     next();
 });
 
 // VERIFYING PASSWORD
-deliveryAgentSchema.methods.comparePassword = async function (password) {
+userSchema.methods.comparePassword = async function (password) {
     return await bcrypt.compare(password, this.password);
 };
 
-// LOGIN ATTEMPT, FAILURE AND RESET
-deliveryAgentSchema.methods.recordLoginFailure = async function () {
+// RECORD LOGIN FAILURE
+userSchema.methods.recordLoginFailure = async function () {
     const MAX_ATTEMPTS = 5;
     const LOCK_DURATION_MS = 15 * 60 * 1000;
     this.loginAttempts += 1;
-
     if (this.loginAttempts >= MAX_ATTEMPTS) {
         this.lockUntil = new Date(Date.now() + LOCK_DURATION_MS);
     }
-
     await this.save();
 };
 
-deliveryAgentSchema.methods.resetLoginAttempts = async function () {
+// RESET LOGIN ATTEMPTS
+userSchema.methods.resetLoginAttempts = async function () {
     if (this.loginAttempts !== 0 || this.lockUntil != null) {
         this.loginAttempts = 0;
         this.lockUntil = null;
-
         await this.save();
     }
 };
 
-const deliveryAgent = mongoose.model("deliveryAgent", deliveryAgentSchema);
-module.exports = deliveryAgent;
+const User = mongoose.model("user", userSchema);
+module.exports = User;
