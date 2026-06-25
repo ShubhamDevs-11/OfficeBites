@@ -3,8 +3,6 @@ require('dotenv').config();
 const express = require('express');
 const app = express();
 const path = require('path');
-const xssClean = require('xss-clean');
-const mongoSanitize = require('express-mongo-sanitize');
 const cookieParser = require('cookie-parser');
 const rateLimit = require('express-rate-limit');
 const helmet=require('helmet');
@@ -20,8 +18,6 @@ app.use(express.json());
 app.use(express.urlencoded({extended : true}));
 
 app.use(helmet());
-app.use(mongoSanitize());
-app.use(xssClean());
 app.use(cookieParser(process.env.COOKIE_SECRET));
 
 if (process.env.NODE_ENV === 'production') {
@@ -54,4 +50,4 @@ const startServer = async () => {
 startServer();
 
 //Routes
-app.use("/api/auth", authRoutes);
+app.use("/api", authRoutes);
