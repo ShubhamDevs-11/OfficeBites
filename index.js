@@ -5,7 +5,6 @@ const app = express();
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const rateLimit = require('express-rate-limit');
-const helmet=require('helmet');
 
 const logger = require('./utils/logger.js');
 const connectDb = require('./config/db');
@@ -17,7 +16,6 @@ app.set('views', path.join(__dirname, 'views'));
 app.use(express.json());
 app.use(express.urlencoded({extended : true}));
 
-app.use(helmet());
 app.use(cookieParser(process.env.COOKIE_SECRET));
 
 if (process.env.NODE_ENV === 'production') {
@@ -41,7 +39,7 @@ const globalLimiter = rateLimit({
 app.use(globalLimiter);
 
 //Routes
-app.use("/api", authRoutes);
+app.use("/api/auth", authRoutes);
 
 //DATABASE CONNECTION
 const startServer = async () => {
