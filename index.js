@@ -26,7 +26,7 @@ if (process.env.NODE_ENV === 'production') {
 
 if(process.env.NODE_ENV != 'production'){
     app.use((req,res,next)=>{
-        logger.debug(`${req.files} ${req.baseUrl}`);
+        logger.debug("Incoming request", { method: req.method, url: req.originalUrl });
         next();
     })
 }
@@ -40,6 +40,9 @@ const globalLimiter = rateLimit({
 })
 app.use(globalLimiter);
 
+//Routes
+app.use("/api", authRoutes);
+
 //DATABASE CONNECTION
 const startServer = async () => {
     await connectDb();
@@ -48,6 +51,3 @@ const startServer = async () => {
     })
 }
 startServer();
-
-//Routes
-app.use("/api", authRoutes);

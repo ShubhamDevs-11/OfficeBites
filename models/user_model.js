@@ -64,10 +64,11 @@ const userSchema = new mongoose.Schema(
 );
 
 // HASHING PASSWORD
-userSchema.pre("save", async function (next) {
-    if (!this.isModified("password")) return next();
-    this.password = await bcrypt.hash(this.password, parseInt(process.env.BCRYPT_SALT_ROUNDS));
-    next();
+userSchema.pre("save", async function () {
+    if (!this.isModified("password")) return;
+
+    const saltRounds = Number(process.env.BCRYPT_SALT_ROUNDS) || 10;
+    this.password = await bcrypt.hash(this.password, saltRounds);
 });
 
 // VERIFYING PASSWORD
