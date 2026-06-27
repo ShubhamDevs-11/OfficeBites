@@ -3,51 +3,268 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>OfficeBites Login</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Plus Jakarta Sans", sans-serif;
+        }
+
         body {
-            font-family: Arial, sans-serif;
-            max-width: 500px;
-            margin: 50px auto;
-            padding: 20px;
+            position: relative;
+            overflow: hidden;
+
+            background:
+                radial-gradient(circle at 20% 20%, rgba(255,243,230,.08), transparent 28%),
+                radial-gradient(circle at 80% 70%, rgba(255,243,230,.05), transparent 35%),
+                radial-gradient(circle at 70% 15%, rgba(255,255,255,.04), transparent 20%),
+                radial-gradient(circle at center, #4a2342 0%, #381932 100%);
+
+            color: #FFF3E6;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 24px;
+        }
+
+        body::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background:
+                linear-gradient(rgba(255,255,255,.02) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,.02) 1px, transparent 1px);
+            background-size: 60px 60px;
+            mask-image: radial-gradient(circle at center, black 60%, transparent 100%);
+            pointer-events: none;
+        }
+
+        body::after {
+            content: "";
+            position: absolute;
+            width: 550px;
+            height: 550px;
+            border-radius: 50%;
+            background: rgba(255,243,230,.05);
+            filter: blur(100px);
+            top: -120px;
+            right: -150px;
+            animation: floatBlob 14s ease-in-out infinite alternate;
+            z-index: -1;
+        }
+
+        @keyframes floatBlob {
+            from {
+                transform: translate(0,0);
+            }
+            to {
+                transform: translate(-60px,50px);
+            }
+        }
+
+        .card {
+            width: 100%;
+            max-width: 430px;
+            background: rgba(255,243,230,.03);
+            border: 1px solid rgba(255,243,230,.12);
+            border-radius: 24px;
+            padding: 40px 32px;
+
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+
+            box-shadow:
+                0 20px 40px rgba(0,0,0,.4),
+                inset 0 1px 0 rgba(255,243,230,.08);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 32px;
+        }
+
+        .brand-logo {
+            font-size: 32px;
+            font-weight: 700;
+            letter-spacing: -1px;
+            margin-bottom: 8px;
+        }
+
+        .brand-logo span {
+            opacity: .7;
+            font-weight: 400;
+        }
+
+        .header p {
+            color: rgba(255,243,230,.6);
+            font-size: 14px;
         }
 
         form {
             display: flex;
             flex-direction: column;
-            gap: 12px;
+            gap: 20px;
         }
 
-        input,
+        .input-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-bottom: 8px;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: .8px;
+            text-transform: uppercase;
+            color: rgba(255,243,230,.6);
+            transition: .2s;
+        }
+
+        .input-group:focus-within label {
+            color: #FFF3E6;
+        }
+
+        input {
+            padding: 14px 16px;
+            border-radius: 10px;
+            border: 1px solid rgba(255,243,230,.15);
+            background: rgba(255,243,230,.04);
+            color: #FFF3E6;
+            font-size: 15px;
+            font-weight: 500;
+            outline: none;
+            transition: .25s;
+        }
+
+        input::placeholder {
+            color: rgba(255,243,230,.25);
+        }
+
+        input:focus {
+            border-color: rgba(255,243,230,.6);
+            background: rgba(255,243,230,.08);
+            box-shadow: 0 0 0 4px rgba(255,243,230,.06);
+        }
+
         button {
-            padding: 10px;
+            margin-top: 10px;
+            padding: 16px;
+            border: none;
+            border-radius: 10px;
+            background: #FFF3E6;
+            color: #381932;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: .2s;
+            box-shadow: 0 4px 12px rgba(0,0,0,.25);
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255,243,230,.2);
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+
+        .message {
+            padding: 14px 16px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            font-size: 14px;
+            line-height: 1.4;
+            border: 1px solid transparent;
+        }
+
+        .message-error {
+            background: rgba(255, 69, 96, 0.16);
+            color: #FFC8CC;
+            border-color: rgba(255, 69, 96, 0.32);
+        }
+
+        .message-success {
+            background: rgba(146, 213, 158, 0.18);
+            color: #D8F6CC;
+            border-color: rgba(146, 213, 158, 0.32);
+        }
+
+        .footer-text {
+            text-align: center;
+            margin-top: 24px;
+            font-size: 13px;
+            color: rgba(255,243,230,.45);
+        }
+
+        .footer-text a {
+            color: #FFF3E6;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .footer-text a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
 <body>
 
-    <h2>Login</h2>
+<div class="card">
+
+    <div class="header">
+        <div class="brand-logo">Office<span>Bites</span></div>
+        <p>Welcome back. Ready for another productive day?</p>
+    </div>
+
+    <% if (typeof error !== 'undefined' && error) { %>
+        <div class="message message-error"><%= error %></div>
+    <% } %>
+
+    <% if (typeof success !== 'undefined' && success) { %>
+        <div class="message message-success"><%= success %></div>
+    <% } %>
 
     <form action="/api/auth/login" method="POST">
 
-        <input
-            type="email"
-            name="email"
-            placeholder="Email"
-            required
-        >
+        <div class="input-group">
+            <label>Email</label>
+            <input
+                type="email"
+                name="email"
+                value="<%= typeof email !== 'undefined' ? email : '' %>"
+                placeholder="name@company.com"
+                required>
+        </div>
 
-        <input
-            type="password"
-            name="password"
-            placeholder="Password"
-            required
-        >
+        <div class="input-group">
+            <label>Password</label>
+            <input
+                type="password"
+                name="password"
+                placeholder="••••••••"
+                required>
+        </div>
 
-        <button type="submit">Login</button>
+        <button type="submit">Sign In</button>
 
     </form>
+
+    <div class="footer-text">
+        Don't have an OfficeBites account?
+        <a href="/api/auth/register">Create one</a>
+    </div>
+
+</div>
 
 </body>
 </html>

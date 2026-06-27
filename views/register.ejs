@@ -1,109 +1,307 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register</title>
+    <title>Join OfficeBites</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
 
     <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
         body {
-            font-family: Arial, sans-serif;
-            max-width: 500px;
-            margin: 50px auto;
-            padding: 20px;
+            position: relative;
+            overflow: hidden;
+
+            background:
+                radial-gradient(circle at 20% 20%, rgba(255, 243, 230, .08), transparent 28%),
+                radial-gradient(circle at 80% 70%, rgba(255, 243, 230, .05), transparent 35%),
+                radial-gradient(circle at 70% 15%, rgba(255, 255, 255, .04), transparent 20%),
+                radial-gradient(circle at 50% 50%, #4a2342 0%, #381932 100%);
+
+            color: #FFF3E6;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 24px;
+        }
+
+        body::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background:
+                linear-gradient(rgba(255, 255, 255, .02) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, .02) 1px, transparent 1px);
+            background-size: 60px 60px;
+            mask-image: radial-gradient(circle at center, black 60%, transparent 100%);
+            pointer-events: none;
+        }
+        
+        .card {
+            background: rgba(255, 243, 230, 0.03);
+            border: 1px solid rgba(255, 243, 230, 0.12);
+            padding: 40px 32px;
+            border-radius: 24px;
+            width: 100%;
+            max-width: 440px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4),
+                inset 0 1px 0 rgba(255, 243, 230, 0.1);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 32px;
+        }
+
+        /* Branding Detail: Highlighted the "Bites" part to make the brand pop */
+        .brand-logo {
+            font-size: 32px;
+            font-weight: 700;
+            letter-spacing: -1px;
+            margin-bottom: 6px;
+            color: #FFF3E6;
+        }
+
+        .brand-logo span {
+            opacity: 0.7;
+            font-weight: 400;
+        }
+
+        .header p {
+            font-size: 14px;
+            color: rgba(255, 243, 230, 0.6);
         }
 
         form {
             display: flex;
             flex-direction: column;
-            gap: 12px;
+            gap: 20px;
+        }
+
+        .input-group {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            margin-bottom: 8px;
+            color: rgba(255, 243, 230, 0.6);
+            transition: color 0.2s ease;
+        }
+
+        .input-group:focus-within label {
+            color: #FFF3E6;
         }
 
         input,
-        select,
-        button {
-            padding: 10px;
+        select {
+            width: 100%;
+            padding: 14px 16px;
+            background-color: rgba(255, 243, 230, 0.04);
+            border: 1px solid rgba(255, 243, 230, 0.15);
+            border-radius: 10px;
+            color: #FFF3E6;
+            font-size: 15px;
+            font-weight: 500;
+            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+            outline: none;
+            appearance: none;
         }
 
-        #companyField,
-        #phoneField {
-            display: none;
+        .select-wrapper {
+            position: relative;
+        }
+
+        .select-wrapper::after {
+            content: '▾';
+            position: absolute;
+            right: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: rgba(255, 243, 230, 0.5);
+            pointer-events: none;
+            font-size: 16px;
+        }
+
+        select option {
+            background-color: #2b1326;
+            color: #FFF3E6;
+        }
+
+        input::placeholder {
+            color: rgba(255, 243, 230, 0.25);
+        }
+
+        input:focus,
+        select:focus {
+            border-color: rgba(255, 243, 230, 0.6);
+            background-color: rgba(255, 243, 230, 0.08);
+            box-shadow: 0 0 0 4px rgba(255, 243, 230, 0.06);
+        }
+
+        .dynamic-field {
+            max-height: 0;
+            opacity: 0;
+            transform: translateY(-10px);
+            overflow: hidden;
+            transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+            margin-bottom: 0;
+        }
+
+        .dynamic-field.show {
+            max-height: 90px;
+            opacity: 1;
+            transform: translateY(0);
+            margin-top: 4px;
+        }
+
+        button {
+            margin-top: 12px;
+            padding: 16px;
+            background-color: #FFF3E6;
+            color: #381932;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: 700;
+            letter-spacing: 0.3px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        button:hover {
+            background-color: #ffffff;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 243, 230, 0.2);
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+
+        .footer-text {
+            text-align: center;
+            margin-top: 24px;
+            font-size: 13px;
+            color: rgba(255, 243, 230, 0.4);
+        }
+
+        .footer-text a {
+            color: #FFF3E6;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .footer-text a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
+
 <body>
 
-    <h2>Register</h2>
-
-    <form action="/api/auth/register" method="POST">
-
-        <input
-            type="text"
-            name="userName"
-            placeholder="Username"
-            required
-        >
-
-        <input
-            type="email"
-            name="email"
-            placeholder="Email"
-            required
-        >
-
-        <input
-            type="password"
-            name="password"
-            placeholder="Password"
-            required
-        >
-
-        <select name="role" id="role" required>
-            <option value="">Select Role</option>
-            <option value="owner">Owner</option>
-            <option value="client">Client</option>
-            <option value="deliveryAgent">Delivery Agent</option>
-        </select>
-
-        <div id="companyField">
-            <input
-                type="text"
-                name="companyName"
-                placeholder="Company Name"
-            >
+    <div class="card">
+        <div class="header">
+            <!-- Brand Name integration -->
+            <div class="brand-logo">Office<span>Bites</span></div>
+            <p>Fueling your workday, one bite at a time.</p>
         </div>
 
-        <div id="phoneField">
-            <input
-                type="text"
-                name="phone"
-                placeholder="Phone Number"
-            >
+        <form action="/api/auth/register" method="POST">
+
+            <div class="input-group">
+                <label for="userName">Username</label>
+                <input type="text" id="userName" name="userName" placeholder="e.g. hungry_manager" required>
+            </div>
+
+            <div class="input-group">
+                <label for="email">Work Email</label>
+                <input type="email" id="email" name="email" placeholder="name@company.com" required>
+            </div>
+
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="••••••••" required>
+            </div>
+
+            <div class="input-group">
+                <label for="role">Who are you?</label>
+                <div class="select-wrapper">
+                    <select name="role" id="role" required>
+                        <option value="">Select your profile...</option>
+                        <option value="owner">Restaurant/Kitchen Owner</option>
+                        <option value="client">Corporate Client</option>
+                        <option value="deliveryAgent">Delivery Partner</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Context-aware placeholder for Company Name -->
+            <div class="input-group dynamic-field" id="companyWrapper">
+                <label for="companyField">Company / Kitchen Name</label>
+                <input type="text" name="companyName" id="companyField"
+                    placeholder="e.g. Acme Corp or Salad Days Kitchen">
+            </div>
+
+            <div class="input-group dynamic-field" id="phoneWrapper">
+                <label for="phoneField">Contact Phone Number</label>
+                <input type="tel" name="phone" id="phoneField" placeholder="+91  XXXX-XXX-XXX">
+            </div>
+
+            <button type="submit">Get Started</button>
+        </form>
+
+        <div class="footer-text">
+            Already have an OfficeBites account? <a href="/api/auth/login">Sign In</a>
         </div>
-
-        <button type="submit">Register</button>
-
-    </form>
+    </div>
 
     <script>
-const roleSelect = document.getElementById("role");
-const companyField = document.getElementById("companyField");
-const phoneField = document.getElementById("phoneField");
+        const roleSelect = document.getElementById("role");
+        const companyWrapper = document.getElementById("companyWrapper");
+        const phoneWrapper = document.getElementById("phoneWrapper");
+        const companyField = document.getElementById("companyField");
+        const phoneField = document.getElementById("phoneField");
 
-function toggleRoleFields() {
-    companyField.style.display = "none";
-    phoneField.style.display = "none";
+        function toggleRoleFields() {
+            companyWrapper.classList.remove("show");
+            phoneWrapper.classList.remove("show");
 
-    if (roleSelect.value === "deliveryAgent") {
-        phoneField.style.display = "block";
-    } else if (roleSelect.value === "owner" || roleSelect.value === "client") {
-        companyField.style.display = "block";
-    }
-}
+            companyField.removeAttribute("required");
+            phoneField.removeAttribute("required");
 
-roleSelect.addEventListener("change", toggleRoleFields);
-toggleRoleFields();
-</script>
+            if (roleSelect.value === "deliveryAgent") {
+                phoneWrapper.classList.add("show");
+                phoneField.setAttribute("required", "");
+            } else if (roleSelect.value === "owner" || roleSelect.value === "client") {
+                companyWrapper.classList.add("show");
+                companyField.setAttribute("required", "");
+            }
+        }
+
+        roleSelect.addEventListener("change", toggleRoleFields);
+        toggleRoleFields();
+    </script>
 
 </body>
+
 </html>

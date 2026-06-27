@@ -21,6 +21,18 @@ const sendCookie = (res, token) => {
     });
 };
 
+const isHtmlRequest = (req) => {
+    return req.accepts(["html", "json"]) === "html";
+};
+
+const renderLogin = (res, status, error, success, email = "") => {
+    return res.status(status).render("login", {
+        error,
+        success,
+        email,
+    });
+};
+
 // ─────────────────────────────────────────
 // REGISTER
 // ─────────────────────────────────────────
@@ -89,26 +101,35 @@ const register = async (req, res) => {
 // ─────────────────────────────────────────
 const login = async (req, res) => {
     try {
-        const { email, password } = req.body;          
+        const { email, password } = req.body;
 
         logger.debug("Login attempt", { email });
 
         const user = await User.findOne({ email });
         if (!user) {
             logger.warn("Login failed — user not found", { email });
+            if (isHtmlRequest(req)) {
+                return renderLogin(res, 404, "User not found", null, email);
+            }
             return res.status(404).json({ message: "User not found" });
         }
 
         // check active
         if (!user.isActive) {
             logger.warn("Login failed — account deactivated", { email });
+            if (isHtmlRequest(req)) {
+                return renderLogin(res, 403, "Account is deactivated", null, email);
+            }
             return res.status(403).json({ message: "Account is deactivated" });
         }
 
         // check lock
-        if (user.lockUntil && (user.lockUntil > Date.now())) {
+        if (user.lockUntil && user.lockUntil > Date.now()) {
             const minutesLeft = Math.ceil((user.lockUntil - Date.now()) / 1000 / 60);
             logger.warn("Login failed — account locked", { email, minutesLeft });
+            if (isHtmlRequest(req)) {
+                return renderLogin(res, 423, `Account locked. Try again in ${minutesLeft} minute(s)`, null, email);
+            }
             return res.status(423).json({
                 message: `Account locked. Try again in ${minutesLeft} minute(s)`,
             });
@@ -119,12 +140,14 @@ const login = async (req, res) => {
         if (!isMatch) {
             await user.recordLoginFailure();
             const attemptsLeft = 5 - user.loginAttempts;
+            const message = attemptsLeft > 0
+                ? `Wrong password. ${attemptsLeft} attempt(s) left`
+                : "Account locked for 15 minutes";
             logger.warn("Login failed — wrong password", { email, attemptsLeft });
-            return res.status(401).json({
-                message: attemptsLeft > 0
-                    ? `Wrong password. ${attemptsLeft} attempt(s) left`
-                    : "Account locked for 15 minutes",
-            });
+            if (isHtmlRequest(req)) {
+                return renderLogin(res, 401, message, null, email);
+            }
+            return res.status(401).json({ message });
         }
 
         await user.resetLoginAttempts();
@@ -133,6 +156,10 @@ const login = async (req, res) => {
         const token = generateToken(user._id, user.role);
         sendCookie(res, token);
 
+        if (isHtmlRequest(req)) {
+            return renderLogin(res, 200, null, "Login successful. Redirecting...", email);
+        }
+
         return res.status(200).json({
             message: "Login successful",
             user: { id: user._id, userName: user.userName, email: user.email, role: user.role },
@@ -140,6 +167,9 @@ const login = async (req, res) => {
 
     } catch (error) {
         logger.error("Login error", { error: error.message, stack: error.stack });
+        if (isHtmlRequest(req)) {
+            return renderLogin(res, 500, "Internal server error", null, req.body.email);
+        }
         return res.status(500).json({ message: "Internal server error" });
     }
 };
