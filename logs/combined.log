@@ -130,3 +130,31 @@
 {"email":"shubh@gmail.com","level":"info","message":"User logged in","role":"owner","timestamp":"2026-06-25 23:32:05","userId":"6a3d64fef471dbb0c88e51a1"}
 {"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-06-25 23:32:11","url":"/api/auth/login"}
 {"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-06-25 23:32:15","url":"/api/auth/logout"}
+{"level":"info","message":"mongoDb is connected localhost","timestamp":"2026-06-27 23:50:12"}
+{"level":"info","message":"Server running in development mode on port 5000","timestamp":"2026-06-27 23:50:12"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-06-27 23:50:51","url":"/api/auth/login"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-06-27 23:50:51","url":"/favicon.ico"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-06-27 23:52:38","url":"/api/auth/register"}
+{"level":"debug","message":"Incoming request","method":"POST","timestamp":"2026-06-27 23:54:05","url":"/api/auth/register"}
+{"email":"test@gmail.com","level":"debug","message":"Register attempt","role":"deliveryAgent","timestamp":"2026-06-27 23:54:05"}
+{"email":"test@gmail.com","level":"info","message":"User registered","role":"deliveryAgent","timestamp":"2026-06-27 23:54:06","userId":"6a401545a8034a0faa518bdf"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-06-27 23:54:22","url":"/api/auth/login"}
+{"level":"debug","message":"Incoming request","method":"POST","timestamp":"2026-06-27 23:54:27","url":"/api/auth/login"}
+{"email":"test@gmail.com","level":"debug","message":"Login attempt","timestamp":"2026-06-27 23:54:27"}
+{"attemptsLeft":4,"email":"test@gmail.com","level":"warn","message":"Login failed — wrong password","timestamp":"2026-06-27 23:54:28"}
+{"level":"debug","message":"Incoming request","method":"POST","timestamp":"2026-06-27 23:54:36","url":"/api/auth/login"}
+{"email":"test@gmail.com","level":"debug","message":"Login attempt","timestamp":"2026-06-27 23:54:36"}
+{"email":"test@gmail.com","level":"info","message":"User logged in","role":"deliveryAgent","timestamp":"2026-06-27 23:54:36","userId":"6a401545a8034a0faa518bdf"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-06-27 23:55:13","url":"/.well-known/appspecific/com.chrome.devtools.json"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-06-27 23:55:33","url":"/api/auth/logout"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-06-27 23:57:32","url":"/api/auth/register"}
+{"level":"info","message":"mongoDb is connected localhost","timestamp":"2026-06-28 00:22:07"}
+{"level":"info","message":"Server running in development mode on port 5000","timestamp":"2026-06-28 00:22:07"}
+{"level":"info","message":"mongoDb is connected localhost","timestamp":"2026-06-28 00:22:11"}
+{"level":"info","message":"Server running in development mode on port 5000","timestamp":"2026-06-28 00:22:11"}
+{"level":"info","message":"mongoDb is connected localhost","timestamp":"2026-06-28 00:23:50"}
+{"level":"info","message":"Server running in development mode on port 5000","timestamp":"2026-06-28 00:23:50"}
+{"level":"info","message":"mongoDb is connected localhost","timestamp":"2026-06-28 00:26:31"}
+{"level":"info","message":"Server running in development mode on port 5000","timestamp":"2026-06-28 00:26:31"}
+{"level":"info","message":"mongoDb is connected localhost","timestamp":"2026-06-28 00:28:03"}
+{"level":"info","message":"Server running in development mode on port 5000","timestamp":"2026-06-28 00:28:03"}
