@@ -1,3 +1,4 @@
+const Menu = require("../models/menu_model");
 const User = require("../models/user_model");
 const logger = require("../utils/logger");
 
@@ -79,5 +80,109 @@ const changePassword = async (req, res) => {
         return res.status(500).json({ message: "Internal server error" });
     }
 };
+//Menu Functions
+const addItem = async (req,res)=>{
+    try {
+        const {itemName,itemPhoto,itemPrice} = req.body;
+        
+        logger.debug("addItem attempt",{userId:req.user.userId});
 
-module.exports = { getProfile, editProfile, changePassword };
+        const item =await Menu.create({
+            itemName,
+            itemPhoto,
+            itemPrice,
+            owner:req.user.userId
+        });
+        logger.info("Item added", { itemId: item._id, userId: req.user.userId });
+        return res.status(201).json({ message: "Item added successfully", item });
+    } catch (error) {
+        logger.error("addItem error", { error: error.message, stack: error.stack });
+        return res.status(500).json({ message: "Internal server error" });
+    }
+}
+
+// ─────────────────────────────────────────
+// EDIT ITEM
+// ─────────────────────────────────────────
+const editItem = async (req, res) => {
+    try {
+        const { itemName, itemPhoto, itemPrice } = req.body;
+        const { id } = req.params;
+
+        logger.debug("editItem attempt", { itemId: id, userId: req.user.userId });
+
+        const item = await Menu.findOne({ _id: id, owner: req.user.userId });
+        if (!item) {
+            logger.warn("editItem — item not found or unauthorized", { itemId: id, userId: req.user.userId });
+            return res.status(404).json({ message: "Item not found" });
+        }
+
+        if (itemName) item.itemName = itemName;
+        if (itemPhoto) item.itemPhoto = itemPhoto;
+        if (itemPrice) item.itemPrice = itemPrice;
+
+        await item.save();
+
+        logger.info("Item updated", { itemId: item._id, userId: req.user.userId });
+        return res.status(200).json({ message: "Item updated successfully", item });
+
+    } catch (error) {
+        logger.error("editItem error", { error: error.message, stack: error.stack });
+        return res.status(500).json({ message: "Internal server error" });
+    }
+};
+
+// ─────────────────────────────────────────
+// REMOVE ITEM
+// ─────────────────────────────────────────
+const removeItem = async (req, res) => {
+    try {
+        const { id } = req.params;
+
+        logger.debug("removeItem attempt", { itemId: id, userId: req.user.userId });
+
+        const item = await Menu.findOneAndDelete({ _id: id, owner: req.user.userId });
+        if (!item) {
+            logger.warn("removeItem — item not found or unauthorized", { itemId: id, userId: req.user.userId });
+            return res.status(404).json({ message: "Item not found" });
+        }
+
+        logger.info("Item removed", { itemId: id, userId: req.user.userId });
+        return res.status(200).json({ message: "Item removed successfully" });
+
+    } catch (error) {
+        logger.error("removeItem error", { error: error.message, stack: error.stack });
+        return res.status(500).json({ message: "Internal server error" });
+    }
+};
+
+// ─────────────────────────────────────────
+// TOGGLE AVAILABILITY
+// ─────────────────────────────────────────
+const toggleAvailability = async (req, res) => {
+    try {
+        const { id } = req.params;
+
+        logger.debug("toggleAvailability attempt", { itemId: id, userId: req.user.userId });
+
+        const item = await Menu.findOne({ _id: id, owner: req.user.userId });
+        if (!item) {
+            logger.warn("toggleAvailability — item not found or unauthorized", { itemId: id });
+            return res.status(404).json({ message: "Item not found" });
+        }
+
+        item.isAvailable = !item.isAvailable;
+        await item.save();
+
+        logger.info("Item availability toggled", { itemId: id, isAvailable: item.isAvailable });
+        return res.status(200).json({ 
+            message: `Item marked as ${item.isAvailable ? "available" : "unavailable"}`,
+            isAvailable: item.isAvailable
+        });
+
+    } catch (error) {
+        logger.error("toggleAvailability error", { error: error.message, stack: error.stack });
+        return res.status(500).json({ message: "Internal server error" });
+    }
+};
+module.exports = { getProfile, editProfile, changePassword , addItem ,editItem , removeItem};

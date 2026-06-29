@@ -248,3 +248,94 @@
 {"level":"info","message":"Server running in development mode on port 5000","timestamp":"2026-06-28 01:17:37"}
 {"level":"info","message":"mongoDb is connected localhost","timestamp":"2026-06-28 01:17:51"}
 {"level":"info","message":"Server running in development mode on port 5000","timestamp":"2026-06-28 01:17:51"}
+{"level":"info","message":"mongoDb is connected localhost","timestamp":"2026-06-29 07:20:11"}
+{"level":"info","message":"Server running in development mode on port 5000","timestamp":"2026-06-29 07:20:11"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-06-29 07:20:27","url":"/"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-06-29 07:25:40","url":"/api/auth/register"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-06-29 07:25:41","url":"/favicon.ico"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-06-29 07:25:48","url":"/api/auth/login"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-06-29 07:25:50","url":"/api/auth/register"}
+{"level":"info","message":"mongoDb is connected localhost","timestamp":"2026-06-29 07:33:30"}
+{"level":"info","message":"Server running in development mode on port 5000","timestamp":"2026-06-29 07:33:30"}
+{"level":"info","message":"mongoDb is connected localhost","timestamp":"2026-06-29 07:33:36"}
+{"level":"info","message":"Server running in development mode on port 5000","timestamp":"2026-06-29 07:33:36"}
+{"level":"info","message":"mongoDb is connected localhost","timestamp":"2026-06-29 07:33:44"}
+{"level":"info","message":"Server running in development mode on port 5000","timestamp":"2026-06-29 07:33:44"}
+{"level":"info","message":"mongoDb is connected localhost","timestamp":"2026-06-29 07:33:50"}
+{"level":"info","message":"Server running in development mode on port 5000","timestamp":"2026-06-29 07:33:50"}
+{"level":"info","message":"mongoDb is connected localhost","timestamp":"2026-06-29 07:35:59"}
+{"level":"info","message":"Server running in development mode on port 5000","timestamp":"2026-06-29 07:35:59"}
+{"level":"info","message":"mongoDb is connected localhost","timestamp":"2026-06-29 07:36:14"}
+{"level":"info","message":"Server running in development mode on port 5000","timestamp":"2026-06-29 07:36:14"}
+{"level":"info","message":"mongoDb is connected localhost","timestamp":"2026-06-29 07:36:21"}
+{"level":"info","message":"Server running in development mode on port 5000","timestamp":"2026-06-29 07:36:21"}
+{"level":"info","message":"mongoDb is connected localhost","timestamp":"2026-06-29 07:36:41"}
+{"level":"info","message":"Server running in development mode on port 5000","timestamp":"2026-06-29 07:36:41"}
+{"level":"info","message":"mongoDb is connected localhost","timestamp":"2026-06-29 07:36:56"}
+{"level":"info","message":"Server running in development mode on port 5000","timestamp":"2026-06-29 07:36:56"}
+{"level":"info","message":"mongoDb is connected localhost","timestamp":"2026-06-29 07:37:25"}
+{"level":"info","message":"Server running in development mode on port 5000","timestamp":"2026-06-29 07:37:25"}
+{"level":"info","message":"mongoDb is connected localhost","timestamp":"2026-06-29 07:37:30"}
+{"level":"info","message":"Server running in development mode on port 5000","timestamp":"2026-06-29 07:37:30"}
+{"level":"info","message":"mongoDb is connected localhost","timestamp":"2026-06-29 07:37:47"}
+{"level":"info","message":"Server running in development mode on port 5000","timestamp":"2026-06-29 07:37:47"}
+{"level":"info","message":"mongoDb is connected localhost","timestamp":"2026-06-29 07:37:51"}
+{"level":"info","message":"Server running in development mode on port 5000","timestamp":"2026-06-29 07:37:51"}
+{"level":"info","message":"mongoDb is connected localhost","timestamp":"2026-06-29 07:37:57"}
+{"level":"info","message":"Server running in development mode on port 5000","timestamp":"2026-06-29 07:37:57"}
+{"level":"info","message":"mongoDb is connected localhost","timestamp":"2026-06-29 07:38:06"}
+{"level":"info","message":"Server running in development mode on port 5000","timestamp":"2026-06-29 07:38:06"}
+{"level":"info","message":"mongoDb is connected localhost","timestamp":"2026-06-29 07:38:12"}
+{"level":"info","message":"Server running in development mode on port 5000","timestamp":"2026-06-29 07:38:12"}
+{"level":"info","message":"mongoDb is connected localhost","timestamp":"2026-06-29 07:38:21"}
+{"level":"info","message":"Server running in development mode on port 5000","timestamp":"2026-06-29 07:38:21"}
+{"level":"info","message":"mongoDb is connected localhost","timestamp":"2026-06-29 07:38:23"}
+{"level":"info","message":"Server running in development mode on port 5000","timestamp":"2026-06-29 07:38:23"}
+{"level":"info","message":"mongoDb is connected localhost","timestamp":"2026-06-29 07:38:27"}
+{"level":"info","message":"Server running in development mode on port 5000","timestamp":"2026-06-29 07:38:27"}
+{"level":"info","message":"mongoDb is connected localhost","timestamp":"2026-06-29 07:38:36"}
+{"level":"info","message":"Server running in development mode on port 5000","timestamp":"2026-06-29 07:38:36"}
+{"level":"info","message":"mongoDb is connected localhost","timestamp":"2026-06-29 07:38:42"}
+{"level":"info","message":"Server running in development mode on port 5000","timestamp":"2026-06-29 07:38:42"}
+{"level":"info","message":"mongoDb is connected localhost","timestamp":"2026-06-29 07:38:51"}
+{"level":"info","message":"Server running in development mode on port 5000","timestamp":"2026-06-29 07:38:51"}
+{"level":"info","message":"mongoDb is connected localhost","timestamp":"2026-06-29 07:38:53"}
+{"level":"info","message":"Server running in development mode on port 5000","timestamp":"2026-06-29 07:38:53"}
+{"level":"info","message":"mongoDb is connected localhost","timestamp":"2026-06-29 07:39:05"}
+{"level":"info","message":"Server running in development mode on port 5000","timestamp":"2026-06-29 07:39:05"}
+{"level":"info","message":"mongoDb is connected localhost","timestamp":"2026-06-29 07:39:09"}
+{"level":"info","message":"Server running in development mode on port 5000","timestamp":"2026-06-29 07:39:09"}
+{"level":"info","message":"mongoDb is connected localhost","timestamp":"2026-06-29 07:39:11"}
+{"level":"info","message":"Server running in development mode on port 5000","timestamp":"2026-06-29 07:39:11"}
+{"level":"info","message":"mongoDb is connected localhost","timestamp":"2026-06-29 07:39:16"}
+{"level":"info","message":"Server running in development mode on port 5000","timestamp":"2026-06-29 07:39:16"}
+{"level":"info","message":"mongoDb is connected localhost","timestamp":"2026-06-29 07:39:22"}
+{"level":"info","message":"Server running in development mode on port 5000","timestamp":"2026-06-29 07:39:22"}
+{"level":"info","message":"mongoDb is connected localhost","timestamp":"2026-06-29 07:39:32"}
+{"level":"info","message":"Server running in development mode on port 5000","timestamp":"2026-06-29 07:39:32"}
+{"level":"info","message":"mongoDb is connected localhost","timestamp":"2026-06-29 07:39:35"}
+{"level":"info","message":"Server running in development mode on port 5000","timestamp":"2026-06-29 07:39:35"}
+{"level":"info","message":"mongoDb is connected localhost","timestamp":"2026-06-29 07:39:45"}
+{"level":"info","message":"Server running in development mode on port 5000","timestamp":"2026-06-29 07:39:45"}
+{"level":"info","message":"mongoDb is connected localhost","timestamp":"2026-06-29 07:39:52"}
+{"level":"info","message":"Server running in development mode on port 5000","timestamp":"2026-06-29 07:39:52"}
+{"level":"info","message":"mongoDb is connected localhost","timestamp":"2026-06-29 07:39:54"}
+{"level":"info","message":"Server running in development mode on port 5000","timestamp":"2026-06-29 07:39:54"}
+{"level":"info","message":"mongoDb is connected localhost","timestamp":"2026-06-29 07:39:59"}
+{"level":"info","message":"Server running in development mode on port 5000","timestamp":"2026-06-29 07:39:59"}
+{"level":"info","message":"mongoDb is connected localhost","timestamp":"2026-06-29 07:45:35"}
+{"level":"info","message":"Server running in development mode on port 5000","timestamp":"2026-06-29 07:45:35"}
+{"level":"info","message":"mongoDb is connected localhost","timestamp":"2026-06-29 07:45:40"}
+{"level":"info","message":"Server running in development mode on port 5000","timestamp":"2026-06-29 07:45:40"}
+{"level":"info","message":"mongoDb is connected localhost","timestamp":"2026-06-29 07:45:49"}
+{"level":"info","message":"Server running in development mode on port 5000","timestamp":"2026-06-29 07:45:49"}
+{"level":"info","message":"mongoDb is connected localhost","timestamp":"2026-06-29 07:46:00"}
+{"level":"info","message":"Server running in development mode on port 5000","timestamp":"2026-06-29 07:46:00"}
+{"level":"info","message":"mongoDb is connected localhost","timestamp":"2026-06-29 07:49:20"}
+{"level":"info","message":"Server running in development mode on port 5000","timestamp":"2026-06-29 07:49:20"}
+{"level":"info","message":"mongoDb is connected localhost","timestamp":"2026-06-29 07:49:27"}
+{"level":"info","message":"Server running in development mode on port 5000","timestamp":"2026-06-29 07:49:27"}
+{"level":"info","message":"mongoDb is connected localhost","timestamp":"2026-06-29 07:49:35"}
+{"level":"info","message":"Server running in development mode on port 5000","timestamp":"2026-06-29 07:49:35"}
+{"level":"info","message":"mongoDb is connected localhost","timestamp":"2026-06-29 07:51:09"}
+{"level":"info","message":"Server running in development mode on port 5000","timestamp":"2026-06-29 07:51:10"}
