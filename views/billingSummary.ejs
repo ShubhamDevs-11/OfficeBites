@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Billing Summary</title>
+</head>
+<body>
+  <h1>Billing Summary</h1>
+  <p>Outstanding Amount: <strong><%= summary.outstandingAmount %></strong></p>
+  <p>Total Paid Amount: <strong><%= summary.totalPaidAmount %></strong></p>
+  <p>Payments Received: <strong><%= summary.hasPaymentsReceived ? 'Yes' : 'No' %></strong></p>
+  <p>Paid Bills: <strong><%= summary.paidBillCount %></strong></p>
+  <p>Pending Bills: <strong><%= summary.pendingBillCount %></strong></p>
+  <p><a href="/api/owner/bills">View all bills</a></p>
+</body>
+</html>

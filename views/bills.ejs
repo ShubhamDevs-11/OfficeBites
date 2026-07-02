@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bills</title>
+</head>
+<body>
+  <h1>Bill List</h1>
+  <a href="/api/owner/billing-summary">Billing summary</a>
+  <table border="1" cellpadding="8" cellspacing="0">
+    <thead>
+      <tr>
+        <th>Office</th>
+        <th>Amount</th>
+        <th>Month</th>
+        <th>Year</th>
+        <th>Status</th>
+        <th>Paid At</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% if (bills.length === 0) { %>
+        <tr>
+          <td colspan="6">No bills found.</td>
+        </tr>
+      <% } else { %>
+        <% bills.forEach((bill) => { %>
+          <tr>
+            <td><%= bill.office?.officeName || 'Unknown' %></td>
+            <td><%= bill.amount %></td>
+            <td><%= bill.month %></td>
+            <td><%= bill.year %></td>
+            <td><%= bill.status %></td>
+            <td><%= bill.paidAt ? bill.paidAt.toISOString().split('T')[0] : '-' %></td>
+          </tr>
+        <% }) %>
+      <% } %>
+    </tbody>
+  </table>
+</body>
+</html>
