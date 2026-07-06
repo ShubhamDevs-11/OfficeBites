@@ -424,39 +424,31 @@ const getAgents = async (req, res) => {
         return res.status(500).json({ message: "Internal server error" });
     }
 };
+//─────────────────────────────────────────
+//BILL
+//─────────────────────────────────────────
 
+// ─────────────────────────────────────────
+// CREATE BILL
+// ─────────────────────────────────────────
 const createBill = async (req, res) => {
     try {
         const { office, amount, month, year } = req.body;
 
-        logger.debug("createBill attempt", {
-            owner: req.user.userId,
-            office,
-        });
+        logger.debug("createBill attempt", { userId: req.user.userId, office });
 
-        // Check office belongs to owner
-        const officeExists = await Office.findOne({
-            _id: office,
-            owner: req.user.userId,
-        });
-
+        // check office belongs to owner
+        const officeExists = await Office.findOne({ _id: office, owner: req.user.userId });
         if (!officeExists) {
-            return res.status(404).json({
-                message: "Office not found",
-            });
+            logger.warn("createBill — office not found or unauthorized", { office });
+            return res.status(404).json({ message: "Office not found" });
         }
 
-        // Prevent duplicate bill
-        const existing = await Bill.findOne({
-            office,
-            month,
-            year,
-        });
-
+        // prevent duplicate bill for same month
+        const existing = await Bill.findOne({ office, month, year });
         if (existing) {
-            return res.status(409).json({
-                message: "Bill already exists for this month",
-            });
+            logger.warn("createBill — bill already exists", { office, month, year });
+            return res.status(409).json({ message: "Bill already exists for this month" });
         }
 
         const bill = await Bill.create({
@@ -467,157 +459,105 @@ const createBill = async (req, res) => {
             year,
         });
 
-        logger.info("Bill created", {
-            billId: bill._id,
-        });
-
-        return res.status(201).json({
-            message: "Bill created successfully",
-            bill,
-        });
+        logger.info("Bill created", { billId: bill._id, userId: req.user.userId });
+        return res.status(201).json({ message: "Bill created successfully", bill });
 
     } catch (error) {
-        logger.error("createBill error", {
-            error: error.message,
-            stack: error.stack,
-        });
-
-        return res.status(500).json({
-            message: "Internal server error",
-        });
+        logger.error("createBill error", { error: error.message, stack: error.stack });
+        return res.status(500).json({ message: "Internal server error" });
     }
 };
 
+// ─────────────────────────────────────────
+// GET ALL BILLS (this owner)
+// ─────────────────────────────────────────
 const getBills = async (req, res) => {
     try {
+        logger.debug("getBills attempt", { userId: req.user.userId });
 
-        const bills = await Bill.find({
-            owner: req.user.userId,
-        })
+        const bills = await Bill.find({ owner: req.user.userId })
             .populate("office", "officeName")
             .sort({ year: -1, month: -1 });
 
-        return res.status(200).json({
-            bills,
-        });
+        logger.info("Bills fetched", { count: bills.length, userId: req.user.userId });
+        return res.status(200).json({ bills });
 
     } catch (error) {
-
-        logger.error("getBills error", {
-            error: error.message,
-            stack: error.stack,
-        });
-
-        return res.status(500).json({
-            message: "Internal server error",
-        });
+        logger.error("getBills error", { error: error.message, stack: error.stack });
+        return res.status(500).json({ message: "Internal server error" });
     }
 };
+
+// ─────────────────────────────────────────
+// GET BILLS FOR ONE OFFICE
+// ─────────────────────────────────────────
 const getOfficeBills = async (req, res) => {
     try {
-
         const { officeId } = req.params;
 
-        const bills = await Bill.find({
-            owner: req.user.userId,
-            office: officeId,
-        }).sort({
-            year: -1,
-            month: -1,
-        });
+        logger.debug("getOfficeBills attempt", { officeId, userId: req.user.userId });
 
-        return res.status(200).json({
-            bills,
-        });
+        const bills = await Bill.find({ owner: req.user.userId, office: officeId })
+            .sort({ year: -1, month: -1 });
+
+        logger.info("Office bills fetched", { count: bills.length, officeId });
+        return res.status(200).json({ bills });
 
     } catch (error) {
-
-        logger.error("getOfficeBills error", {
-            error: error.message,
-            stack: error.stack,
-        });
-
-        return res.status(500).json({
-            message: "Internal server error",
-        });
+        logger.error("getOfficeBills error", { error: error.message, stack: error.stack });
+        return res.status(500).json({ message: "Internal server error" });
     }
 };
+
+// ─────────────────────────────────────────
+// MARK BILL AS PAID
+// ─────────────────────────────────────────
 const markBillPaid = async (req, res) => {
     try {
-
         const { id } = req.params;
 
-        const bill = await Bill.findOne({
-            _id: id,
-            owner: req.user.userId,
-        });
+        logger.debug("markBillPaid attempt", { billId: id, userId: req.user.userId });
 
+        const bill = await Bill.findOne({ _id: id, owner: req.user.userId });
         if (!bill) {
-            return res.status(404).json({
-                message: "Bill not found",
-            });
+            logger.warn("markBillPaid — bill not found or unauthorized", { billId: id });
+            return res.status(404).json({ message: "Bill not found" });
         }
 
         bill.status = "paid";
         bill.paidAt = new Date();
-
         await bill.save();
 
-        logger.info("Bill marked paid", {
-            billId: bill._id,
-        });
-
-        return res.status(200).json({
-            message: "Bill marked as paid",
-            bill,
-        });
+        logger.info("Bill marked paid", { billId: bill._id, userId: req.user.userId });
+        return res.status(200).json({ message: "Bill marked as paid", bill });
 
     } catch (error) {
-
-        logger.error("markBillPaid error", {
-            error: error.message,
-            stack: error.stack,
-        });
-
-        return res.status(500).json({
-            message: "Internal server error",
-        });
+        logger.error("markBillPaid error", { error: error.message, stack: error.stack });
+        return res.status(500).json({ message: "Internal server error" });
     }
 };
+
+// ─────────────────────────────────────────
+// DELETE BILL
+// ─────────────────────────────────────────
 const deleteBill = async (req, res) => {
     try {
-
         const { id } = req.params;
 
-        const bill = await Bill.findOneAndDelete({
-            _id: id,
-            owner: req.user.userId,
-        });
+        logger.debug("deleteBill attempt", { billId: id, userId: req.user.userId });
 
+        const bill = await Bill.findOneAndDelete({ _id: id, owner: req.user.userId });
         if (!bill) {
-            return res.status(404).json({
-                message: "Bill not found",
-            });
+            logger.warn("deleteBill — bill not found or unauthorized", { billId: id });
+            return res.status(404).json({ message: "Bill not found" });
         }
 
-        logger.info("Bill deleted", {
-            billId: id,
-        });
-
-        return res.status(200).json({
-            message: "Bill deleted successfully",
-        });
+        logger.info("Bill deleted", { billId: id, userId: req.user.userId });
+        return res.status(200).json({ message: "Bill deleted successfully" });
 
     } catch (error) {
-
-        logger.error("deleteBill error", {
-            error: error.message,
-            stack: error.stack,
-        });
-
-        return res.status(500).json({
-            message: "Internal server error",
-        });
+        logger.error("deleteBill error", { error: error.message, stack: error.stack });
+        return res.status(500).json({ message: "Internal server error" });
     }
 };
 

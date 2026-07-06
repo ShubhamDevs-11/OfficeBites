@@ -355,3 +355,5 @@
 {"level":"debug","message":"Incoming request","method":"POST","timestamp":"2026-07-02 22:58:50","url":"/api/auth/login"}
 {"email":"shubhamkapadia19@gmail.com","level":"debug","message":"Login attempt","timestamp":"2026-07-02 22:58:50"}
 {"attemptsLeft":3,"email":"shubhamkapadia19@gmail.com","level":"warn","message":"Login failed — wrong password","timestamp":"2026-07-02 22:58:51"}
+{"level":"info","message":"mongoDb is connected 127.0.0.1","timestamp":"2026-07-07 00:07:59"}
+{"level":"info","message":"Server running in development mode on port 3000","timestamp":"2026-07-07 00:07:59"}
