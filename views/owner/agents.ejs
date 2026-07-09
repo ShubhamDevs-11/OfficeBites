@@ -2,39 +2,227 @@
 <html lang="en">
 <head>
     <%- include('../partials/head') %>
+    <style>
+        :root {
+            --dark: #4A4A4A;
+            --light-gray: #CBCBCB;
+            --cream: #FFFFE3;
+            --accent: #6D8196;
+            --accent-hover: #556678;
+            --card-bg: #FFFFFF;
+            --danger: #BA3C3C;
+            --danger-hover: #962E2E;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--cream);
+            color: var(--dark);
+            min-height: 100vh;
+            padding: 0 0 40px 0;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        h2 {
+            font-size: 26px;
+            font-weight: 600;
+            margin-bottom: 24px;
+            letter-spacing: -0.5px;
+        }
+
+        h3 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            padding-bottom: 6px;
+            border-bottom: 1px solid var(--light-gray);
+        }
+
+        #message {
+            margin-bottom: 24px;
+            padding: 12px;
+            font-size: 14px;
+            font-weight: 500;
+            background-color: #FFFFFF;
+            border: 1px solid var(--light-gray);
+            border-left: 4px solid var(--accent);
+            border-radius: 4px;
+        }
+        #message:empty {
+            display: none;
+        }
+
+        /* Two Column Layout for Management */
+        .management-grid {
+            display: grid;
+            grid-template-columns: 380px 1fr;
+            gap: 32px;
+            align-items: start;
+        }
+
+        @media (max-width: 850px) {
+            .management-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .form-card {
+            background: var(--card-bg);
+            border: 1px solid var(--light-gray);
+            border-radius: 6px;
+            padding: 24px;
+            box-shadow: 0 2px 8px rgba(74, 74, 74, 0.02);
+        }
+
+        .form-group {
+            margin-bottom: 16px;
+        }
+
+        label {
+            display: block;
+            font-size: 14px;
+            font-weight: 500;
+            margin-bottom: 6px;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px 12px;
+            font-size: 15px;
+            border: 1px solid var(--light-gray);
+            border-radius: 4px;
+            color: var(--dark);
+            background-color: #FAFAFA;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(109, 129, 150, 0.15);
+            background-color: #FFFFFF;
+        }
+
+        button[type="submit"] {
+            width: 100%;
+            padding: 11px;
+            font-size: 15px;
+            font-weight: 500;
+            color: #FFFFFF;
+            background-color: var(--accent);
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 8px;
+            transition: background-color 0.2s ease;
+        }
+
+        button[type="submit"]:hover {
+            background-color: var(--accent-hover);
+        }
+
+        /* Dynamic List Container & Cards */
+        .agent-list-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 16px;
+        }
+
+        .agent-card {
+            background: var(--card-bg) !important;
+            border: 1px solid var(--light-gray) !important;
+            border-radius: 6px !important;
+            padding: 18px !important;
+            margin-bottom: 0 !important;
+            box-shadow: 0 2px 6px rgba(74, 74, 74, 0.02) !important;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .agent-card p {
+            font-size: 14px;
+            margin-bottom: 6px;
+            line-height: 1.4;
+        }
+
+        .agent-card p strong {
+            font-size: 16px;
+            color: var(--dark);
+        }
+
+        .agent-card button {
+            width: 100%;
+            padding: 8px;
+            font-size: 13px;
+            font-weight: 500;
+            color: #FFFFFF;
+            background-color: var(--danger);
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 12px;
+            transition: background-color 0.2s ease;
+        }
+
+        .agent-card button:hover {
+            background-color: var(--danger-hover);
+        }
+    </style>
 </head>
 <body>
 
     <%- include('../partials/nav') %>
 
-    <h2>Delivery Agents</h2>
+    <div class="container">
+        <h2>Delivery Agents</h2>
 
-    <div id="message"></div>
+        <div id="message"></div>
 
-    <h3>Add New Agent</h3>
-    <form id="addForm">
-        <div>
-            <label>Username</label>
-            <input type="text" name="userName" required>
-        </div>
-        <div>
-            <label>Email</label>
-            <input type="email" name="email" required>
-        </div>
-        <div>
-            <label>Password</label>
-            <input type="password" name="password" required>
-        </div>
-        <div>
-            <label>Phone</label>
-            <input type="tel" name="phone" required>
-        </div>
-        <button type="submit">Add Agent</button>
-    </form>
+        <div class="management-grid">
+            <!-- Left Side: Add Form -->
+            <div class="form-card">
+                <h3>Add New Agent</h3>
+                <form id="addForm">
+                    <div class="form-group">
+                        <label>Username</label>
+                        <input type="text" name="userName" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Password</label>
+                        <input type="password" name="password" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Phone</label>
+                        <input type="tel" name="phone" required>
+                    </div>
+                    <button type="submit">Add Agent</button>
+                </form>
+            </div>
 
-    <h3>All Agents</h3>
-    <div id="agentList">
-        <p>Loading...</p>
+            <!-- Right Side: Agents Grid -->
+            <div>
+                <h3>All Agents</h3>
+                <div id="agentList" class="agent-list-container">
+                    <p>Loading...</p>
+                </div>
+            </div>
+        </div>
     </div>
 
     <script>
@@ -62,12 +250,15 @@
                 }
 
                 agentList.innerHTML = data.agents.map(agent => `
-                    <div style="border:1px solid #ccc; padding:10px; margin-bottom:10px;">
-                        <p><strong>${agent.userName}</strong></p>
-                        <p>${agent.email}</p>
-                        <p>Phone: ${agent.phone}</p>
-                        <p>Available: ${agent.isAvailable ? "Yes" : "No"}</p>
-
+                    <div class="agent-card">
+                        <div>
+                            <p><strong>${agent.userName}</strong></p>
+                            <p style="opacity: 0.85;">${agent.email}</p>
+                            <p style="margin-top: 4px;">Phone: ${agent.phone}</p>
+                            <p style="font-size: 13px; color: ${agent.isAvailable ? '#2E7D32' : '#C62828'}; font-weight: 500;">
+                                Available: ${agent.isAvailable ? "Yes" : "No"}
+                            </p>
+                        </div>
                         <button onclick="removeAgent('${agent._id}')">Remove</button>
                     </div>
                 `).join("");

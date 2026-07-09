@@ -3,180 +3,431 @@
 
 <head>
     <%- include('../partials/head') %>
+    <style>
+        :root {
+            --dark: #4A4A4A;
+            --light-gray: #CBCBCB;
+            --cream: #FFFFE3;
+            --accent: #6D8196;
+            --accent-hover: #556678;
+            --card-bg: #FFFFFF;
+            --danger: #BA3C3C;
+            --danger-hover: #962E2E;
+            --success: #2E7D32;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--cream);
+            color: var(--dark);
+            min-height: 100vh;
+            padding: 0 0 40px 0;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        h2 {
+            font-size: 26px;
+            font-weight: 600;
+            margin-bottom: 24px;
+            letter-spacing: -0.5px;
+        }
+
+        h3 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            padding-bottom: 6px;
+            border-bottom: 1px solid var(--light-gray);
+        }
+
+        #message {
+            margin-bottom: 24px;
+            padding: 12px;
+            font-size: 14px;
+            font-weight: 500;
+            background-color: #FFFFFF;
+            border: 1px solid var(--light-gray);
+            border-left: 4px solid var(--accent);
+            border-radius: 4px;
+        }
+        #message:empty {
+            display: none;
+        }
+
+        /* Two-Column Dashboard Split */
+        .management-grid {
+            display: grid;
+            grid-template-columns: 360px 1fr;
+            gap: 32px;
+            align-items: start;
+        }
+
+        @media (max-width: 850px) {
+            .management-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .form-card {
+            background: var(--card-bg);
+            border: 1px solid var(--light-gray);
+            border-radius: 6px;
+            padding: 24px;
+            box-shadow: 0 2px 8px rgba(74, 74, 74, 0.02);
+        }
+
+        .form-group {
+            margin-bottom: 16px;
+        }
+
+        label {
+            display: block;
+            font-size: 14px;
+            font-weight: 500;
+            margin-bottom: 6px;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px 12px;
+            font-size: 15px;
+            border: 1px solid var(--light-gray);
+            border-radius: 4px;
+            color: var(--dark);
+            background-color: #FAFAFA;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        /* Customizing file inputs slightly for cleaner visual alignment */
+        input[type="file"] {
+            padding: 8px 10px;
+            font-size: 14px;
+            background: none;
+            border: 1px dashed var(--light-gray);
+            cursor: pointer;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(109, 129, 150, 0.15);
+            background-color: #FFFFFF;
+        }
+
+        button[type="submit"] {
+            width: 100%;
+            padding: 11px;
+            font-size: 15px;
+            font-weight: 500;
+            color: #FFFFFF;
+            background-color: var(--accent);
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 8px;
+            transition: background-color 0.2s ease;
+        }
+
+        button[type="submit"]:hover {
+            background-color: var(--accent-hover);
+        }
+
+        /* Responsive Menu Card Grid Layout */
+        .item-list-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 20px;
+        }
+
+        .menu-card {
+            background: var(--card-bg) !important;
+            border: 1px solid var(--light-gray) !important;
+            border-radius: 6px !important;
+            padding: 18px !important;
+            margin-bottom: 0 !important;
+            box-shadow: 0 2px 6px rgba(74, 74, 74, 0.02) !important;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .menu-card img {
+            width: 100% !important;
+            height: 160px !important;
+            object-fit: cover !important;
+            border-radius: 4px !important;
+            margin-bottom: 12px !important;
+            border: 1px solid var(--light-gray);
+        }
+
+        .menu-card p {
+            font-size: 14px;
+            margin-bottom: 6px;
+            line-height: 1.4;
+        }
+
+        .menu-card p strong {
+            font-size: 16px;
+            color: var(--dark);
+        }
+
+        .menu-actions {
+            margin-top: 14px;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .menu-card button {
+            width: 100%;
+            padding: 8px;
+            font-size: 13px;
+            font-weight: 500;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+
+        .btn-toggle {
+            background-color: var(--accent);
+            color: #FFFFFF;
+        }
+
+        .btn-toggle:hover {
+            background-color: var(--accent-hover);
+        }
+
+        .btn-row {
+            display: flex;
+            gap: 6px;
+        }
+
+        .btn-edit {
+            background-color: #FAFAFA;
+            color: var(--dark);
+            border: 1px solid var(--light-gray) !important;
+        }
+
+        .btn-edit:hover {
+            background-color: #EEEEE0;
+        }
+
+        .btn-remove {
+            background-color: var(--danger);
+            color: #FFFFFF;
+        }
+
+        .btn-remove:hover {
+            background-color: var(--danger-hover);
+        }
+    </style>
 </head>
 
 <body>
 
     <%- include('../partials/nav') %>
 
+    <div class="container">
         <h2>Menu Items</h2>
 
         <div id="message"></div>
 
-        <h3>Add New Item</h3>
-        <form id="addForm">
-            <div>
-                <label>Item Name</label>
-                <input type="text" name="itemName" required>
-            </div>
-            <div>
-                <label>Item Photo</label>
-                <input type="file" name="itemPhoto" accept="image/*" required>
-            </div>
-            <div>
-                <label>Price</label>
-                <input type="number" name="itemPrice" required>
-            </div>
-            <button type="submit">Add Item</button>
-        </form>
-
-        <h3>All Items</h3>
-        <div id="itemList">
-            <p>Loading...</p>
-        </div>
-
-        <script>
-            const messageBox = document.getElementById("message");
-            const itemList = document.getElementById("itemList");
-
-            // ─────────────────────────────────
-            // LOAD ALL ITEMS
-            // ─────────────────────────────────
-            async function loadItems() {
-                try {
-                    const res = await fetch("/api/owner/items-data", {
-                        credentials: "include",
-                    });
-                    const data = await res.json();
-
-                    if (!res.ok) {
-                        itemList.textContent = data.message;
-                        return;
-                    }
-
-                    if (data.items.length === 0) {
-                        itemList.innerHTML = "<p>No items yet.</p>";
-                        return;
-                    }
-
-                    itemList.innerHTML = data.items.map(item => `
-                    <div style="border:1px solid #ccc; padding:10px; margin-bottom:10px;">
-                        <img src="${item.itemPhoto}" width="80">
-                        <p><strong>${item.itemName}</strong> - ₹${item.itemPrice}</p>
-                        <p>Status: ${item.isAvailable ? "Available" : "Unavailable"}</p>
-
-                        <button onclick="toggleItem('${item._id}')">
-                            ${item.isAvailable ? "Mark Unavailable" : "Mark Available"}
-                        </button>
-                        <button onclick="editItem('${item._id}', '${item.itemName}', '${item.itemPhoto}', ${item.itemPrice})">Edit</button>
-                        <button onclick="removeItem('${item._id}')">Remove</button>
+        <div class="management-grid">
+            <!-- Left Panel: Create Form -->
+            <div class="form-card">
+                <h3>Add New Item</h3>
+                <form id="addForm">
+                    <div class="form-group">
+                        <label>Item Name</label>
+                        <input type="text" name="itemName" required>
                     </div>
-                `).join("");
+                    <div class="form-group">
+                        <label>Item Photo</label>
+                        <input type="file" name="itemPhoto" accept="image/*" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Price</label>
+                        <input type="number" name="itemPrice" required>
+                    </div>
+                    <button type="submit">Add Item</button>
+                </form>
+            </div>
 
-                } catch (error) {
-                    itemList.textContent = "Failed to load items.";
+            <!-- Right Panel: Cards Display -->
+            <div>
+                <h3>All Items</h3>
+                <div id="itemList" class="item-list-container">
+                    <p>Loading...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const messageBox = document.getElementById("message");
+        const itemList = document.getElementById("itemList");
+
+        // ─────────────────────────────────
+        // LOAD ALL ITEMS
+        // ─────────────────────────────────
+        async function loadItems() {
+            try {
+                const res = await fetch("/api/owner/items-data", {
+                    credentials: "include",
+                });
+                const data = await res.json();
+
+                if (!res.ok) {
+                    itemList.textContent = data.message;
+                    return;
                 }
+
+                if (data.items.length === 0) {
+                    itemList.innerHTML = "<p>No items yet.</p>";
+                    return;
+                }
+
+                itemList.innerHTML = data.items.map(item => {
+                    const statusColor = item.isAvailable ? "var(--success)" : "var(--danger)";
+                    return `
+                    <div class="menu-card">
+                        <div>
+                            <img src="${item.itemPhoto}" alt="${item.itemName}">
+                            <p><strong>${item.itemName}</strong></p>
+                            <p style="font-weight: 600; font-size: 15px;">₹${item.itemPrice}</p>
+                            <p style="font-size: 13px; margin-top: 4px;">
+                                Status: <span style="color: ${statusColor}; font-weight: 600;">${item.isAvailable ? "Available" : "Unavailable"}</span>
+                            </p>
+                        </div>
+
+                        <div class="menu-actions">
+                            <button class="btn-toggle" onclick="toggleItem('${item._id}')">
+                                ${item.isAvailable ? "Mark Unavailable" : "Mark Available"}
+                            </button>
+                            <div class="btn-row">
+                                <button class="btn-edit" onclick="editItem('${item._id}', '${item.itemName}', '${item.itemPhoto}', ${item.itemPrice})">Edit</button>
+                                <button class="btn-remove" onclick="removeItem('${item._id}')">Remove</button>
+                            </div>
+                        </div>
+                    </div>
+                `}).join("");
+
+            } catch (error) {
+                itemList.textContent = "Failed to load items.";
             }
+        }
 
-            loadItems();
+        loadItems();
 
-            // ─────────────────────────────────
-            // ADD ITEM
-            // ─────────────────────────────────
-            document.getElementById("addForm").addEventListener("submit", async (e) => {
-                e.preventDefault();
-                const formData = new FormData(e.target);   // no need for Object.fromEntries anymore!
+        // ─────────────────────────────────
+        // ADD ITEM
+        // ─────────────────────────────────
+        document.getElementById("addForm").addEventListener("submit", async (e) => {
+            e.preventDefault();
+            const formData = new FormData(e.target);   // no need for Object.fromEntries anymore!
 
-                try {
-                    const res = await fetch("/api/owner/items", {
-                        method: "POST",
-                        credentials: "include",
-                        body: formData,   // send FormData directly, NOT JSON.stringify
-                        // don't set Content-Type header — browser sets it automatically with the right boundary
-                    });
-                    const data = await res.json();
+            try {
+                const res = await fetch("/api/owner/items", {
+                    method: "POST",
+                    credentials: "include",
+                    body: formData,   // send FormData directly, NOT JSON.stringify
+                    // don't set Content-Type header — browser sets it automatically with the right boundary
+                });
+                const data = await res.json();
 
-                    messageBox.textContent = data.message;
-                    if (res.ok) {
-                        e.target.reset();
-                        loadItems();
-                    }
-
-                } catch (error) {
-                    messageBox.textContent = "Failed to add item.";
+                messageBox.textContent = data.message;
+                if (res.ok) {
+                    e.target.reset();
+                    loadItems();
                 }
-            });
 
-            // ─────────────────────────────────
-            // TOGGLE AVAILABILITY
-            // ─────────────────────────────────
-            async function toggleItem(id) {
-                try {
-                    const res = await fetch(`/api/owner/items/${id}/toggle`, {
-                        method: "PATCH",
-                        credentials: "include",
-                    });
-                    const data = await res.json();
-
-                    messageBox.textContent = data.message;
-                    if (res.ok) loadItems();
-
-                } catch (error) {
-                    messageBox.textContent = "Failed to toggle item.";
-                }
+            } catch (error) {
+                messageBox.textContent = "Failed to add item.";
             }
+        });
 
-            // ─────────────────────────────────
-            // EDIT ITEM (simple prompt-based edit)
-            // ─────────────────────────────────
-            async function editItem(id, currentName, currentPhoto, currentPrice) {
-                const itemName = prompt("Item name:", currentName);
-                if (itemName === null) return;
+        // ─────────────────────────────────
+        // TOGGLE AVAILABILITY
+        // ─────────────────────────────────
+        async function toggleItem(id) {
+            try {
+                const res = await fetch(`/api/owner/items/${id}/toggle`, {
+                    method: "PATCH",
+                    credentials: "include",
+                });
+                const data = await res.json();
 
-                const itemPhoto = prompt("Item photo URL:", currentPhoto);
-                if (itemPhoto === null) return;
+                messageBox.textContent = data.message;
+                if (res.ok) loadItems();
 
-                const itemPrice = prompt("Item price:", currentPrice);
-                if (itemPrice === null) return;
-
-                try {
-                    const res = await fetch(`/api/owner/items/${id}`, {
-                        method: "PATCH",
-                        headers: { "Content-Type": "application/json" },
-                        credentials: "include",
-                        body: JSON.stringify({ itemName, itemPhoto, itemPrice }),
-                    });
-                    const data = await res.json();
-
-                    messageBox.textContent = data.message;
-                    if (res.ok) loadItems();
-
-                } catch (error) {
-                    messageBox.textContent = "Failed to update item.";
-                }
+            } catch (error) {
+                messageBox.textContent = "Failed to toggle item.";
             }
+        }
 
-            // ─────────────────────────────────
-            // REMOVE ITEM
-            // ─────────────────────────────────
-            async function removeItem(id) {
-                if (!confirm("Are you sure you want to remove this item?")) return;
+        // ─────────────────────────────────
+        // EDIT ITEM (simple prompt-based edit)
+        // ─────────────────────────────────
+        async function editItem(id, currentName, currentPhoto, currentPrice) {
+            const itemName = prompt("Item name:", currentName);
+            if (itemName === null) return;
 
-                try {
-                    const res = await fetch(`/api/owner/items/${id}`, {
-                        method: "DELETE",
-                        credentials: "include",
-                    });
-                    const data = await res.json();
+            const itemPhoto = prompt("Item photo URL:", currentPhoto);
+            if (itemPhoto === null) return;
 
-                    messageBox.textContent = data.message;
-                    if (res.ok) loadItems();
+            const itemPrice = prompt("Item price:", currentPrice);
+            if (itemPrice === null) return;
 
-                } catch (error) {
-                    messageBox.textContent = "Failed to remove item.";
-                }
+            try {
+                const res = await fetch(`/api/owner/items/${id}`, {
+                    method: "PATCH",
+                    headers: { "Content-Type": "application/json" },
+                    credentials: "include",
+                    body: JSON.stringify({ itemName, itemPhoto, itemPrice }),
+                });
+                const data = await res.json();
+
+                messageBox.textContent = data.message;
+                if (res.ok) loadItems();
+
+            } catch (error) {
+                messageBox.textContent = "Failed to update item.";
             }
-        </script>
+        }
+
+        // ─────────────────────────────────
+        // REMOVE ITEM
+        // ─────────────────────────────────
+        async function removeItem(id) {
+            if (!confirm("Are you sure you want to remove this item?")) return;
+
+            try {
+                const res = await fetch(`/api/owner/items/${id}`, {
+                    method: "DELETE",
+                    credentials: "include",
+                });
+                const data = await res.json();
+
+                messageBox.textContent = data.message;
+                if (res.ok) loadItems();
+
+            } catch (error) {
+                messageBox.textContent = "Failed to remove item.";
+            }
+        }
+    </script>
 
 </body>
 

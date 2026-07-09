@@ -2,39 +2,249 @@
 <html lang="en">
 <head>
     <%- include('../partials/head') %>
+    <style>
+        :root {
+            --dark: #4A4A4A;
+            --light-gray: #CBCBCB;
+            --cream: #FFFFE3;
+            --accent: #6D8196;
+            --accent-hover: #556678;
+            --card-bg: #FFFFFF;
+            --danger: #BA3C3C;
+            --danger-hover: #962E2E;
+            --success: #2E7D32;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--cream);
+            color: var(--dark);
+            min-height: 100vh;
+            padding: 0 0 40px 0;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        h2 {
+            font-size: 26px;
+            font-weight: 600;
+            margin-bottom: 24px;
+            letter-spacing: -0.5px;
+        }
+
+        h3 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            padding-bottom: 6px;
+            border-bottom: 1px solid var(--light-gray);
+        }
+
+        #message {
+            margin-bottom: 24px;
+            padding: 12px;
+            font-size: 14px;
+            font-weight: 500;
+            background-color: #FFFFFF;
+            border: 1px solid var(--light-gray);
+            border-left: 4px solid var(--accent);
+            border-radius: 4px;
+        }
+        #message:empty {
+            display: none;
+        }
+
+        /* Responsive Dashboard split */
+        .management-grid {
+            display: grid;
+            grid-template-columns: 360px 1fr;
+            gap: 32px;
+            align-items: start;
+        }
+
+        @media (max-width: 850px) {
+            .management-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .form-card {
+            background: var(--card-bg);
+            border: 1px solid var(--light-gray);
+            border-radius: 6px;
+            padding: 24px;
+            box-shadow: 0 2px 8px rgba(74, 74, 74, 0.02);
+        }
+
+        .form-group {
+            margin-bottom: 16px;
+        }
+
+        label {
+            display: block;
+            font-size: 14px;
+            font-weight: 500;
+            margin-bottom: 6px;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px 12px;
+            font-size: 15px;
+            border: 1px solid var(--light-gray);
+            border-radius: 4px;
+            color: var(--dark);
+            background-color: #FAFAFA;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(109, 129, 150, 0.15);
+            background-color: #FFFFFF;
+        }
+
+        button[type="submit"] {
+            width: 100%;
+            padding: 11px;
+            font-size: 15px;
+            font-weight: 500;
+            color: #FFFFFF;
+            background-color: var(--accent);
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 8px;
+            transition: background-color 0.2s ease;
+        }
+
+        button[type="submit"]:hover {
+            background-color: var(--accent-hover);
+        }
+
+        /* Dynamic Bills Cards Layout */
+        .bill-list-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 16px;
+        }
+
+        .bill-card {
+            background: var(--card-bg) !important;
+            border: 1px solid var(--light-gray) !important;
+            border-radius: 6px !important;
+            padding: 20px !important;
+            margin-bottom: 0 !important;
+            box-shadow: 0 2px 6px rgba(74, 74, 74, 0.02) !important;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .bill-card p {
+            font-size: 14px;
+            margin-bottom: 6px;
+            line-height: 1.4;
+        }
+
+        .bill-card p strong {
+            font-size: 16px;
+            color: var(--dark);
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        .bill-actions {
+            margin-top: 14px;
+            display: flex;
+            gap: 8px;
+        }
+
+        .bill-card button {
+            flex: 1;
+            padding: 8px 10px;
+            font-size: 13px;
+            font-weight: 500;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+
+        .btn-pay {
+            background-color: var(--accent);
+            color: #FFFFFF;
+        }
+
+        .btn-pay:hover {
+            background-color: var(--accent-hover);
+        }
+
+        .btn-delete {
+            background-color: #FAFAFA;
+            color: var(--danger);
+            border: 1px solid var(--light-gray) !important;
+        }
+
+        .btn-delete:hover {
+            background-color: #F5F5F5;
+            color: var(--danger-hover);
+        }
+    </style>
 </head>
 <body>
 
     <%- include('../partials/nav') %>
 
-    <h2>Billing</h2>
+    <div class="container">
+        <h2>Billing</h2>
 
-    <div id="message"></div>
+        <div id="message"></div>
 
-    <h3>Create New Bill</h3>
-    <form id="addForm">
-        <div>
-            <label>Office ID</label>
-            <input type="text" name="office" placeholder="Paste office ID from Offices page" required>
-        </div>
-        <div>
-            <label>Amount</label>
-            <input type="number" name="amount" required>
-        </div>
-        <div>
-            <label>Month (1-12)</label>
-            <input type="number" name="month" min="1" max="12" required>
-        </div>
-        <div>
-            <label>Year</label>
-            <input type="number" name="year" required>
-        </div>
-        <button type="submit">Create Bill</button>
-    </form>
+        <div class="management-grid">
+            <!-- Left Panel: Form creation -->
+            <div class="form-card">
+                <h3>Create New Bill</h3>
+                <form id="addForm">
+                    <div class="form-group">
+                        <label>Office ID</label>
+                        <input type="text" name="office" placeholder="Paste office ID from Offices page" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Amount</label>
+                        <input type="number" name="amount" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Month (1-12)</label>
+                        <input type="number" name="month" min="1" max="12" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Year</label>
+                        <input type="number" name="year" required>
+                    </div>
+                    <button type="submit">Create Bill</button>
+                </form>
+            </div>
 
-    <h3>All Bills</h3>
-    <div id="billList">
-        <p>Loading...</p>
+            <!-- Right Panel: List Content -->
+            <div>
+                <h3>All Bills</h3>
+                <div id="billList" class="bill-list-container">
+                    <p>Loading...</p>
+                </div>
+            </div>
+        </div>
     </div>
 
     <script>
@@ -61,18 +271,27 @@
                     return;
                 }
 
-                billList.innerHTML = data.bills.map(bill => `
-                    <div style="border:1px solid #ccc; padding:10px; margin-bottom:10px;">
-                        <p><strong>${bill.office ? bill.office.officeName : "Unknown office"}</strong></p>
-                        <p>Amount: ₹${bill.amount}</p>
-                        <p>Month/Year: ${bill.month}/${bill.year}</p>
-                        <p>Status: ${bill.status}</p>
-                        ${bill.paidAt ? `<p>Paid on: ${new Date(bill.paidAt).toLocaleDateString()}</p>` : ""}
+                billList.innerHTML = data.bills.map(bill => {
+                    const isPending = bill.status === "pending";
+                    const statusColor = isPending ? "var(--dark)" : "var(--success)";
+                    const statusWeight = isPending ? "500" : "600";
+                    
+                    return `
+                    <div class="bill-card">
+                        <div>
+                            <p><strong>${bill.office ? bill.office.officeName : "Unknown office"}</strong></p>
+                            <p>Amount: <span style="font-weight: 600;">₹${bill.amount}</span></p>
+                            <p style="opacity: 0.85;">Month/Year: ${bill.month}/${bill.year}</p>
+                            <p style="margin-top: 4px; font-size: 13px;">Status: <span style="color: ${statusColor}; font-weight: ${statusWeight}; text-transform: uppercase;">${bill.status}</span></p>
+                            ${bill.paidAt ? `<p style="font-size: 12px; opacity: 0.7;">Paid on: ${new Date(bill.paidAt).toLocaleDateString()}</p>` : ""}
+                        </div>
 
-                        ${bill.status === "pending" ? `<button onclick="markPaid('${bill._id}')">Mark as Paid</button>` : ""}
-                        <button onclick="removeBill('${bill._id}')">Delete</button>
+                        <div class="bill-actions">
+                            ${isPending ? `<button class="btn-pay" onclick="markPaid('${bill._id}')">Mark Paid</button>` : ""}
+                            <button class="btn-delete" onclick="removeBill('${bill._id}')">Delete</button>
+                        </div>
                     </div>
-                `).join("");
+                `}).join("");
 
             } catch (error) {
                 billList.textContent = "Failed to load bills.";
