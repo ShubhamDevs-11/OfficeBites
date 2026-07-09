@@ -90,6 +90,23 @@ const changePassword = async (req, res) => {
   }
 };
 //Menu Functions
+// ─────────────────────────────────────────
+// GET ALL ITEMS
+// ─────────────────────────────────────────
+const getItems = async (req, res) => {
+    try {
+        logger.debug("getItems attempt", { userId: req.user.userId });
+
+        const items = await Menu.find({ owner: req.user.userId }).sort({ createdAt: -1 });
+
+        logger.info("Items fetched", { count: items.length, userId: req.user.userId });
+        return res.status(200).json({ items });
+
+    } catch (error) {
+        logger.error("getItems error", { error: error.message, stack: error.stack });
+        return res.status(500).json({ message: "Internal server error" });
+    }
+};
 const addItem = async (req, res) => {
   try {
     const {itemName, itemPhoto, itemPrice} = req.body;
@@ -211,7 +228,25 @@ const toggleAvailability = async (req, res) => {
     return res.status(500).json({message: "Internal server error"});
   }
 };
+// ─────────────────────────────────────────
+// GET ALL OFFICES
+// ─────────────────────────────────────────
+const getOffices = async (req, res) => {
+    try {
+        logger.debug("getOffices attempt", { userId: req.user.userId });
 
+        const offices = await Office.find({ owner: req.user.userId })
+            .populate("assignedAgent", "userName phone")
+            .sort({ createdAt: -1 });
+
+        logger.info("Offices fetched", { count: offices.length, userId: req.user.userId });
+        return res.status(200).json({ offices });
+
+    } catch (error) {
+        logger.error("getOffices error", { error: error.message, stack: error.stack });
+        return res.status(500).json({ message: "Internal server error" });
+    }
+};
 // ─────────────────────────────────────────
 // ADD OFFICE
 // ─────────────────────────────────────────
@@ -562,18 +597,9 @@ const deleteBill = async (req, res) => {
 };
 
 module.exports = { 
-    // profile
     getProfile, editProfile, changePassword,
-    // menu
-    addItem, editItem, removeItem, toggleAvailability,
-    // office
-    addOffice, editOffice, removeOffice, toggleOfficeStatus,
-    // agents
+    addItem, editItem, removeItem, toggleAvailability, getItems,      
+    addOffice, editOffice, removeOffice, toggleOfficeStatus, getOffices, 
     addAgent, removeAgent, getAgents,
-    // bills
-    createBill,
-    getBills,
-    getOfficeBills,
-    markBillPaid,
-    deleteBill,
+    createBill, getBills, getOfficeBills, markBillPaid, deleteBill,
 };

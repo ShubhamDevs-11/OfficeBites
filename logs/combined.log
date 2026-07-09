@@ -369,3 +369,209 @@
 {"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-07 00:32:43","url":"/favicon.ico"}
 {"level":"info","message":"mongoDb is connected 127.0.0.1","timestamp":"2026-07-07 02:34:11"}
 {"level":"info","message":"Server running in development mode on port 5000","timestamp":"2026-07-07 02:34:11"}
+{"level":"info","message":"mongoDb is connected 127.0.0.1","timestamp":"2026-07-10 00:46:40"}
+{"level":"info","message":"Server running in development mode on port 5000","timestamp":"2026-07-10 00:46:40"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 00:48:22","url":"/api/auth/login"}
+{"level":"info","message":"mongoDb is connected 127.0.0.1","timestamp":"2026-07-10 00:49:05"}
+{"level":"info","message":"Server running in development mode on port 5000","timestamp":"2026-07-10 00:49:05"}
+{"level":"info","message":"mongoDb is connected 127.0.0.1","timestamp":"2026-07-10 00:49:13"}
+{"level":"info","message":"Server running in development mode on port 5000","timestamp":"2026-07-10 00:49:13"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 00:49:13","url":"/api/auth/login"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 00:49:14","url":"/api/auth/login"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 00:49:14","url":"/api/auth/login"}
+{"level":"info","message":"mongoDb is connected 127.0.0.1","timestamp":"2026-07-10 00:50:51"}
+{"level":"info","message":"Server running in development mode on port 5000","timestamp":"2026-07-10 00:50:51"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 00:50:51","url":"/api/auth/login"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 00:50:51","url":"/favicon.ico"}
+{"level":"debug","message":"Incoming request","method":"POST","timestamp":"2026-07-10 00:52:00","url":"/api/auth/login"}
+{"email":"shubh@gmail.com","level":"debug","message":"Login attempt","timestamp":"2026-07-10 00:52:00"}
+{"email":"shubh@gmail.com","level":"info","message":"User logged in","role":"owner","timestamp":"2026-07-10 00:52:01","userId":"6a3d64fef471dbb0c88e51a1"}
+{"level":"info","message":"mongoDb is connected 127.0.0.1","timestamp":"2026-07-10 00:52:15"}
+{"level":"info","message":"Server running in development mode on port 5000","timestamp":"2026-07-10 00:52:15"}
+{"level":"debug","message":"Incoming request","method":"POST","timestamp":"2026-07-10 00:52:20","url":"/api/auth/login"}
+{"email":"shubh@gmail.com","level":"debug","message":"Login attempt","timestamp":"2026-07-10 00:52:20"}
+{"email":"shubh@gmail.com","level":"info","message":"User logged in","role":"owner","timestamp":"2026-07-10 00:52:20","userId":"6a3d64fef471dbb0c88e51a1"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 00:52:21","url":"/api/auth/login"}
+{"level":"debug","message":"Incoming request","method":"POST","timestamp":"2026-07-10 00:52:27","url":"/api/auth/login"}
+{"email":"shubh@gmail.com","level":"debug","message":"Login attempt","timestamp":"2026-07-10 00:52:27"}
+{"attemptsLeft":4,"email":"shubh@gmail.com","level":"warn","message":"Login failed — wrong password","timestamp":"2026-07-10 00:52:27"}
+{"level":"debug","message":"Incoming request","method":"POST","timestamp":"2026-07-10 00:52:29","url":"/api/auth/login"}
+{"email":"shubh@gmail.com","level":"debug","message":"Login attempt","timestamp":"2026-07-10 00:52:29"}
+{"email":"shubh@gmail.com","level":"info","message":"User logged in","role":"owner","timestamp":"2026-07-10 00:52:29","userId":"6a3d64fef471dbb0c88e51a1"}
+{"level":"debug","message":"Incoming request","method":"POST","timestamp":"2026-07-10 00:52:30","url":"/api/auth/login"}
+{"email":"shubh@gmail.com","level":"debug","message":"Login attempt","timestamp":"2026-07-10 00:52:30"}
+{"email":"shubh@gmail.com","level":"info","message":"User logged in","role":"owner","timestamp":"2026-07-10 00:52:30","userId":"6a3d64fef471dbb0c88e51a1"}
+{"level":"debug","message":"Incoming request","method":"POST","timestamp":"2026-07-10 00:52:30","url":"/api/auth/login"}
+{"email":"shubh@gmail.com","level":"debug","message":"Login attempt","timestamp":"2026-07-10 00:52:30"}
+{"email":"shubh@gmail.com","level":"info","message":"User logged in","role":"owner","timestamp":"2026-07-10 00:52:30","userId":"6a3d64fef471dbb0c88e51a1"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 00:52:31","url":"/api/auth/register"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 00:52:33","url":"/api/auth/register"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 00:52:41","url":"/api/auth/login"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 00:52:54","url":"/api/auth/register"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 00:53:16","url":"/api/auth/login"}
+{"level":"debug","message":"Incoming request","method":"POST","timestamp":"2026-07-10 00:53:22","url":"/api/auth/login"}
+{"email":"test@gmail.com","level":"debug","message":"Login attempt","timestamp":"2026-07-10 00:53:22"}
+{"attemptsLeft":1,"email":"test@gmail.com","level":"warn","message":"Login failed — wrong password","timestamp":"2026-07-10 00:53:22"}
+{"level":"debug","message":"Incoming request","method":"POST","timestamp":"2026-07-10 00:53:26","url":"/api/auth/login"}
+{"email":"test@gmail.com","level":"debug","message":"Login attempt","timestamp":"2026-07-10 00:53:26"}
+{"email":"test@gmail.com","level":"info","message":"User logged in","role":"deliveryAgent","timestamp":"2026-07-10 00:53:27","userId":"6a401545a8034a0faa518bdf"}
+{"level":"debug","message":"Incoming request","method":"POST","timestamp":"2026-07-10 00:53:27","url":"/api/auth/login"}
+{"email":"test@gmail.com","level":"debug","message":"Login attempt","timestamp":"2026-07-10 00:53:27"}
+{"email":"test@gmail.com","level":"info","message":"User logged in","role":"deliveryAgent","timestamp":"2026-07-10 00:53:27","userId":"6a401545a8034a0faa518bdf"}
+{"level":"debug","message":"Incoming request","method":"POST","timestamp":"2026-07-10 00:53:27","url":"/api/auth/login"}
+{"email":"test@gmail.com","level":"debug","message":"Login attempt","timestamp":"2026-07-10 00:53:27"}
+{"level":"debug","message":"Incoming request","method":"POST","timestamp":"2026-07-10 00:53:27","url":"/api/auth/login"}
+{"email":"test@gmail.com","level":"debug","message":"Login attempt","timestamp":"2026-07-10 00:53:27"}
+{"email":"test@gmail.com","level":"info","message":"User logged in","role":"deliveryAgent","timestamp":"2026-07-10 00:53:27","userId":"6a401545a8034a0faa518bdf"}
+{"email":"test@gmail.com","level":"info","message":"User logged in","role":"deliveryAgent","timestamp":"2026-07-10 00:53:28","userId":"6a401545a8034a0faa518bdf"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 00:53:31","url":"/api/auth/register"}
+{"level":"debug","message":"Incoming request","method":"POST","timestamp":"2026-07-10 00:53:54","url":"/api/auth/register"}
+{"email":"yatee@gmail.com","level":"debug","message":"Register attempt","role":"owner","timestamp":"2026-07-10 00:53:54"}
+{"email":"yatee@gmail.com","level":"info","message":"User registered","role":"owner","timestamp":"2026-07-10 00:53:54","userId":"6a4ff54ae36dfb242d4e2f66"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 00:53:59","url":"/api/auth/register"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 00:54:01","url":"/api/auth/login"}
+{"level":"debug","message":"Incoming request","method":"POST","timestamp":"2026-07-10 00:54:10","url":"/api/auth/login"}
+{"email":"yatee@gmail.com","level":"debug","message":"Login attempt","timestamp":"2026-07-10 00:54:10"}
+{"email":"yatee@gmail.com","level":"info","message":"User logged in","role":"owner","timestamp":"2026-07-10 00:54:10","userId":"6a4ff54ae36dfb242d4e2f66"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 00:54:32","url":"/.well-known/appspecific/com.chrome.devtools.json"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 00:56:37","url":"/.well-known/appspecific/com.chrome.devtools.json"}
+{"level":"debug","message":"Incoming request","method":"POST","timestamp":"2026-07-10 00:56:54","url":"/api/auth/login"}
+{"email":"yatee@gmail.com","level":"debug","message":"Login attempt","timestamp":"2026-07-10 00:56:54"}
+{"email":"yatee@gmail.com","level":"info","message":"User logged in","role":"owner","timestamp":"2026-07-10 00:56:55","userId":"6a4ff54ae36dfb242d4e2f66"}
+{"level":"info","message":"mongoDb is connected 127.0.0.1","timestamp":"2026-07-10 00:59:27"}
+{"level":"info","message":"Server running in development mode on port 5000","timestamp":"2026-07-10 00:59:27"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 01:00:10","url":"/api/auth/login"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 01:00:10","url":"/.well-known/appspecific/com.chrome.devtools.json"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 01:00:10","url":"/api/auth/login"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 01:00:10","url":"/.well-known/appspecific/com.chrome.devtools.json"}
+{"level":"debug","message":"Incoming request","method":"POST","timestamp":"2026-07-10 01:00:18","url":"/api/auth/login"}
+{"email":"yatee@gmail.com","level":"debug","message":"Login attempt","timestamp":"2026-07-10 01:00:18"}
+{"email":"yatee@gmail.com","level":"info","message":"User logged in","role":"owner","timestamp":"2026-07-10 01:00:18","userId":"6a4ff54ae36dfb242d4e2f66"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 01:00:18","url":"/api/owner/profile-data"}
+{"level":"debug","message":"Token verified","role":"owner","timestamp":"2026-07-10 01:00:18","userId":"6a4ff54ae36dfb242d4e2f66"}
+{"level":"info","message":"getProfile — success","timestamp":"2026-07-10 01:00:18","userId":"6a4ff54ae36dfb242d4e2f66"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 01:00:18","url":"/.well-known/appspecific/com.chrome.devtools.json"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 01:01:33","url":"/api/auth/register"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 01:04:18","url":"/api/auth/login"}
+{"level":"debug","message":"Incoming request","method":"POST","timestamp":"2026-07-10 01:04:24","url":"/api/auth/login"}
+{"email":"yatee@gmail.com","level":"debug","message":"Login attempt","timestamp":"2026-07-10 01:04:24"}
+{"email":"yatee@gmail.com","level":"info","message":"User logged in","role":"owner","timestamp":"2026-07-10 01:04:24","userId":"6a4ff54ae36dfb242d4e2f66"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 01:04:24","url":"/api/owner/profile-data"}
+{"level":"debug","message":"Token verified","role":"owner","timestamp":"2026-07-10 01:04:24","userId":"6a4ff54ae36dfb242d4e2f66"}
+{"level":"info","message":"getProfile — success","timestamp":"2026-07-10 01:04:24","userId":"6a4ff54ae36dfb242d4e2f66"}
+{"level":"info","message":"mongoDb is connected 127.0.0.1","timestamp":"2026-07-10 01:04:31"}
+{"level":"info","message":"Server running in development mode on port 5000","timestamp":"2026-07-10 01:04:31"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 01:04:32","url":"/api/owner/profile-data"}
+{"level":"debug","message":"Token verified","role":"owner","timestamp":"2026-07-10 01:04:32","userId":"6a4ff54ae36dfb242d4e2f66"}
+{"level":"info","message":"getProfile — success","timestamp":"2026-07-10 01:04:32","userId":"6a4ff54ae36dfb242d4e2f66"}
+{"level":"debug","message":"Incoming request","method":"POST","timestamp":"2026-07-10 01:04:33","url":"/api/auth/login"}
+{"email":"yatee@gmail.com","level":"debug","message":"Login attempt","timestamp":"2026-07-10 01:04:33"}
+{"email":"yatee@gmail.com","level":"info","message":"User logged in","role":"owner","timestamp":"2026-07-10 01:04:33","userId":"6a4ff54ae36dfb242d4e2f66"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 01:04:33","url":"/api/owner/profile-data"}
+{"level":"debug","message":"Token verified","role":"owner","timestamp":"2026-07-10 01:04:33","userId":"6a4ff54ae36dfb242d4e2f66"}
+{"level":"info","message":"getProfile — success","timestamp":"2026-07-10 01:04:33","userId":"6a4ff54ae36dfb242d4e2f66"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 01:04:36","url":"/api/auth/login"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 01:04:36","url":"/api/auth/login"}
+{"level":"debug","message":"Incoming request","method":"POST","timestamp":"2026-07-10 01:04:41","url":"/api/auth/login"}
+{"email":"yatee@gmail.com","level":"debug","message":"Login attempt","timestamp":"2026-07-10 01:04:41"}
+{"email":"yatee@gmail.com","level":"info","message":"User logged in","role":"owner","timestamp":"2026-07-10 01:04:41","userId":"6a4ff54ae36dfb242d4e2f66"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 01:04:41","url":"/api/owner/profile-data"}
+{"level":"debug","message":"Token verified","role":"owner","timestamp":"2026-07-10 01:04:41","userId":"6a4ff54ae36dfb242d4e2f66"}
+{"level":"info","message":"getProfile — success","timestamp":"2026-07-10 01:04:41","userId":"6a4ff54ae36dfb242d4e2f66"}
+{"level":"info","message":"mongoDb is connected 127.0.0.1","timestamp":"2026-07-10 01:05:39"}
+{"level":"info","message":"Server running in development mode on port 5000","timestamp":"2026-07-10 01:05:39"}
+{"level":"debug","message":"Incoming request","method":"POST","timestamp":"2026-07-10 01:05:49","url":"/api/auth/login"}
+{"email":"yatee@gmail.com","level":"debug","message":"Login attempt","timestamp":"2026-07-10 01:05:49"}
+{"email":"yatee@gmail.com","level":"info","message":"User logged in","role":"owner","timestamp":"2026-07-10 01:05:49","userId":"6a4ff54ae36dfb242d4e2f66"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 01:05:50","url":"/api/owner/profile-data"}
+{"level":"debug","message":"Token verified","role":"owner","timestamp":"2026-07-10 01:05:50","userId":"6a4ff54ae36dfb242d4e2f66"}
+{"level":"info","message":"getProfile — success","timestamp":"2026-07-10 01:05:50","userId":"6a4ff54ae36dfb242d4e2f66"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 01:05:52","url":"/api/auth/login"}
+{"level":"debug","message":"Incoming request","method":"POST","timestamp":"2026-07-10 01:05:58","url":"/api/auth/login"}
+{"email":"yatee@gmail.com","level":"debug","message":"Login attempt","timestamp":"2026-07-10 01:05:58"}
+{"email":"yatee@gmail.com","level":"info","message":"User logged in","role":"owner","timestamp":"2026-07-10 01:05:58","userId":"6a4ff54ae36dfb242d4e2f66"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 01:05:58","url":"/api/owner/profile-data"}
+{"level":"debug","message":"Token verified","role":"owner","timestamp":"2026-07-10 01:05:58","userId":"6a4ff54ae36dfb242d4e2f66"}
+{"level":"info","message":"getProfile — success","timestamp":"2026-07-10 01:05:58","userId":"6a4ff54ae36dfb242d4e2f66"}
+{"level":"info","message":"mongoDb is connected 127.0.0.1","timestamp":"2026-07-10 01:07:53"}
+{"level":"info","message":"Server running in development mode on port 5000","timestamp":"2026-07-10 01:07:53"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 01:07:53","url":"/api/owner/profile-data"}
+{"level":"debug","message":"Token verified","role":"owner","timestamp":"2026-07-10 01:07:53","userId":"6a4ff54ae36dfb242d4e2f66"}
+{"level":"info","message":"getProfile — success","timestamp":"2026-07-10 01:07:53","userId":"6a4ff54ae36dfb242d4e2f66"}
+{"level":"debug","message":"Incoming request","method":"POST","timestamp":"2026-07-10 01:07:54","url":"/api/auth/login"}
+{"email":"yatee@gmail.com","level":"debug","message":"Login attempt","timestamp":"2026-07-10 01:07:54"}
+{"email":"yatee@gmail.com","level":"info","message":"User logged in","role":"owner","timestamp":"2026-07-10 01:07:54","userId":"6a4ff54ae36dfb242d4e2f66"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 01:07:54","url":"/api/owner/profile-data"}
+{"level":"debug","message":"Token verified","role":"owner","timestamp":"2026-07-10 01:07:54","userId":"6a4ff54ae36dfb242d4e2f66"}
+{"level":"info","message":"getProfile — success","timestamp":"2026-07-10 01:07:54","userId":"6a4ff54ae36dfb242d4e2f66"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 01:07:57","url":"/api/auth/login"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 01:07:57","url":"/api/auth/login"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 01:07:57","url":"/api/auth/login"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 01:07:57","url":"/api/auth/login"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 01:07:57","url":"/api/auth/login"}
+{"level":"debug","message":"Incoming request","method":"POST","timestamp":"2026-07-10 01:08:03","url":"/api/auth/login"}
+{"email":"yatee@gmail.com","level":"debug","message":"Login attempt","timestamp":"2026-07-10 01:08:03"}
+{"email":"yatee@gmail.com","level":"info","message":"User logged in","role":"owner","timestamp":"2026-07-10 01:08:03","userId":"6a4ff54ae36dfb242d4e2f66"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 01:08:03","url":"/api/owner/profile"}
+{"level":"debug","message":"Token verified","role":"owner","timestamp":"2026-07-10 01:08:03","userId":"6a4ff54ae36dfb242d4e2f66"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 01:08:03","url":"/api/owner/profile-data"}
+{"level":"debug","message":"Token verified","role":"owner","timestamp":"2026-07-10 01:08:03","userId":"6a4ff54ae36dfb242d4e2f66"}
+{"level":"info","message":"getProfile — success","timestamp":"2026-07-10 01:08:03","userId":"6a4ff54ae36dfb242d4e2f66"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 01:08:13","url":"/api/owner/menu"}
+{"level":"debug","message":"Token verified","role":"owner","timestamp":"2026-07-10 01:08:13","userId":"6a4ff54ae36dfb242d4e2f66"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 01:08:16","url":"/api/owner/profile"}
+{"level":"debug","message":"Token verified","role":"owner","timestamp":"2026-07-10 01:08:16","userId":"6a4ff54ae36dfb242d4e2f66"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 01:08:16","url":"/api/owner/profile-data"}
+{"level":"debug","message":"Token verified","role":"owner","timestamp":"2026-07-10 01:08:16","userId":"6a4ff54ae36dfb242d4e2f66"}
+{"level":"info","message":"getProfile — success","timestamp":"2026-07-10 01:08:16","userId":"6a4ff54ae36dfb242d4e2f66"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 01:08:17","url":"/api/owner/offices"}
+{"level":"debug","message":"Token verified","role":"owner","timestamp":"2026-07-10 01:08:17","userId":"6a4ff54ae36dfb242d4e2f66"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 01:08:19","url":"/api/owner/agents"}
+{"level":"debug","message":"Token verified","role":"owner","timestamp":"2026-07-10 01:08:19","userId":"6a4ff54ae36dfb242d4e2f66"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 01:08:21","url":"/api/owner/bills"}
+{"level":"debug","message":"Token verified","role":"owner","timestamp":"2026-07-10 01:08:21","userId":"6a4ff54ae36dfb242d4e2f66"}
+{"level":"debug","message":"Incoming request","method":"POST","timestamp":"2026-07-10 01:08:24","url":"/api/auth/logout"}
+{"level":"debug","message":"Token verified","role":"owner","timestamp":"2026-07-10 01:08:24","userId":"6a4ff54ae36dfb242d4e2f66"}
+{"level":"info","message":"User logged out","timestamp":"2026-07-10 01:08:24","userId":"6a4ff54ae36dfb242d4e2f66"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 01:08:24","url":"/api/auth/login"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 01:08:26","url":"/api/auth/register"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 01:08:31","url":"/api/owner/profile"}
+{"level":"warn","message":"No token found","timestamp":"2026-07-10 01:08:31","url":"/profile"}
+{"level":"debug","message":"Incoming request","method":"POST","timestamp":"2026-07-10 01:09:56","url":"/api/auth/login"}
+{"email":"yatee@gmail.com","level":"debug","message":"Login attempt","timestamp":"2026-07-10 01:09:56"}
+{"email":"yatee@gmail.com","level":"info","message":"User logged in","role":"owner","timestamp":"2026-07-10 01:09:56","userId":"6a4ff54ae36dfb242d4e2f66"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 01:09:56","url":"/api/owner/profile"}
+{"level":"debug","message":"Token verified","role":"owner","timestamp":"2026-07-10 01:09:56","userId":"6a4ff54ae36dfb242d4e2f66"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 01:09:56","url":"/api/owner/profile-data"}
+{"level":"debug","message":"Token verified","role":"owner","timestamp":"2026-07-10 01:09:56","userId":"6a4ff54ae36dfb242d4e2f66"}
+{"level":"info","message":"getProfile — success","timestamp":"2026-07-10 01:09:56","userId":"6a4ff54ae36dfb242d4e2f66"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 01:09:57","url":"/api/owner/menu"}
+{"level":"debug","message":"Token verified","role":"owner","timestamp":"2026-07-10 01:09:57","userId":"6a4ff54ae36dfb242d4e2f66"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 01:09:57","url":"/api/owner/items-data"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 01:09:59","url":"/api/owner/menu"}
+{"level":"debug","message":"Token verified","role":"owner","timestamp":"2026-07-10 01:09:59","userId":"6a4ff54ae36dfb242d4e2f66"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 01:09:59","url":"/api/owner/items-data"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 01:09:59","url":"/api/owner/menu"}
+{"level":"debug","message":"Token verified","role":"owner","timestamp":"2026-07-10 01:09:59","userId":"6a4ff54ae36dfb242d4e2f66"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 01:09:59","url":"/api/owner/items-data"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 01:10:02","url":"/api/owner/profile"}
+{"level":"debug","message":"Token verified","role":"owner","timestamp":"2026-07-10 01:10:02","userId":"6a4ff54ae36dfb242d4e2f66"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 01:10:02","url":"/api/owner/profile-data"}
+{"level":"debug","message":"Token verified","role":"owner","timestamp":"2026-07-10 01:10:02","userId":"6a4ff54ae36dfb242d4e2f66"}
+{"level":"info","message":"getProfile — success","timestamp":"2026-07-10 01:10:02","userId":"6a4ff54ae36dfb242d4e2f66"}
+{"level":"info","message":"mongoDb is connected 127.0.0.1","timestamp":"2026-07-10 01:11:12"}
+{"level":"info","message":"Server running in development mode on port 5000","timestamp":"2026-07-10 01:11:12"}
+{"level":"info","message":"mongoDb is connected 127.0.0.1","timestamp":"2026-07-10 01:11:36"}
+{"level":"info","message":"Server running in development mode on port 5000","timestamp":"2026-07-10 01:11:36"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 01:11:39","url":"/api/owner/profile"}
+{"level":"debug","message":"Token verified","role":"owner","timestamp":"2026-07-10 01:11:39","userId":"6a4ff54ae36dfb242d4e2f66"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 01:11:39","url":"/api/owner/profile-data"}
+{"level":"debug","message":"Token verified","role":"owner","timestamp":"2026-07-10 01:11:39","userId":"6a4ff54ae36dfb242d4e2f66"}
+{"level":"info","message":"getProfile — success","timestamp":"2026-07-10 01:11:39","userId":"6a4ff54ae36dfb242d4e2f66"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 01:11:41","url":"/api/owner/menu"}
+{"level":"debug","message":"Token verified","role":"owner","timestamp":"2026-07-10 01:11:41","userId":"6a4ff54ae36dfb242d4e2f66"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 01:11:41","url":"/api/owner/items-data"}
+{"level":"info","message":"mongoDb is connected 127.0.0.1","timestamp":"2026-07-10 01:12:00"}
+{"level":"info","message":"Server running in development mode on port 5000","timestamp":"2026-07-10 01:12:00"}
+{"level":"info","message":"mongoDb is connected 127.0.0.1","timestamp":"2026-07-10 01:12:04"}
+{"level":"info","message":"Server running in development mode on port 5000","timestamp":"2026-07-10 01:12:04"}

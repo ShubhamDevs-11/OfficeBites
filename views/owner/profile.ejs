@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head') %>
+</head>
+<body>
+
+    <%- include('../partials/nav') %>
+
+    <h2>My Profile</h2>
+
+    <div id="message"></div>
+
+    <div id="profileInfo">
+        <p>Loading...</p>
+    </div>
+
+    <h3>Edit Profile</h3>
+    <form id="editForm">
+        <div>
+            <label>Username</label>
+            <input type="text" name="userName" id="userNameField">
+        </div>
+        <div>
+            <label>Company Name</label>
+            <input type="text" name="companyName" id="companyField">
+        </div>
+        <button type="submit">Save Changes</button>
+    </form>
+
+    <h3>Change Password</h3>
+    <form id="passwordForm">
+        <div>
+            <label>Old Password</label>
+            <input type="password" name="oldPassword" required>
+        </div>
+        <div>
+            <label>New Password</label>
+            <input type="password" name="newPassword" required>
+        </div>
+        <button type="submit">Change Password</button>
+    </form>
+
+    <script>
+        const messageBox = document.getElementById("message");
+        const profileInfo = document.getElementById("profileInfo");
+        const userNameField = document.getElementById("userNameField");
+        const companyField = document.getElementById("companyField");
+
+        // load profile on page open
+        async function loadProfile() {
+            try {
+                const res = await fetch("/api/owner/profile-data", {
+                    credentials: "include",
+                });
+                const data = await res.json();
+
+                if (!res.ok) {
+                    profileInfo.textContent = data.message;
+                    return;
+                }
+
+                const user = data.user;
+                profileInfo.innerHTML = `
+                    <p><strong>Username:</strong> ${user.userName}</p>
+                    <p><strong>Email:</strong> ${user.email}</p>
+                    <p><strong>Company:</strong> ${user.companyName}</p>
+                `;
+
+                // pre-fill edit form
+                userNameField.value = user.userName;
+                companyField.value = user.companyName;
+
+            } catch (error) {
+                profileInfo.textContent = "Failed to load profile.";
+            }
+        }
+
+        loadProfile();
+
+        // edit profile
+        document.getElementById("editForm").addEventListener("submit", async (e) => {
+            e.preventDefault();
+            const formData = new FormData(e.target);
+            const body = Object.fromEntries(formData.entries());
+
+            try {
+                const res = await fetch("/api/owner/profile", {
+                    method: "PATCH",
+                    headers: { "Content-Type": "application/json" },
+                    credentials: "include",
+                    body: JSON.stringify(body),
+                });
+                const data = await res.json();
+
+                messageBox.textContent = data.message;
+                if (res.ok) loadProfile();
+
+            } catch (error) {
+                messageBox.textContent = "Failed to update profile.";
+            }
+        });
+
+        // change password
+        document.getElementById("passwordForm").addEventListener("submit", async (e) => {
+            e.preventDefault();
+            const formData = new FormData(e.target);
+            const body = Object.fromEntries(formData.entries());
+
+            try {
+                const res = await fetch("/api/owner/profile/password", {
+                    method: "PATCH",
+                    headers: { "Content-Type": "application/json" },
+                    credentials: "include",
+                    body: JSON.stringify(body),
+                });
+                const data = await res.json();
+
+                messageBox.textContent = data.message;
+                if (res.ok) e.target.reset();
+
+            } catch (error) {
+                messageBox.textContent = "Failed to change password.";
+            }
+        });
+    </script>
+
+</body>
+</html>

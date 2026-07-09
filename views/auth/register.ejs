@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Register - OfficeBites</title>
+</head>
+
+<body>
+
+    <h2>Register</h2>
+
+    <div id="message"></div>
+
+    <form id="registerForm">
+        <div>
+            <label>Username</label>
+            <input type="text" name="userName" required>
+        </div>
+
+        <div>
+            <label>Email</label>
+            <input type="email" name="email" required>
+        </div>
+
+        <div>
+            <label>Password</label>
+            <input type="password" name="password" required>
+        </div>
+
+        <div>
+            <label>Role</label>
+            <select name="role" id="role" required>
+                <option value="">Select role</option>
+                <option value="owner">Owner</option>
+                <option value="client">Client</option>
+                <option value="deliveryAgent">Delivery Agent</option>
+            </select>
+        </div>
+
+        <div id="companyWrapper" style="display:none;">
+            <label>Company Name</label>
+            <input type="text" name="companyName" id="companyField">
+        </div>
+
+        <div id="phoneWrapper" style="display:none;">
+            <label>Phone</label>
+            <input type="tel" name="phone" id="phoneField">
+        </div>
+
+        <div id="officeWrapper" style="display:none;">
+            <label>Office ID</label>
+            <input type="text" name="office" id="officeField">
+        </div>
+
+        <button type="submit">Register</button>
+    </form>
+
+    <p>Already have an account? <a href="/api/auth/login">Login</a></p>
+
+    <script>
+        const roleSelect = document.getElementById("role");
+        const companyWrapper = document.getElementById("companyWrapper");
+        const phoneWrapper = document.getElementById("phoneWrapper");
+        const officeWrapper = document.getElementById("officeWrapper");
+        const companyField = document.getElementById("companyField");
+        const phoneField = document.getElementById("phoneField");
+        const officeField = document.getElementById("officeField");
+
+        function toggleRoleFields() {
+            companyWrapper.style.display = "none";
+            phoneWrapper.style.display = "none";
+            officeWrapper.style.display = "none";
+
+            companyField.removeAttribute("required");
+            phoneField.removeAttribute("required");
+            officeField.removeAttribute("required");
+
+            if (roleSelect.value === "owner") {
+                companyWrapper.style.display = "block";
+                companyField.setAttribute("required", "");
+            } else if (roleSelect.value === "deliveryAgent") {
+                phoneWrapper.style.display = "block";
+                phoneField.setAttribute("required", "");
+            } else if (roleSelect.value === "client") {
+                officeWrapper.style.display = "block";
+                officeField.setAttribute("required", "");
+            }
+        }
+
+        roleSelect.addEventListener("change", toggleRoleFields);
+
+        const form = document.getElementById("registerForm");
+        const messageBox = document.getElementById("message");
+
+        form.addEventListener("submit", async (e) => {
+            e.preventDefault();
+
+            const formData = new FormData(form);
+            const body = Object.fromEntries(formData.entries());
+
+            try {
+                const res = await fetch("/api/auth/register", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    credentials: "include",
+                    body: JSON.stringify(body),
+                });
+
+                const data = await res.json();
+
+                if (!res.ok) {
+                    messageBox.textContent = data.message;
+                    return;
+                }
+
+                // redirect based on role
+                if (data.user.role === "owner") {
+                    window.location.href = "/api/owner/profile";  
+                } else if (data.user.role === "client") {
+                    window.location.href = "/api/client/orders";
+                } else {
+                    window.location.href = "/api/agent/dashboard";
+                }
+
+            } catch (error) {
+                messageBox.textContent = "Something went wrong. Try again.";
+            }
+        });
+    </script>
+
+</body>
+
+</html>

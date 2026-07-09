@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Login - OfficeBites</title>
+</head>
+
+<body>
+
+    <h2>Login</h2>
+
+    <div id="message"></div>
+
+    <form id="loginForm">
+        <div>
+            <label>Email</label>
+            <input type="email" name="email" required>
+        </div>
+
+        <div>
+            <label>Password</label>
+            <input type="password" name="password" required>
+        </div>
+
+        <button type="submit">Login</button>
+    </form>
+
+    <p>Don't have an account? <a href="/api/auth/register">Register</a></p>
+
+    <script>
+        const form = document.getElementById("loginForm");
+        const messageBox = document.getElementById("message");
+
+        form.addEventListener("submit", async (e) => {
+            e.preventDefault();
+
+            const email = form.email.value;
+            const password = form.password.value;
+
+            try {
+                const res = await fetch("/api/auth/login", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    credentials: "include", // important! sends/receives cookies
+                    body: JSON.stringify({ email, password }),
+                });
+
+                const data = await res.json();
+
+                if (!res.ok) {
+                    messageBox.textContent = data.message;
+                    return;
+                }
+
+                // redirect based on role
+                if (data.user.role === "owner") {
+                    window.location.href = "/api/owner/profile";   
+                } else if (data.user.role === "client") {
+                    window.location.href = "/api/client/orders";
+                } else {
+                    window.location.href = "/api/agent/dashboard";
+                }
+
+            } catch (error) {
+                messageBox.textContent = "Something went wrong. Try again.";
+            }
+        });
+    </script>
+
+</body>
+
+</html>

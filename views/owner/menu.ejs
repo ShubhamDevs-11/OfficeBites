@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head') %>
+</head>
+<body>
+
+    <%- include('../partials/nav') %>
+
+    <h2>Menu Items</h2>
+
+    <div id="message"></div>
+
+    <h3>Add New Item</h3>
+    <form id="addForm">
+        <div>
+            <label>Item Name</label>
+            <input type="text" name="itemName" required>
+        </div>
+        <div>
+            <label>Item Photo (URL)</label>
+            <input type="text" name="itemPhoto" required>
+        </div>
+        <div>
+            <label>Price</label>
+            <input type="number" name="itemPrice" required>
+        </div>
+        <button type="submit">Add Item</button>
+    </form>
+
+    <h3>All Items</h3>
+    <div id="itemList">
+        <p>Loading...</p>
+    </div>
+
+    <script>
+        const messageBox = document.getElementById("message");
+        const itemList = document.getElementById("itemList");
+
+        // ─────────────────────────────────
+        // LOAD ALL ITEMS
+        // ─────────────────────────────────
+        async function loadItems() {
+            try {
+                const res = await fetch("/api/owner/items-data", {
+                    credentials: "include",
+                });
+                const data = await res.json();
+
+                if (!res.ok) {
+                    itemList.textContent = data.message;
+                    return;
+                }
+
+                if (data.items.length === 0) {
+                    itemList.innerHTML = "<p>No items yet.</p>";
+                    return;
+                }
+
+                itemList.innerHTML = data.items.map(item => `
+                    <div style="border:1px solid #ccc; padding:10px; margin-bottom:10px;">
+                        <img src="${item.itemPhoto}" width="80">
+                        <p><strong>${item.itemName}</strong> - ₹${item.itemPrice}</p>
+                        <p>Status: ${item.isAvailable ? "Available" : "Unavailable"}</p>
+
+                        <button onclick="toggleItem('${item._id}')">
+                            ${item.isAvailable ? "Mark Unavailable" : "Mark Available"}
+                        </button>
+                        <button onclick="editItem('${item._id}', '${item.itemName}', '${item.itemPhoto}', ${item.itemPrice})">Edit</button>
+                        <button onclick="removeItem('${item._id}')">Remove</button>
+                    </div>
+                `).join("");
+
+            } catch (error) {
+                itemList.textContent = "Failed to load items.";
+            }
+        }
+
+        loadItems();
+
+        // ─────────────────────────────────
+        // ADD ITEM
+        // ─────────────────────────────────
+        document.getElementById("addForm").addEventListener("submit", async (e) => {
+            e.preventDefault();
+            const formData = new FormData(e.target);
+            const body = Object.fromEntries(formData.entries());
+
+            try {
+                const res = await fetch("/api/owner/items", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    credentials: "include",
+                    body: JSON.stringify(body),
+                });
+                const data = await res.json();
+
+                messageBox.textContent = data.message;
+                if (res.ok) {
+                    e.target.reset();
+                    loadItems();
+                }
+
+            } catch (error) {
+                messageBox.textContent = "Failed to add item.";
+            }
+        });
+
+        // ─────────────────────────────────
+        // TOGGLE AVAILABILITY
+        // ─────────────────────────────────
+        async function toggleItem(id) {
+            try {
+                const res = await fetch(`/api/owner/items/${id}/toggle`, {
+                    method: "PATCH",
+                    credentials: "include",
+                });
+                const data = await res.json();
+
+                messageBox.textContent = data.message;
+                if (res.ok) loadItems();
+
+            } catch (error) {
+                messageBox.textContent = "Failed to toggle item.";
+            }
+        }
+
+        // ─────────────────────────────────
+        // EDIT ITEM (simple prompt-based edit)
+        // ─────────────────────────────────
+        async function editItem(id, currentName, currentPhoto, currentPrice) {
+            const itemName = prompt("Item name:", currentName);
+            if (itemName === null) return;
+
+            const itemPhoto = prompt("Item photo URL:", currentPhoto);
+            if (itemPhoto === null) return;
+
+            const itemPrice = prompt("Item price:", currentPrice);
+            if (itemPrice === null) return;
+
+            try {
+                const res = await fetch(`/api/owner/items/${id}`, {
+                    method: "PATCH",
+                    headers: { "Content-Type": "application/json" },
+                    credentials: "include",
+                    body: JSON.stringify({ itemName, itemPhoto, itemPrice }),
+                });
+                const data = await res.json();
+
+                messageBox.textContent = data.message;
+                if (res.ok) loadItems();
+
+            } catch (error) {
+                messageBox.textContent = "Failed to update item.";
+            }
+        }
+
+        // ─────────────────────────────────
+        // REMOVE ITEM
+        // ─────────────────────────────────
+        async function removeItem(id) {
+            if (!confirm("Are you sure you want to remove this item?")) return;
+
+            try {
+                const res = await fetch(`/api/owner/items/${id}`, {
+                    method: "DELETE",
+                    credentials: "include",
+                });
+                const data = await res.json();
+
+                messageBox.textContent = data.message;
+                if (res.ok) loadItems();
+
+            } catch (error) {
+                messageBox.textContent = "Failed to remove item.";
+            }
+        }
+    </script>
+
+</body>
+</html>

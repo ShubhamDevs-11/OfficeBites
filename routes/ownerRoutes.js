@@ -23,6 +23,23 @@ const {
   deleteBill,
 } = require("../controllers/ownerController");
 
+
+// Page views
+router.get("/profile", verifyToken, authorizeRoles("owner"), (req, res) => {
+    res.render("owner/profile");
+});
+router.get("/menu", verifyToken, authorizeRoles("owner"), (req, res) => {
+    res.render("owner/menu");
+});
+router.get("/offices", verifyToken, authorizeRoles("owner"), (req, res) => {
+    res.render("owner/offices");
+});
+router.get("/agents", verifyToken, authorizeRoles("owner"), (req, res) => {
+    res.render("owner/agents");
+});
+router.get("/bills", verifyToken, authorizeRoles("owner"), (req, res) => {
+    res.render("owner/bills");
+});
 // Profile API
 router.get("/profile-data", verifyToken, authorizeRoles("owner"), getProfile);
 router.patch("/profile", verifyToken, authorizeRoles("owner"), editProfile);

@@ -1,0 +1,22 @@
+<nav>
+    <a href="/api/owner/profile">Profile</a>
+    <a href="/api/owner/menu">Menu</a>
+    <a href="/api/owner/offices">Offices</a>
+    <a href="/api/owner/agents">Agents</a>
+    <a href="/api/owner/bills">Bills</a>
+    <button onclick="logout()">Logout</button>
+</nav>
+
+<script>
+    async function logout() {
+        try {
+            await fetch("/api/auth/logout", {
+                method: "POST",
+                credentials: "include",
+            });
+            window.location.href = "/api/auth/login";
+        } catch (error) {
+            alert("Logout failed. Try again.");
+        }
+    }
+</script>
