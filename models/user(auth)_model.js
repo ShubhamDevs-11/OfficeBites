@@ -25,13 +25,15 @@ const userSchema = new mongoose.Schema(
             enum: ["owner", "client", "deliveryAgent"],
             required: true,
         },
-
-        // owner + client only
         companyName: {
             type: String,
             default: null,
         },
-
+        office: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "office",
+            default: null,
+        },
         // deliveryAgent only
         phone: {
             type: String,

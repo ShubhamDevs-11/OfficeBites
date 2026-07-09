@@ -357,3 +357,15 @@
 {"attemptsLeft":3,"email":"shubhamkapadia19@gmail.com","level":"warn","message":"Login failed — wrong password","timestamp":"2026-07-02 22:58:51"}
 {"level":"info","message":"mongoDb is connected 127.0.0.1","timestamp":"2026-07-07 00:07:59"}
 {"level":"info","message":"Server running in development mode on port 3000","timestamp":"2026-07-07 00:07:59"}
+{"level":"info","message":"mongoDb is connected 127.0.0.1","timestamp":"2026-07-07 00:30:34"}
+{"level":"info","message":"Server running in development mode on port 3000","timestamp":"2026-07-07 00:30:34"}
+{"level":"info","message":"mongoDb is connected 127.0.0.1","timestamp":"2026-07-07 00:31:20"}
+{"level":"info","message":"Server running in development mode on port 3000","timestamp":"2026-07-07 00:31:20"}
+{"level":"info","message":"mongoDb is connected 127.0.0.1","timestamp":"2026-07-07 00:31:54"}
+{"level":"info","message":"Server running in development mode on port 3000","timestamp":"2026-07-07 00:31:54"}
+{"level":"info","message":"mongoDb is connected 127.0.0.1","timestamp":"2026-07-07 00:32:42"}
+{"level":"info","message":"Server running in development mode on port 5000","timestamp":"2026-07-07 00:32:42"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-07 00:32:42","url":"/api/auth/register"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-07 00:32:43","url":"/favicon.ico"}
+{"level":"info","message":"mongoDb is connected 127.0.0.1","timestamp":"2026-07-07 02:34:11"}
+{"level":"info","message":"Server running in development mode on port 5000","timestamp":"2026-07-07 02:34:11"}

@@ -10,6 +10,7 @@ const logger = require('./utils/logger.js');
 const connectDb = require('./config/db');
 const authRoutes = require("./routes/authRoutes.js");
 const ownerRoutes = require("./routes/ownerRoutes.js");
+const clientRoutes = require("./routes/clientRoutes.js");
 
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
@@ -42,6 +43,7 @@ app.use(globalLimiter);
 //Routes
 app.use("/api/auth", authRoutes);
 app.use("/api/owner", ownerRoutes);
+app.use("/api/client", clientRoutes);
 
 //DATABASE CONNECTION
 const startServer = async () => {
