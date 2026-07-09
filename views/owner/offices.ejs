@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head') %>
+</head>
+<body>
+
+    <%- include('../partials/nav') %>
+
+    <h2>Offices</h2>
+
+    <div id="message"></div>
+
+    <h3>Add New Office</h3>
+    <form id="addForm">
+        <div>
+            <label>Office Name</label>
+            <input type="text" name="officeName" required>
+        </div>
+        <div>
+            <label>Address</label>
+            <input type="text" name="address" required>
+        </div>
+        <div>
+            <label>Contact Number</label>
+            <input type="text" name="contactNumber" required>
+        </div>
+        <button type="submit">Add Office</button>
+    </form>
+
+    <h3>All Offices</h3>
+    <div id="officeList">
+        <p>Loading...</p>
+    </div>
+
+    <script>
+        const messageBox = document.getElementById("message");
+        const officeList = document.getElementById("officeList");
+
+        // ─────────────────────────────────
+        // LOAD ALL OFFICES
+        // ─────────────────────────────────
+        async function loadOffices() {
+            try {
+                const res = await fetch("/api/owner/offices-data", {
+                    credentials: "include",
+                });
+                const data = await res.json();
+
+                if (!res.ok) {
+                    officeList.textContent = data.message;
+                    return;
+                }
+
+                if (data.offices.length === 0) {
+                    officeList.innerHTML = "<p>No offices yet.</p>";
+                    return;
+                }
+
+                officeList.innerHTML = data.offices.map(office => `
+                    <div style="border:1px solid #ccc; padding:10px; margin-bottom:10px;">
+                        <p><strong>${office.officeName}</strong></p>
+                        <p>${office.address}</p>
+                        <p>Contact: ${office.contactNumber}</p>
+                        <p>Status: ${office.isActive ? "Active" : "Inactive"}</p>
+                        <p>Assigned Agent: ${office.assignedAgent ? office.assignedAgent.userName : "None"}</p>
+
+                        <button onclick="toggleOffice('${office._id}')">
+                            ${office.isActive ? "Deactivate" : "Activate"}
+                        </button>
+                        <button onclick="editOffice('${office._id}', '${office.officeName}', '${office.address}', '${office.contactNumber}')">Edit</button>
+                        <button onclick="removeOffice('${office._id}')">Remove</button>
+                    </div>
+                `).join("");
+
+            } catch (error) {
+                officeList.textContent = "Failed to load offices.";
+            }
+        }
+
+        loadOffices();
+
+        // ─────────────────────────────────
+        // ADD OFFICE
+        // ─────────────────────────────────
+        document.getElementById("addForm").addEventListener("submit", async (e) => {
+            e.preventDefault();
+            const formData = new FormData(e.target);
+            const body = Object.fromEntries(formData.entries());
+
+            try {
+                const res = await fetch("/api/owner/offices", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    credentials: "include",
+                    body: JSON.stringify(body),
+                });
+                const data = await res.json();
+
+                messageBox.textContent = data.message;
+                if (res.ok) {
+                    e.target.reset();
+                    loadOffices();
+                }
+
+            } catch (error) {
+                messageBox.textContent = "Failed to add office.";
+            }
+        });
+
+        // ─────────────────────────────────
+        // TOGGLE STATUS
+        // ─────────────────────────────────
+        async function toggleOffice(id) {
+            try {
+                const res = await fetch(`/api/owner/offices/${id}/status`, {
+                    method: "PATCH",
+                    credentials: "include",
+                });
+                const data = await res.json();
+
+                messageBox.textContent = data.message;
+                if (res.ok) loadOffices();
+
+            } catch (error) {
+                messageBox.textContent = "Failed to toggle office status.";
+            }
+        }
+
+        // ─────────────────────────────────
+        // EDIT OFFICE
+        // ─────────────────────────────────
+        async function editOffice(id, currentName, currentAddress, currentContact) {
+            const officeName = prompt("Office name:", currentName);
+            if (officeName === null) return;
+
+            const address = prompt("Address:", currentAddress);
+            if (address === null) return;
+
+            const contactNumber = prompt("Contact number:", currentContact);
+            if (contactNumber === null) return;
+
+            try {
+                const res = await fetch(`/api/owner/offices/${id}`, {
+                    method: "PATCH",
+                    headers: { "Content-Type": "application/json" },
+                    credentials: "include",
+                    body: JSON.stringify({ officeName, address, contactNumber }),
+                });
+                const data = await res.json();
+
+                messageBox.textContent = data.message;
+                if (res.ok) loadOffices();
+
+            } catch (error) {
+                messageBox.textContent = "Failed to update office.";
+            }
+        }
+
+        // ─────────────────────────────────
+        // REMOVE OFFICE
+        // ─────────────────────────────────
+        async function removeOffice(id) {
+            if (!confirm("Are you sure you want to remove this office?")) return;
+
+            try {
+                const res = await fetch(`/api/owner/offices/${id}`, {
+                    method: "DELETE",
+                    credentials: "include",
+                });
+                const data = await res.json();
+
+                messageBox.textContent = data.message;
+                if (res.ok) loadOffices();
+
+            } catch (error) {
+                messageBox.textContent = "Failed to remove office.";
+            }
+        }
+    </script>
+
+</body>
+</html>

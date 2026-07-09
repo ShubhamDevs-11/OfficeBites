@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head') %>
+</head>
+<body>
+
+    <%- include('../partials/nav') %>
+
+    <h2>Delivery Agents</h2>
+
+    <div id="message"></div>
+
+    <h3>Add New Agent</h3>
+    <form id="addForm">
+        <div>
+            <label>Username</label>
+            <input type="text" name="userName" required>
+        </div>
+        <div>
+            <label>Email</label>
+            <input type="email" name="email" required>
+        </div>
+        <div>
+            <label>Password</label>
+            <input type="password" name="password" required>
+        </div>
+        <div>
+            <label>Phone</label>
+            <input type="tel" name="phone" required>
+        </div>
+        <button type="submit">Add Agent</button>
+    </form>
+
+    <h3>All Agents</h3>
+    <div id="agentList">
+        <p>Loading...</p>
+    </div>
+
+    <script>
+        const messageBox = document.getElementById("message");
+        const agentList = document.getElementById("agentList");
+
+        // ─────────────────────────────────
+        // LOAD ALL AGENTS
+        // ─────────────────────────────────
+        async function loadAgents() {
+            try {
+                const res = await fetch("/api/owner/agents-data", {
+                    credentials: "include",
+                });
+                const data = await res.json();
+
+                if (!res.ok) {
+                    agentList.textContent = data.message;
+                    return;
+                }
+
+                if (data.agents.length === 0) {
+                    agentList.innerHTML = "<p>No agents yet.</p>";
+                    return;
+                }
+
+                agentList.innerHTML = data.agents.map(agent => `
+                    <div style="border:1px solid #ccc; padding:10px; margin-bottom:10px;">
+                        <p><strong>${agent.userName}</strong></p>
+                        <p>${agent.email}</p>
+                        <p>Phone: ${agent.phone}</p>
+                        <p>Available: ${agent.isAvailable ? "Yes" : "No"}</p>
+
+                        <button onclick="removeAgent('${agent._id}')">Remove</button>
+                    </div>
+                `).join("");
+
+            } catch (error) {
+                agentList.textContent = "Failed to load agents.";
+            }
+        }
+
+        loadAgents();
+
+        // ─────────────────────────────────
+        // ADD AGENT
+        // ─────────────────────────────────
+        document.getElementById("addForm").addEventListener("submit", async (e) => {
+            e.preventDefault();
+            const formData = new FormData(e.target);
+            const body = Object.fromEntries(formData.entries());
+
+            try {
+                const res = await fetch("/api/owner/agents", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    credentials: "include",
+                    body: JSON.stringify(body),
+                });
+                const data = await res.json();
+
+                messageBox.textContent = data.message;
+                if (res.ok) {
+                    e.target.reset();
+                    loadAgents();
+                }
+
+            } catch (error) {
+                messageBox.textContent = "Failed to add agent.";
+            }
+        });
+
+        // ─────────────────────────────────
+        // REMOVE AGENT
+        // ─────────────────────────────────
+        async function removeAgent(id) {
+            if (!confirm("Are you sure you want to remove this agent?")) return;
+
+            try {
+                const res = await fetch(`/api/owner/agents/${id}`, {
+                    method: "DELETE",
+                    credentials: "include",
+                });
+                const data = await res.json();
+
+                messageBox.textContent = data.message;
+                if (res.ok) loadAgents();
+
+            } catch (error) {
+                messageBox.textContent = "Failed to remove agent.";
+            }
+        }
+    </script>
+
+</body>
+</html>

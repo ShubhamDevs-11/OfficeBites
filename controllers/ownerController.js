@@ -108,23 +108,34 @@ const getItems = async (req, res) => {
     }
 };
 const addItem = async (req, res) => {
-  try {
-    const {itemName, itemPhoto, itemPrice} = req.body;
+    try {
+        const { itemName, itemPrice } = req.body;
 
-    logger.debug("addItem attempt", {userId: req.user.userId});
+        logger.debug("addItem attempt", { userId: req.user.userId });
 
-    const item = await Menu.create({
-      itemName,
-      itemPhoto,
-      itemPrice,
-      owner: req.user.userId,
-    });
-    logger.info("Item added", {itemId: item._id, userId: req.user.userId});
-    return res.status(201).json({message: "Item added successfully", item});
-  } catch (error) {
-    logger.error("addItem error", {error: error.message, stack: error.stack});
-    return res.status(500).json({message: "Internal server error"});
-  }
+        // check if file was uploaded
+        if (!req.file) {
+            logger.warn("addItem — no photo uploaded", { userId: req.user.userId });
+            return res.status(400).json({ message: "Item photo is required" });
+        }
+
+        // build the path to access this image later
+        const itemPhoto = `/uploads/menu/${req.file.filename}`;
+
+        const item = await Menu.create({
+            itemName,
+            itemPhoto,
+            itemPrice,
+            owner: req.user.userId,
+        });
+
+        logger.info("Item added", { itemId: item._id, userId: req.user.userId });
+        return res.status(201).json({ message: "Item added successfully", item });
+
+    } catch (error) {
+        logger.error("addItem error", { error: error.message, stack: error.stack });
+        return res.status(500).json({ message: "Internal server error" });
+    }
 };
 
 // ─────────────────────────────────────────
