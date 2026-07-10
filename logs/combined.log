@@ -1045,3 +1045,523 @@
 {"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 01:48:27","url":"/api/owner/profile-data"}
 {"level":"debug","message":"Token verified","role":"owner","timestamp":"2026-07-10 01:48:27","userId":"6a50020b68782620e3f46fa1"}
 {"level":"info","message":"getProfile — success","timestamp":"2026-07-10 01:48:27","userId":"6a50020b68782620e3f46fa1"}
+{"level":"info","message":"mongoDb is connected 127.0.0.1","timestamp":"2026-07-10 01:48:33"}
+{"level":"info","message":"Server running in development mode on port 5000","timestamp":"2026-07-10 01:48:33"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 01:48:33","url":"/api/owner/profile"}
+{"level":"debug","message":"Token verified","role":"owner","timestamp":"2026-07-10 01:48:33","userId":"6a50020b68782620e3f46fa1"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 01:48:33","url":"/api/owner/profile-data"}
+{"level":"debug","message":"Token verified","role":"owner","timestamp":"2026-07-10 01:48:33","userId":"6a50020b68782620e3f46fa1"}
+{"level":"info","message":"getProfile — success","timestamp":"2026-07-10 01:48:33","userId":"6a50020b68782620e3f46fa1"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 01:48:36","url":"/api/owner/profile"}
+{"level":"debug","message":"Token verified","role":"owner","timestamp":"2026-07-10 01:48:36","userId":"6a50020b68782620e3f46fa1"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 01:48:36","url":"/api/owner/profile-data"}
+{"level":"debug","message":"Token verified","role":"owner","timestamp":"2026-07-10 01:48:36","userId":"6a50020b68782620e3f46fa1"}
+{"level":"info","message":"getProfile — success","timestamp":"2026-07-10 01:48:36","userId":"6a50020b68782620e3f46fa1"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 01:48:37","url":"/api/owner/menu"}
+{"level":"debug","message":"Token verified","role":"owner","timestamp":"2026-07-10 01:48:37","userId":"6a50020b68782620e3f46fa1"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 01:48:37","url":"/api/owner/items-data"}
+{"level":"debug","message":"Token verified","role":"owner","timestamp":"2026-07-10 01:48:37","userId":"6a50020b68782620e3f46fa1"}
+{"level":"debug","message":"getItems attempt","timestamp":"2026-07-10 01:48:37","userId":"6a50020b68782620e3f46fa1"}
+{"count":0,"level":"info","message":"Items fetched","timestamp":"2026-07-10 01:48:37","userId":"6a50020b68782620e3f46fa1"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 01:48:38","url":"/api/owner/profile"}
+{"level":"debug","message":"Token verified","role":"owner","timestamp":"2026-07-10 01:48:38","userId":"6a50020b68782620e3f46fa1"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 01:48:38","url":"/api/owner/profile-data"}
+{"level":"debug","message":"Token verified","role":"owner","timestamp":"2026-07-10 01:48:38","userId":"6a50020b68782620e3f46fa1"}
+{"level":"info","message":"getProfile — success","timestamp":"2026-07-10 01:48:38","userId":"6a50020b68782620e3f46fa1"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 01:48:39","url":"/api/owner/menu"}
+{"level":"debug","message":"Token verified","role":"owner","timestamp":"2026-07-10 01:48:39","userId":"6a50020b68782620e3f46fa1"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 01:48:39","url":"/api/owner/items-data"}
+{"level":"debug","message":"Token verified","role":"owner","timestamp":"2026-07-10 01:48:39","userId":"6a50020b68782620e3f46fa1"}
+{"level":"debug","message":"getItems attempt","timestamp":"2026-07-10 01:48:39","userId":"6a50020b68782620e3f46fa1"}
+{"count":0,"level":"info","message":"Items fetched","timestamp":"2026-07-10 01:48:39","userId":"6a50020b68782620e3f46fa1"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 01:48:41","url":"/api/owner/offices"}
+{"level":"debug","message":"Token verified","role":"owner","timestamp":"2026-07-10 01:48:41","userId":"6a50020b68782620e3f46fa1"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 01:48:41","url":"/api/owner/offices-data"}
+{"level":"debug","message":"Token verified","role":"owner","timestamp":"2026-07-10 01:48:41","userId":"6a50020b68782620e3f46fa1"}
+{"level":"debug","message":"getOffices attempt","timestamp":"2026-07-10 01:48:41","userId":"6a50020b68782620e3f46fa1"}
+{"count":0,"level":"info","message":"Offices fetched","timestamp":"2026-07-10 01:48:41","userId":"6a50020b68782620e3f46fa1"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 01:48:42","url":"/api/owner/profile"}
+{"level":"debug","message":"Token verified","role":"owner","timestamp":"2026-07-10 01:48:42","userId":"6a50020b68782620e3f46fa1"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 01:48:42","url":"/api/owner/profile-data"}
+{"level":"debug","message":"Token verified","role":"owner","timestamp":"2026-07-10 01:48:42","userId":"6a50020b68782620e3f46fa1"}
+{"level":"info","message":"getProfile — success","timestamp":"2026-07-10 01:48:42","userId":"6a50020b68782620e3f46fa1"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 01:51:27","url":"/api/owner/agents"}
+{"level":"debug","message":"Token verified","role":"owner","timestamp":"2026-07-10 01:51:27","userId":"6a50020b68782620e3f46fa1"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 01:51:27","url":"/api/owner/agents-data"}
+{"level":"debug","message":"Token verified","role":"owner","timestamp":"2026-07-10 01:51:27","userId":"6a50020b68782620e3f46fa1"}
+{"level":"debug","message":"getAgents attempt","timestamp":"2026-07-10 01:51:27","userId":"6a50020b68782620e3f46fa1"}
+{"count":1,"level":"info","message":"Agents fetched","timestamp":"2026-07-10 01:51:27","userId":"6a50020b68782620e3f46fa1"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 01:52:54","url":"/api/owner/agents"}
+{"level":"debug","message":"Token verified","role":"owner","timestamp":"2026-07-10 01:52:54","userId":"6a50020b68782620e3f46fa1"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 01:52:54","url":"/api/owner/agents-data"}
+{"level":"debug","message":"Token verified","role":"owner","timestamp":"2026-07-10 01:52:54","userId":"6a50020b68782620e3f46fa1"}
+{"level":"debug","message":"getAgents attempt","timestamp":"2026-07-10 01:52:54","userId":"6a50020b68782620e3f46fa1"}
+{"count":1,"level":"info","message":"Agents fetched","timestamp":"2026-07-10 01:52:54","userId":"6a50020b68782620e3f46fa1"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 01:52:56","url":"/api/owner/profile"}
+{"level":"debug","message":"Token verified","role":"owner","timestamp":"2026-07-10 01:52:56","userId":"6a50020b68782620e3f46fa1"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 01:52:56","url":"/api/owner/profile-data"}
+{"level":"debug","message":"Token verified","role":"owner","timestamp":"2026-07-10 01:52:56","userId":"6a50020b68782620e3f46fa1"}
+{"level":"info","message":"getProfile — success","timestamp":"2026-07-10 01:52:56","userId":"6a50020b68782620e3f46fa1"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 01:52:57","url":"/api/owner/menu"}
+{"level":"debug","message":"Token verified","role":"owner","timestamp":"2026-07-10 01:52:57","userId":"6a50020b68782620e3f46fa1"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 01:52:57","url":"/api/owner/items-data"}
+{"level":"debug","message":"Token verified","role":"owner","timestamp":"2026-07-10 01:52:57","userId":"6a50020b68782620e3f46fa1"}
+{"level":"debug","message":"getItems attempt","timestamp":"2026-07-10 01:52:57","userId":"6a50020b68782620e3f46fa1"}
+{"count":0,"level":"info","message":"Items fetched","timestamp":"2026-07-10 01:52:57","userId":"6a50020b68782620e3f46fa1"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 01:52:57","url":"/api/owner/profile"}
+{"level":"debug","message":"Token verified","role":"owner","timestamp":"2026-07-10 01:52:57","userId":"6a50020b68782620e3f46fa1"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 01:52:58","url":"/api/owner/profile-data"}
+{"level":"debug","message":"Token verified","role":"owner","timestamp":"2026-07-10 01:52:58","userId":"6a50020b68782620e3f46fa1"}
+{"level":"info","message":"getProfile — success","timestamp":"2026-07-10 01:52:58","userId":"6a50020b68782620e3f46fa1"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 01:52:59","url":"/api/owner/bills"}
+{"level":"debug","message":"Token verified","role":"owner","timestamp":"2026-07-10 01:52:59","userId":"6a50020b68782620e3f46fa1"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 01:52:59","url":"/api/owner/bills-data"}
+{"level":"debug","message":"Token verified","role":"owner","timestamp":"2026-07-10 01:52:59","userId":"6a50020b68782620e3f46fa1"}
+{"level":"debug","message":"getBills attempt","timestamp":"2026-07-10 01:52:59","userId":"6a50020b68782620e3f46fa1"}
+{"count":0,"level":"info","message":"Bills fetched","timestamp":"2026-07-10 01:52:59","userId":"6a50020b68782620e3f46fa1"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 01:52:59","url":"/api/owner/agents"}
+{"level":"debug","message":"Token verified","role":"owner","timestamp":"2026-07-10 01:52:59","userId":"6a50020b68782620e3f46fa1"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 01:52:59","url":"/api/owner/agents-data"}
+{"level":"debug","message":"Token verified","role":"owner","timestamp":"2026-07-10 01:52:59","userId":"6a50020b68782620e3f46fa1"}
+{"level":"debug","message":"getAgents attempt","timestamp":"2026-07-10 01:52:59","userId":"6a50020b68782620e3f46fa1"}
+{"count":1,"level":"info","message":"Agents fetched","timestamp":"2026-07-10 01:52:59","userId":"6a50020b68782620e3f46fa1"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 01:52:59","url":"/api/owner/offices"}
+{"level":"debug","message":"Token verified","role":"owner","timestamp":"2026-07-10 01:52:59","userId":"6a50020b68782620e3f46fa1"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 01:52:59","url":"/api/owner/offices-data"}
+{"level":"debug","message":"Token verified","role":"owner","timestamp":"2026-07-10 01:52:59","userId":"6a50020b68782620e3f46fa1"}
+{"level":"debug","message":"getOffices attempt","timestamp":"2026-07-10 01:52:59","userId":"6a50020b68782620e3f46fa1"}
+{"count":0,"level":"info","message":"Offices fetched","timestamp":"2026-07-10 01:52:59","userId":"6a50020b68782620e3f46fa1"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 01:53:00","url":"/api/owner/offices"}
+{"level":"debug","message":"Token verified","role":"owner","timestamp":"2026-07-10 01:53:00","userId":"6a50020b68782620e3f46fa1"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 01:53:00","url":"/api/owner/offices-data"}
+{"level":"debug","message":"Token verified","role":"owner","timestamp":"2026-07-10 01:53:00","userId":"6a50020b68782620e3f46fa1"}
+{"level":"debug","message":"getOffices attempt","timestamp":"2026-07-10 01:53:00","userId":"6a50020b68782620e3f46fa1"}
+{"count":0,"level":"info","message":"Offices fetched","timestamp":"2026-07-10 01:53:00","userId":"6a50020b68782620e3f46fa1"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 01:53:00","url":"/api/owner/bills"}
+{"level":"debug","message":"Token verified","role":"owner","timestamp":"2026-07-10 01:53:00","userId":"6a50020b68782620e3f46fa1"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 01:53:00","url":"/api/owner/bills-data"}
+{"level":"debug","message":"Token verified","role":"owner","timestamp":"2026-07-10 01:53:00","userId":"6a50020b68782620e3f46fa1"}
+{"level":"debug","message":"getBills attempt","timestamp":"2026-07-10 01:53:00","userId":"6a50020b68782620e3f46fa1"}
+{"count":0,"level":"info","message":"Bills fetched","timestamp":"2026-07-10 01:53:00","userId":"6a50020b68782620e3f46fa1"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 01:53:01","url":"/api/owner/profile"}
+{"level":"debug","message":"Token verified","role":"owner","timestamp":"2026-07-10 01:53:01","userId":"6a50020b68782620e3f46fa1"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 01:53:01","url":"/api/owner/profile-data"}
+{"level":"debug","message":"Token verified","role":"owner","timestamp":"2026-07-10 01:53:01","userId":"6a50020b68782620e3f46fa1"}
+{"level":"info","message":"getProfile — success","timestamp":"2026-07-10 01:53:01","userId":"6a50020b68782620e3f46fa1"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 01:53:05","url":"/api/owner/menu"}
+{"level":"debug","message":"Token verified","role":"owner","timestamp":"2026-07-10 01:53:05","userId":"6a50020b68782620e3f46fa1"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 01:53:05","url":"/api/owner/items-data"}
+{"level":"debug","message":"Token verified","role":"owner","timestamp":"2026-07-10 01:53:05","userId":"6a50020b68782620e3f46fa1"}
+{"level":"debug","message":"getItems attempt","timestamp":"2026-07-10 01:53:05","userId":"6a50020b68782620e3f46fa1"}
+{"count":0,"level":"info","message":"Items fetched","timestamp":"2026-07-10 01:53:05","userId":"6a50020b68782620e3f46fa1"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 01:53:05","url":"/api/owner/profile"}
+{"level":"debug","message":"Token verified","role":"owner","timestamp":"2026-07-10 01:53:05","userId":"6a50020b68782620e3f46fa1"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 01:53:06","url":"/api/owner/profile-data"}
+{"level":"debug","message":"Token verified","role":"owner","timestamp":"2026-07-10 01:53:06","userId":"6a50020b68782620e3f46fa1"}
+{"level":"info","message":"getProfile — success","timestamp":"2026-07-10 01:53:06","userId":"6a50020b68782620e3f46fa1"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 01:53:10","url":"/api/owner/menu"}
+{"level":"debug","message":"Token verified","role":"owner","timestamp":"2026-07-10 01:53:10","userId":"6a50020b68782620e3f46fa1"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 01:53:10","url":"/api/owner/items-data"}
+{"level":"debug","message":"Token verified","role":"owner","timestamp":"2026-07-10 01:53:10","userId":"6a50020b68782620e3f46fa1"}
+{"level":"debug","message":"getItems attempt","timestamp":"2026-07-10 01:53:10","userId":"6a50020b68782620e3f46fa1"}
+{"count":0,"level":"info","message":"Items fetched","timestamp":"2026-07-10 01:53:10","userId":"6a50020b68782620e3f46fa1"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 01:53:10","url":"/api/owner/profile"}
+{"level":"debug","message":"Token verified","role":"owner","timestamp":"2026-07-10 01:53:10","userId":"6a50020b68782620e3f46fa1"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 01:53:10","url":"/api/owner/profile-data"}
+{"level":"debug","message":"Token verified","role":"owner","timestamp":"2026-07-10 01:53:10","userId":"6a50020b68782620e3f46fa1"}
+{"level":"info","message":"getProfile — success","timestamp":"2026-07-10 01:53:10","userId":"6a50020b68782620e3f46fa1"}
+{"level":"debug","message":"Incoming request","method":"PATCH","timestamp":"2026-07-10 01:53:13","url":"/api/owner/profile"}
+{"level":"debug","message":"Token verified","role":"owner","timestamp":"2026-07-10 01:53:13","userId":"6a50020b68782620e3f46fa1"}
+{"level":"info","message":"editProfile — success","timestamp":"2026-07-10 01:53:13","userId":"6a50020b68782620e3f46fa1"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 01:53:13","url":"/api/owner/profile-data"}
+{"level":"debug","message":"Token verified","role":"owner","timestamp":"2026-07-10 01:53:13","userId":"6a50020b68782620e3f46fa1"}
+{"level":"info","message":"getProfile — success","timestamp":"2026-07-10 01:53:13","userId":"6a50020b68782620e3f46fa1"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 01:53:16","url":"/api/owner/menu"}
+{"level":"debug","message":"Token verified","role":"owner","timestamp":"2026-07-10 01:53:16","userId":"6a50020b68782620e3f46fa1"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 01:53:16","url":"/api/owner/items-data"}
+{"level":"debug","message":"Token verified","role":"owner","timestamp":"2026-07-10 01:53:16","userId":"6a50020b68782620e3f46fa1"}
+{"level":"debug","message":"getItems attempt","timestamp":"2026-07-10 01:53:16","userId":"6a50020b68782620e3f46fa1"}
+{"count":0,"level":"info","message":"Items fetched","timestamp":"2026-07-10 01:53:16","userId":"6a50020b68782620e3f46fa1"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 01:53:16","url":"/api/owner/profile"}
+{"level":"debug","message":"Token verified","role":"owner","timestamp":"2026-07-10 01:53:16","userId":"6a50020b68782620e3f46fa1"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 01:53:16","url":"/api/owner/profile-data"}
+{"level":"debug","message":"Token verified","role":"owner","timestamp":"2026-07-10 01:53:16","userId":"6a50020b68782620e3f46fa1"}
+{"level":"info","message":"getProfile — success","timestamp":"2026-07-10 01:53:16","userId":"6a50020b68782620e3f46fa1"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 01:53:22","url":"/api/owner/menu"}
+{"level":"debug","message":"Token verified","role":"owner","timestamp":"2026-07-10 01:53:22","userId":"6a50020b68782620e3f46fa1"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 01:53:22","url":"/api/owner/items-data"}
+{"level":"debug","message":"Token verified","role":"owner","timestamp":"2026-07-10 01:53:22","userId":"6a50020b68782620e3f46fa1"}
+{"level":"debug","message":"getItems attempt","timestamp":"2026-07-10 01:53:22","userId":"6a50020b68782620e3f46fa1"}
+{"count":0,"level":"info","message":"Items fetched","timestamp":"2026-07-10 01:53:22","userId":"6a50020b68782620e3f46fa1"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 01:53:23","url":"/api/owner/profile"}
+{"level":"debug","message":"Token verified","role":"owner","timestamp":"2026-07-10 01:53:23","userId":"6a50020b68782620e3f46fa1"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 01:53:23","url":"/api/owner/profile-data"}
+{"level":"debug","message":"Token verified","role":"owner","timestamp":"2026-07-10 01:53:23","userId":"6a50020b68782620e3f46fa1"}
+{"level":"info","message":"getProfile — success","timestamp":"2026-07-10 01:53:23","userId":"6a50020b68782620e3f46fa1"}
+{"level":"debug","message":"Incoming request","method":"PATCH","timestamp":"2026-07-10 01:53:26","url":"/api/owner/profile"}
+{"level":"debug","message":"Token verified","role":"owner","timestamp":"2026-07-10 01:53:26","userId":"6a50020b68782620e3f46fa1"}
+{"level":"info","message":"editProfile — success","timestamp":"2026-07-10 01:53:26","userId":"6a50020b68782620e3f46fa1"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 01:53:26","url":"/api/owner/profile-data"}
+{"level":"debug","message":"Token verified","role":"owner","timestamp":"2026-07-10 01:53:26","userId":"6a50020b68782620e3f46fa1"}
+{"level":"info","message":"getProfile — success","timestamp":"2026-07-10 01:53:27","userId":"6a50020b68782620e3f46fa1"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 01:53:28","url":"/api/owner/menu"}
+{"level":"debug","message":"Token verified","role":"owner","timestamp":"2026-07-10 01:53:28","userId":"6a50020b68782620e3f46fa1"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 01:53:28","url":"/api/owner/items-data"}
+{"level":"debug","message":"Token verified","role":"owner","timestamp":"2026-07-10 01:53:28","userId":"6a50020b68782620e3f46fa1"}
+{"level":"debug","message":"getItems attempt","timestamp":"2026-07-10 01:53:28","userId":"6a50020b68782620e3f46fa1"}
+{"count":0,"level":"info","message":"Items fetched","timestamp":"2026-07-10 01:53:28","userId":"6a50020b68782620e3f46fa1"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 01:53:29","url":"/api/owner/profile"}
+{"level":"debug","message":"Token verified","role":"owner","timestamp":"2026-07-10 01:53:29","userId":"6a50020b68782620e3f46fa1"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 01:53:30","url":"/api/owner/profile-data"}
+{"level":"debug","message":"Token verified","role":"owner","timestamp":"2026-07-10 01:53:30","userId":"6a50020b68782620e3f46fa1"}
+{"level":"info","message":"getProfile — success","timestamp":"2026-07-10 01:53:30","userId":"6a50020b68782620e3f46fa1"}
+{"level":"info","message":"mongoDb is connected 127.0.0.1","timestamp":"2026-07-10 22:44:55"}
+{"level":"info","message":"Server running in development mode on port 5000","timestamp":"2026-07-10 22:44:55"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 22:45:05","url":"/api/auth/login"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 22:45:05","url":"/favicon.ico"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 22:45:07","url":"/api/auth/register"}
+{"level":"debug","message":"Incoming request","method":"POST","timestamp":"2026-07-10 22:45:56","url":"/api/auth/register"}
+{"email":"owner@gmail.com","level":"debug","message":"Register attempt","role":"owner","timestamp":"2026-07-10 22:45:56"}
+{"email":"owner@gmail.com","level":"info","message":"User registered","role":"owner","timestamp":"2026-07-10 22:45:56","userId":"6a5128cc7cdd59c3b7b13c21"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 22:45:56","url":"/api/owner/profile"}
+{"level":"debug","message":"Token verified","role":"owner","timestamp":"2026-07-10 22:45:56","userId":"6a5128cc7cdd59c3b7b13c21"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 22:45:56","url":"/api/owner/profile-data"}
+{"level":"debug","message":"Token verified","role":"owner","timestamp":"2026-07-10 22:45:56","userId":"6a5128cc7cdd59c3b7b13c21"}
+{"level":"info","message":"getProfile — success","timestamp":"2026-07-10 22:45:56","userId":"6a5128cc7cdd59c3b7b13c21"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 22:45:59","url":"/api/owner/profile"}
+{"level":"debug","message":"Token verified","role":"owner","timestamp":"2026-07-10 22:45:59","userId":"6a5128cc7cdd59c3b7b13c21"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 22:45:59","url":"/api/owner/profile-data"}
+{"level":"debug","message":"Token verified","role":"owner","timestamp":"2026-07-10 22:45:59","userId":"6a5128cc7cdd59c3b7b13c21"}
+{"level":"info","message":"getProfile — success","timestamp":"2026-07-10 22:45:59","userId":"6a5128cc7cdd59c3b7b13c21"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 22:46:00","url":"/api/owner/menu"}
+{"level":"debug","message":"Token verified","role":"owner","timestamp":"2026-07-10 22:46:00","userId":"6a5128cc7cdd59c3b7b13c21"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 22:46:00","url":"/api/owner/items-data"}
+{"level":"debug","message":"Token verified","role":"owner","timestamp":"2026-07-10 22:46:00","userId":"6a5128cc7cdd59c3b7b13c21"}
+{"level":"debug","message":"getItems attempt","timestamp":"2026-07-10 22:46:00","userId":"6a5128cc7cdd59c3b7b13c21"}
+{"count":0,"level":"info","message":"Items fetched","timestamp":"2026-07-10 22:46:00","userId":"6a5128cc7cdd59c3b7b13c21"}
+{"level":"debug","message":"Incoming request","method":"POST","timestamp":"2026-07-10 22:46:48","url":"/api/owner/items"}
+{"level":"debug","message":"Token verified","role":"owner","timestamp":"2026-07-10 22:46:48","userId":"6a5128cc7cdd59c3b7b13c21"}
+{"level":"debug","message":"addItem attempt","timestamp":"2026-07-10 22:46:48","userId":"6a5128cc7cdd59c3b7b13c21"}
+{"itemId":"6a5129007cdd59c3b7b13c22","level":"info","message":"Item added","timestamp":"2026-07-10 22:46:48","userId":"6a5128cc7cdd59c3b7b13c21"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 22:46:48","url":"/api/owner/items-data"}
+{"level":"debug","message":"Token verified","role":"owner","timestamp":"2026-07-10 22:46:48","userId":"6a5128cc7cdd59c3b7b13c21"}
+{"level":"debug","message":"getItems attempt","timestamp":"2026-07-10 22:46:48","userId":"6a5128cc7cdd59c3b7b13c21"}
+{"count":1,"level":"info","message":"Items fetched","timestamp":"2026-07-10 22:46:48","userId":"6a5128cc7cdd59c3b7b13c21"}
+{"level":"debug","message":"Incoming request","method":"PATCH","timestamp":"2026-07-10 22:46:53","url":"/api/owner/items/6a5129007cdd59c3b7b13c22/toggle"}
+{"level":"debug","message":"Token verified","role":"owner","timestamp":"2026-07-10 22:46:53","userId":"6a5128cc7cdd59c3b7b13c21"}
+{"itemId":"6a5129007cdd59c3b7b13c22","level":"debug","message":"toggleAvailability attempt","timestamp":"2026-07-10 22:46:53","userId":"6a5128cc7cdd59c3b7b13c21"}
+{"isAvailable":false,"itemId":"6a5129007cdd59c3b7b13c22","level":"info","message":"Item availability toggled","timestamp":"2026-07-10 22:46:53"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 22:46:53","url":"/api/owner/items-data"}
+{"level":"debug","message":"Token verified","role":"owner","timestamp":"2026-07-10 22:46:53","userId":"6a5128cc7cdd59c3b7b13c21"}
+{"level":"debug","message":"getItems attempt","timestamp":"2026-07-10 22:46:53","userId":"6a5128cc7cdd59c3b7b13c21"}
+{"count":1,"level":"info","message":"Items fetched","timestamp":"2026-07-10 22:46:53","userId":"6a5128cc7cdd59c3b7b13c21"}
+{"level":"debug","message":"Incoming request","method":"PATCH","timestamp":"2026-07-10 22:46:53","url":"/api/owner/items/6a5129007cdd59c3b7b13c22/toggle"}
+{"level":"debug","message":"Token verified","role":"owner","timestamp":"2026-07-10 22:46:53","userId":"6a5128cc7cdd59c3b7b13c21"}
+{"itemId":"6a5129007cdd59c3b7b13c22","level":"debug","message":"toggleAvailability attempt","timestamp":"2026-07-10 22:46:53","userId":"6a5128cc7cdd59c3b7b13c21"}
+{"isAvailable":true,"itemId":"6a5129007cdd59c3b7b13c22","level":"info","message":"Item availability toggled","timestamp":"2026-07-10 22:46:53"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 22:46:53","url":"/api/owner/items-data"}
+{"level":"debug","message":"Token verified","role":"owner","timestamp":"2026-07-10 22:46:53","userId":"6a5128cc7cdd59c3b7b13c21"}
+{"level":"debug","message":"getItems attempt","timestamp":"2026-07-10 22:46:53","userId":"6a5128cc7cdd59c3b7b13c21"}
+{"count":1,"level":"info","message":"Items fetched","timestamp":"2026-07-10 22:46:53","userId":"6a5128cc7cdd59c3b7b13c21"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 22:46:55","url":"/api/owner/menu"}
+{"level":"debug","message":"Token verified","role":"owner","timestamp":"2026-07-10 22:46:55","userId":"6a5128cc7cdd59c3b7b13c21"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 22:46:55","url":"/api/owner/items-data"}
+{"level":"debug","message":"Token verified","role":"owner","timestamp":"2026-07-10 22:46:55","userId":"6a5128cc7cdd59c3b7b13c21"}
+{"level":"debug","message":"getItems attempt","timestamp":"2026-07-10 22:46:55","userId":"6a5128cc7cdd59c3b7b13c21"}
+{"count":1,"level":"info","message":"Items fetched","timestamp":"2026-07-10 22:46:55","userId":"6a5128cc7cdd59c3b7b13c21"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 22:46:55","url":"/api/owner/profile"}
+{"level":"debug","message":"Token verified","role":"owner","timestamp":"2026-07-10 22:46:55","userId":"6a5128cc7cdd59c3b7b13c21"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 22:46:55","url":"/api/owner/profile-data"}
+{"level":"debug","message":"Token verified","role":"owner","timestamp":"2026-07-10 22:46:55","userId":"6a5128cc7cdd59c3b7b13c21"}
+{"level":"info","message":"getProfile — success","timestamp":"2026-07-10 22:46:55","userId":"6a5128cc7cdd59c3b7b13c21"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 22:46:56","url":"/api/owner/menu"}
+{"level":"debug","message":"Token verified","role":"owner","timestamp":"2026-07-10 22:46:56","userId":"6a5128cc7cdd59c3b7b13c21"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 22:46:56","url":"/api/owner/items-data"}
+{"level":"debug","message":"Token verified","role":"owner","timestamp":"2026-07-10 22:46:56","userId":"6a5128cc7cdd59c3b7b13c21"}
+{"level":"debug","message":"getItems attempt","timestamp":"2026-07-10 22:46:56","userId":"6a5128cc7cdd59c3b7b13c21"}
+{"count":1,"level":"info","message":"Items fetched","timestamp":"2026-07-10 22:46:56","userId":"6a5128cc7cdd59c3b7b13c21"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 22:46:57","url":"/api/owner/offices"}
+{"level":"debug","message":"Token verified","role":"owner","timestamp":"2026-07-10 22:46:57","userId":"6a5128cc7cdd59c3b7b13c21"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 22:46:57","url":"/api/owner/offices-data"}
+{"level":"debug","message":"Token verified","role":"owner","timestamp":"2026-07-10 22:46:57","userId":"6a5128cc7cdd59c3b7b13c21"}
+{"level":"debug","message":"getOffices attempt","timestamp":"2026-07-10 22:46:57","userId":"6a5128cc7cdd59c3b7b13c21"}
+{"count":0,"level":"info","message":"Offices fetched","timestamp":"2026-07-10 22:46:57","userId":"6a5128cc7cdd59c3b7b13c21"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 22:46:58","url":"/api/owner/profile"}
+{"level":"debug","message":"Token verified","role":"owner","timestamp":"2026-07-10 22:46:58","userId":"6a5128cc7cdd59c3b7b13c21"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 22:46:58","url":"/api/owner/profile-data"}
+{"level":"debug","message":"Token verified","role":"owner","timestamp":"2026-07-10 22:46:58","userId":"6a5128cc7cdd59c3b7b13c21"}
+{"level":"info","message":"getProfile — success","timestamp":"2026-07-10 22:46:58","userId":"6a5128cc7cdd59c3b7b13c21"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 22:47:00","url":"/api/owner/agents"}
+{"level":"debug","message":"Token verified","role":"owner","timestamp":"2026-07-10 22:47:00","userId":"6a5128cc7cdd59c3b7b13c21"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 22:47:00","url":"/api/owner/agents-data"}
+{"level":"debug","message":"Token verified","role":"owner","timestamp":"2026-07-10 22:47:00","userId":"6a5128cc7cdd59c3b7b13c21"}
+{"level":"debug","message":"getAgents attempt","timestamp":"2026-07-10 22:47:00","userId":"6a5128cc7cdd59c3b7b13c21"}
+{"count":1,"level":"info","message":"Agents fetched","timestamp":"2026-07-10 22:47:00","userId":"6a5128cc7cdd59c3b7b13c21"}
+{"level":"debug","message":"Incoming request","method":"DELETE","timestamp":"2026-07-10 22:47:05","url":"/api/owner/agents/6a401545a8034a0faa518bdf"}
+{"level":"debug","message":"Token verified","role":"owner","timestamp":"2026-07-10 22:47:05","userId":"6a5128cc7cdd59c3b7b13c21"}
+{"agentId":"6a401545a8034a0faa518bdf","level":"debug","message":"removeAgent attempt","timestamp":"2026-07-10 22:47:05","userId":"6a5128cc7cdd59c3b7b13c21"}
+{"agentId":"6a401545a8034a0faa518bdf","level":"info","message":"Agent removed","timestamp":"2026-07-10 22:47:05","userId":"6a5128cc7cdd59c3b7b13c21"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 22:47:05","url":"/api/owner/agents-data"}
+{"level":"debug","message":"Token verified","role":"owner","timestamp":"2026-07-10 22:47:05","userId":"6a5128cc7cdd59c3b7b13c21"}
+{"level":"debug","message":"getAgents attempt","timestamp":"2026-07-10 22:47:05","userId":"6a5128cc7cdd59c3b7b13c21"}
+{"count":0,"level":"info","message":"Agents fetched","timestamp":"2026-07-10 22:47:05","userId":"6a5128cc7cdd59c3b7b13c21"}
+{"level":"debug","message":"Incoming request","method":"POST","timestamp":"2026-07-10 22:47:15","url":"/api/auth/logout"}
+{"level":"debug","message":"Token verified","role":"owner","timestamp":"2026-07-10 22:47:15","userId":"6a5128cc7cdd59c3b7b13c21"}
+{"level":"info","message":"User logged out","timestamp":"2026-07-10 22:47:15","userId":"6a5128cc7cdd59c3b7b13c21"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 22:47:15","url":"/api/auth/login"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 22:47:16","url":"/api/auth/register"}
+{"level":"debug","message":"Incoming request","method":"POST","timestamp":"2026-07-10 22:47:32","url":"/api/auth/register"}
+{"email":"agent@gmail.com","level":"debug","message":"Register attempt","role":"deliveryAgent","timestamp":"2026-07-10 22:47:32"}
+{"email":"agent@gmail.com","level":"info","message":"User registered","role":"deliveryAgent","timestamp":"2026-07-10 22:47:32","userId":"6a51292c7cdd59c3b7b13c23"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 22:47:32","url":"/api/agent/dashboard"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 22:47:34","url":"/api/agent/dashboard"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 22:47:40","url":"/api/auth/login"}
+{"level":"debug","message":"Incoming request","method":"POST","timestamp":"2026-07-10 22:47:59","url":"/api/auth/login"}
+{"email":"owner@gmail.com","level":"debug","message":"Login attempt","timestamp":"2026-07-10 22:47:59"}
+{"email":"owner@gmail.com","level":"info","message":"User logged in","role":"owner","timestamp":"2026-07-10 22:47:59","userId":"6a5128cc7cdd59c3b7b13c21"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 22:47:59","url":"/api/owner/profile"}
+{"level":"debug","message":"Token verified","role":"owner","timestamp":"2026-07-10 22:47:59","userId":"6a5128cc7cdd59c3b7b13c21"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 22:47:59","url":"/api/owner/profile-data"}
+{"level":"debug","message":"Token verified","role":"owner","timestamp":"2026-07-10 22:47:59","userId":"6a5128cc7cdd59c3b7b13c21"}
+{"level":"info","message":"getProfile — success","timestamp":"2026-07-10 22:47:59","userId":"6a5128cc7cdd59c3b7b13c21"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 22:48:02","url":"/api/owner/menu"}
+{"level":"debug","message":"Token verified","role":"owner","timestamp":"2026-07-10 22:48:02","userId":"6a5128cc7cdd59c3b7b13c21"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 22:48:02","url":"/api/owner/items-data"}
+{"level":"debug","message":"Token verified","role":"owner","timestamp":"2026-07-10 22:48:02","userId":"6a5128cc7cdd59c3b7b13c21"}
+{"level":"debug","message":"getItems attempt","timestamp":"2026-07-10 22:48:02","userId":"6a5128cc7cdd59c3b7b13c21"}
+{"count":1,"level":"info","message":"Items fetched","timestamp":"2026-07-10 22:48:02","userId":"6a5128cc7cdd59c3b7b13c21"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 22:48:03","url":"/api/owner/agents"}
+{"level":"debug","message":"Token verified","role":"owner","timestamp":"2026-07-10 22:48:03","userId":"6a5128cc7cdd59c3b7b13c21"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 22:48:04","url":"/api/owner/agents-data"}
+{"level":"debug","message":"Token verified","role":"owner","timestamp":"2026-07-10 22:48:04","userId":"6a5128cc7cdd59c3b7b13c21"}
+{"level":"debug","message":"getAgents attempt","timestamp":"2026-07-10 22:48:04","userId":"6a5128cc7cdd59c3b7b13c21"}
+{"count":1,"level":"info","message":"Agents fetched","timestamp":"2026-07-10 22:48:04","userId":"6a5128cc7cdd59c3b7b13c21"}
+{"level":"info","message":"mongoDb is connected 127.0.0.1","timestamp":"2026-07-10 22:50:59"}
+{"level":"info","message":"Server running in development mode on port 5000","timestamp":"2026-07-10 22:50:59"}
+{"level":"info","message":"mongoDb is connected 127.0.0.1","timestamp":"2026-07-10 22:51:13"}
+{"level":"info","message":"Server running in development mode on port 5000","timestamp":"2026-07-10 22:51:13"}
+{"level":"info","message":"mongoDb is connected 127.0.0.1","timestamp":"2026-07-10 22:51:42"}
+{"level":"info","message":"Server running in development mode on port 5000","timestamp":"2026-07-10 22:51:42"}
+{"level":"info","message":"mongoDb is connected 127.0.0.1","timestamp":"2026-07-10 22:52:04"}
+{"level":"info","message":"Server running in development mode on port 5000","timestamp":"2026-07-10 22:52:04"}
+{"level":"info","message":"mongoDb is connected 127.0.0.1","timestamp":"2026-07-10 22:52:07"}
+{"level":"info","message":"Server running in development mode on port 5000","timestamp":"2026-07-10 22:52:07"}
+{"level":"info","message":"mongoDb is connected 127.0.0.1","timestamp":"2026-07-10 22:53:26"}
+{"level":"info","message":"Server running in development mode on port 5000","timestamp":"2026-07-10 22:53:26"}
+{"level":"debug","message":"Incoming request","method":"POST","timestamp":"2026-07-10 22:54:05","url":"/api/auth/logout"}
+{"level":"debug","message":"Token verified","role":"owner","timestamp":"2026-07-10 22:54:05","userId":"6a5128cc7cdd59c3b7b13c21"}
+{"level":"info","message":"User logged out","timestamp":"2026-07-10 22:54:05","userId":"6a5128cc7cdd59c3b7b13c21"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 22:54:05","url":"/api/auth/login"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 22:54:06","url":"/api/auth/register"}
+{"level":"debug","message":"Incoming request","method":"POST","timestamp":"2026-07-10 22:54:25","url":"/api/auth/register"}
+{"email":"client@gmail.com","level":"debug","message":"Register attempt","role":"client","timestamp":"2026-07-10 22:54:25"}
+{"error":"user validation failed: office: Cast to ObjectId failed for value \"client1\" (type string) at path \"office\"","level":"error","message":"Register error","stack":"ValidationError: user validation failed: office: Cast to ObjectId failed for value \"client1\" (type string) at path \"office\"\n    at Document.invalidate (D:\\My code\\OfficeBites\\node_modules\\mongoose\\lib\\document.js:3454:32)\n    at model.$set (D:\\My code\\OfficeBites\\node_modules\\mongoose\\lib\\document.js:1530:12)\n    at model.$set (D:\\My code\\OfficeBites\\node_modules\\mongoose\\lib\\document.js:1170:16)\n    at model.Document (D:\\My code\\OfficeBites\\node_modules\\mongoose\\lib\\document.js:181:12)\n    at model.Model (D:\\My code\\OfficeBites\\node_modules\\mongoose\\lib\\model.js:142:12)\n    at new model (D:\\My code\\OfficeBites\\node_modules\\mongoose\\lib\\model.js:4939:15)\n    at model.create (D:\\My code\\OfficeBites\\node_modules\\mongoose\\lib\\model.js:2759:16)\n    at register (D:\\My code\\OfficeBites\\controllers\\authController.js:80:29)\n    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)","timestamp":"2026-07-10 22:54:25"}
+{"level":"debug","message":"Incoming request","method":"POST","timestamp":"2026-07-10 22:54:27","url":"/api/auth/register"}
+{"email":"client@gmail.com","level":"debug","message":"Register attempt","role":"client","timestamp":"2026-07-10 22:54:27"}
+{"error":"user validation failed: office: Cast to ObjectId failed for value \"client1\" (type string) at path \"office\"","level":"error","message":"Register error","stack":"ValidationError: user validation failed: office: Cast to ObjectId failed for value \"client1\" (type string) at path \"office\"\n    at Document.invalidate (D:\\My code\\OfficeBites\\node_modules\\mongoose\\lib\\document.js:3454:32)\n    at model.$set (D:\\My code\\OfficeBites\\node_modules\\mongoose\\lib\\document.js:1530:12)\n    at model.$set (D:\\My code\\OfficeBites\\node_modules\\mongoose\\lib\\document.js:1170:16)\n    at model.Document (D:\\My code\\OfficeBites\\node_modules\\mongoose\\lib\\document.js:181:12)\n    at model.Model (D:\\My code\\OfficeBites\\node_modules\\mongoose\\lib\\model.js:142:12)\n    at new model (D:\\My code\\OfficeBites\\node_modules\\mongoose\\lib\\model.js:4939:15)\n    at model.create (D:\\My code\\OfficeBites\\node_modules\\mongoose\\lib\\model.js:2759:16)\n    at register (D:\\My code\\OfficeBites\\controllers\\authController.js:80:29)\n    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)","timestamp":"2026-07-10 22:54:27"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 22:55:28","url":"/api/auth/login"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 22:55:35","url":"/api/auth/register"}
+{"level":"info","message":"mongoDb is connected 127.0.0.1","timestamp":"2026-07-10 22:57:06"}
+{"level":"info","message":"Server running in development mode on port 5000","timestamp":"2026-07-10 22:57:06"}
+{"level":"info","message":"mongoDb is connected 127.0.0.1","timestamp":"2026-07-10 22:57:54"}
+{"level":"info","message":"Server running in development mode on port 5000","timestamp":"2026-07-10 22:57:54"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 22:57:54","url":"/api/auth/register"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 22:58:00","url":"/api/auth/login"}
+{"level":"debug","message":"Incoming request","method":"POST","timestamp":"2026-07-10 22:58:07","url":"/api/auth/login"}
+{"email":"owner@gmail.com","level":"debug","message":"Login attempt","timestamp":"2026-07-10 22:58:07"}
+{"email":"owner@gmail.com","level":"info","message":"User logged in","role":"owner","timestamp":"2026-07-10 22:58:07","userId":"6a5128cc7cdd59c3b7b13c21"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 22:58:07","url":"/api/owner/profile"}
+{"level":"debug","message":"Token verified","role":"owner","timestamp":"2026-07-10 22:58:07","userId":"6a5128cc7cdd59c3b7b13c21"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 22:58:07","url":"/api/owner/profile-data"}
+{"level":"debug","message":"Token verified","role":"owner","timestamp":"2026-07-10 22:58:07","userId":"6a5128cc7cdd59c3b7b13c21"}
+{"level":"info","message":"getProfile — success","timestamp":"2026-07-10 22:58:07","userId":"6a5128cc7cdd59c3b7b13c21"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 22:58:09","url":"/api/owner/menu"}
+{"level":"debug","message":"Token verified","role":"owner","timestamp":"2026-07-10 22:58:09","userId":"6a5128cc7cdd59c3b7b13c21"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 22:58:09","url":"/api/owner/items-data"}
+{"level":"debug","message":"Token verified","role":"owner","timestamp":"2026-07-10 22:58:09","userId":"6a5128cc7cdd59c3b7b13c21"}
+{"level":"debug","message":"getItems attempt","timestamp":"2026-07-10 22:58:09","userId":"6a5128cc7cdd59c3b7b13c21"}
+{"count":1,"level":"info","message":"Items fetched","timestamp":"2026-07-10 22:58:09","userId":"6a5128cc7cdd59c3b7b13c21"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 22:58:10","url":"/api/owner/offices"}
+{"level":"debug","message":"Token verified","role":"owner","timestamp":"2026-07-10 22:58:10","userId":"6a5128cc7cdd59c3b7b13c21"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 22:58:10","url":"/api/owner/offices-data"}
+{"level":"debug","message":"Token verified","role":"owner","timestamp":"2026-07-10 22:58:10","userId":"6a5128cc7cdd59c3b7b13c21"}
+{"level":"debug","message":"getOffices attempt","timestamp":"2026-07-10 22:58:10","userId":"6a5128cc7cdd59c3b7b13c21"}
+{"count":0,"level":"info","message":"Offices fetched","timestamp":"2026-07-10 22:58:10","userId":"6a5128cc7cdd59c3b7b13c21"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 22:58:11","url":"/api/owner/agents"}
+{"level":"debug","message":"Token verified","role":"owner","timestamp":"2026-07-10 22:58:11","userId":"6a5128cc7cdd59c3b7b13c21"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 22:58:11","url":"/api/owner/agents-data"}
+{"level":"debug","message":"Token verified","role":"owner","timestamp":"2026-07-10 22:58:11","userId":"6a5128cc7cdd59c3b7b13c21"}
+{"level":"debug","message":"getAgents attempt","timestamp":"2026-07-10 22:58:11","userId":"6a5128cc7cdd59c3b7b13c21"}
+{"count":1,"level":"info","message":"Agents fetched","timestamp":"2026-07-10 22:58:11","userId":"6a5128cc7cdd59c3b7b13c21"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 22:58:12","url":"/api/owner/offices"}
+{"level":"debug","message":"Token verified","role":"owner","timestamp":"2026-07-10 22:58:12","userId":"6a5128cc7cdd59c3b7b13c21"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 22:58:12","url":"/api/owner/offices-data"}
+{"level":"debug","message":"Token verified","role":"owner","timestamp":"2026-07-10 22:58:12","userId":"6a5128cc7cdd59c3b7b13c21"}
+{"level":"debug","message":"getOffices attempt","timestamp":"2026-07-10 22:58:12","userId":"6a5128cc7cdd59c3b7b13c21"}
+{"count":0,"level":"info","message":"Offices fetched","timestamp":"2026-07-10 22:58:12","userId":"6a5128cc7cdd59c3b7b13c21"}
+{"level":"debug","message":"Incoming request","method":"POST","timestamp":"2026-07-10 22:58:34","url":"/api/owner/offices"}
+{"level":"debug","message":"Token verified","role":"owner","timestamp":"2026-07-10 22:58:34","userId":"6a5128cc7cdd59c3b7b13c21"}
+{"level":"debug","message":"addOffice attempt","timestamp":"2026-07-10 22:58:34","userId":"6a5128cc7cdd59c3b7b13c21"}
+{"level":"info","message":"Office added","officeId":"6a512bc26d434d56443cb163","timestamp":"2026-07-10 22:58:34","userId":"6a5128cc7cdd59c3b7b13c21"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 22:58:34","url":"/api/owner/offices-data"}
+{"level":"debug","message":"Token verified","role":"owner","timestamp":"2026-07-10 22:58:34","userId":"6a5128cc7cdd59c3b7b13c21"}
+{"level":"debug","message":"getOffices attempt","timestamp":"2026-07-10 22:58:34","userId":"6a5128cc7cdd59c3b7b13c21"}
+{"count":1,"level":"info","message":"Offices fetched","timestamp":"2026-07-10 22:58:34","userId":"6a5128cc7cdd59c3b7b13c21"}
+{"level":"info","message":"mongoDb is connected 127.0.0.1","timestamp":"2026-07-10 23:02:39"}
+{"level":"info","message":"Server running in development mode on port 5000","timestamp":"2026-07-10 23:02:39"}
+{"level":"info","message":"mongoDb is connected 127.0.0.1","timestamp":"2026-07-10 23:03:31"}
+{"level":"info","message":"Server running in development mode on port 5000","timestamp":"2026-07-10 23:03:31"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 23:03:32","url":"/api/owner/offices"}
+{"level":"debug","message":"Token verified","role":"owner","timestamp":"2026-07-10 23:03:32","userId":"6a5128cc7cdd59c3b7b13c21"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 23:03:32","url":"/api/owner/offices-data"}
+{"level":"debug","message":"Token verified","role":"owner","timestamp":"2026-07-10 23:03:32","userId":"6a5128cc7cdd59c3b7b13c21"}
+{"level":"debug","message":"getOffices attempt","timestamp":"2026-07-10 23:03:32","userId":"6a5128cc7cdd59c3b7b13c21"}
+{"count":1,"level":"info","message":"Offices fetched","timestamp":"2026-07-10 23:03:32","userId":"6a5128cc7cdd59c3b7b13c21"}
+{"level":"debug","message":"Incoming request","method":"DELETE","timestamp":"2026-07-10 23:03:40","url":"/api/owner/offices/6a512bc26d434d56443cb163"}
+{"level":"debug","message":"Token verified","role":"owner","timestamp":"2026-07-10 23:03:40","userId":"6a5128cc7cdd59c3b7b13c21"}
+{"level":"debug","message":"removeOffice attempt","officeId":"6a512bc26d434d56443cb163","timestamp":"2026-07-10 23:03:40","userId":"6a5128cc7cdd59c3b7b13c21"}
+{"level":"info","message":"Office removed","officeId":"6a512bc26d434d56443cb163","timestamp":"2026-07-10 23:03:40","userId":"6a5128cc7cdd59c3b7b13c21"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 23:03:40","url":"/api/owner/offices-data"}
+{"level":"debug","message":"Token verified","role":"owner","timestamp":"2026-07-10 23:03:40","userId":"6a5128cc7cdd59c3b7b13c21"}
+{"level":"debug","message":"getOffices attempt","timestamp":"2026-07-10 23:03:40","userId":"6a5128cc7cdd59c3b7b13c21"}
+{"count":0,"level":"info","message":"Offices fetched","timestamp":"2026-07-10 23:03:40","userId":"6a5128cc7cdd59c3b7b13c21"}
+{"level":"debug","message":"Incoming request","method":"POST","timestamp":"2026-07-10 23:04:56","url":"/api/owner/offices"}
+{"level":"debug","message":"Token verified","role":"owner","timestamp":"2026-07-10 23:04:56","userId":"6a5128cc7cdd59c3b7b13c21"}
+{"level":"debug","message":"addOffice attempt","timestamp":"2026-07-10 23:04:56","userId":"6a5128cc7cdd59c3b7b13c21"}
+{"clientId":"6a512d40ae6a24727184d70c","level":"info","message":"Office added","officeId":"6a512d40ae6a24727184d70b","timestamp":"2026-07-10 23:04:56","userId":"6a5128cc7cdd59c3b7b13c21"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 23:04:56","url":"/api/owner/offices-data"}
+{"level":"debug","message":"Token verified","role":"owner","timestamp":"2026-07-10 23:04:56","userId":"6a5128cc7cdd59c3b7b13c21"}
+{"level":"debug","message":"getOffices attempt","timestamp":"2026-07-10 23:04:56","userId":"6a5128cc7cdd59c3b7b13c21"}
+{"count":1,"level":"info","message":"Offices fetched","timestamp":"2026-07-10 23:04:56","userId":"6a5128cc7cdd59c3b7b13c21"}
+{"level":"debug","message":"Incoming request","method":"POST","timestamp":"2026-07-10 23:04:57","url":"/api/auth/logout"}
+{"level":"debug","message":"Token verified","role":"owner","timestamp":"2026-07-10 23:04:57","userId":"6a5128cc7cdd59c3b7b13c21"}
+{"level":"info","message":"User logged out","timestamp":"2026-07-10 23:04:57","userId":"6a5128cc7cdd59c3b7b13c21"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 23:04:57","url":"/api/auth/login"}
+{"level":"debug","message":"Incoming request","method":"POST","timestamp":"2026-07-10 23:05:07","url":"/api/auth/login"}
+{"identifier":"1231231231","level":"debug","message":"Login attempt","timestamp":"2026-07-10 23:05:07"}
+{"error":"email is not defined","level":"error","message":"Login error","stack":"ReferenceError: email is not defined\n    at login (D:\\My code\\OfficeBites\\controllers\\authController.js:134:59)","timestamp":"2026-07-10 23:05:07"}
+{"level":"info","message":"mongoDb is connected 127.0.0.1","timestamp":"2026-07-10 23:05:41"}
+{"level":"info","message":"Server running in development mode on port 5000","timestamp":"2026-07-10 23:05:41"}
+{"level":"info","message":"mongoDb is connected 127.0.0.1","timestamp":"2026-07-10 23:05:45"}
+{"level":"info","message":"Server running in development mode on port 5000","timestamp":"2026-07-10 23:05:45"}
+{"level":"info","message":"mongoDb is connected 127.0.0.1","timestamp":"2026-07-10 23:06:58"}
+{"level":"info","message":"Server running in development mode on port 5000","timestamp":"2026-07-10 23:06:58"}
+{"level":"info","message":"mongoDb is connected 127.0.0.1","timestamp":"2026-07-10 23:07:02"}
+{"level":"info","message":"Server running in development mode on port 5000","timestamp":"2026-07-10 23:07:02"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 23:07:02","url":"/api/auth/login"}
+{"level":"debug","message":"Incoming request","method":"POST","timestamp":"2026-07-10 23:07:08","url":"/api/auth/login"}
+{"identifier":"1231231231","level":"debug","message":"Login attempt","timestamp":"2026-07-10 23:07:08"}
+{"identifier":"1231231231","level":"info","message":"User logged in","role":"client","timestamp":"2026-07-10 23:07:08","userId":"6a512d40ae6a24727184d70c"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 23:07:08","url":"/api/client/profile"}
+{"level":"debug","message":"Token verified","role":"client","timestamp":"2026-07-10 23:07:08","userId":"6a512d40ae6a24727184d70c"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 23:07:08","url":"/api/client/profile-data"}
+{"level":"debug","message":"Token verified","role":"client","timestamp":"2026-07-10 23:07:08","userId":"6a512d40ae6a24727184d70c"}
+{"level":"debug","message":"getProfile attempt","timestamp":"2026-07-10 23:07:08","userId":"6a512d40ae6a24727184d70c"}
+{"level":"info","message":"getProfile — success","timestamp":"2026-07-10 23:07:08","userId":"6a512d40ae6a24727184d70c"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 23:11:51","url":"/api/owner/profile"}
+{"level":"debug","message":"Token verified","role":"client","timestamp":"2026-07-10 23:11:51","userId":"6a512d40ae6a24727184d70c"}
+{"level":"warn","message":"Unauthorized role","role":"client","timestamp":"2026-07-10 23:11:51","userId":"6a512d40ae6a24727184d70c"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 23:14:26","url":"/api/client/profile"}
+{"level":"debug","message":"Token verified","role":"client","timestamp":"2026-07-10 23:14:26","userId":"6a512d40ae6a24727184d70c"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 23:14:26","url":"/api/client/profile-data"}
+{"level":"debug","message":"Token verified","role":"client","timestamp":"2026-07-10 23:14:26","userId":"6a512d40ae6a24727184d70c"}
+{"level":"debug","message":"getProfile attempt","timestamp":"2026-07-10 23:14:26","userId":"6a512d40ae6a24727184d70c"}
+{"level":"info","message":"getProfile — success","timestamp":"2026-07-10 23:14:26","userId":"6a512d40ae6a24727184d70c"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 23:14:29","url":"/api/client/profile"}
+{"level":"debug","message":"Token verified","role":"client","timestamp":"2026-07-10 23:14:29","userId":"6a512d40ae6a24727184d70c"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 23:14:29","url":"/api/client/profile-data"}
+{"level":"debug","message":"Token verified","role":"client","timestamp":"2026-07-10 23:14:29","userId":"6a512d40ae6a24727184d70c"}
+{"level":"debug","message":"getProfile attempt","timestamp":"2026-07-10 23:14:29","userId":"6a512d40ae6a24727184d70c"}
+{"level":"info","message":"getProfile — success","timestamp":"2026-07-10 23:14:29","userId":"6a512d40ae6a24727184d70c"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 23:14:30","url":"/api/client/menu"}
+{"level":"debug","message":"Token verified","role":"client","timestamp":"2026-07-10 23:14:30","userId":"6a512d40ae6a24727184d70c"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 23:14:30","url":"/api/client/menu-data"}
+{"level":"debug","message":"Token verified","role":"client","timestamp":"2026-07-10 23:14:30","userId":"6a512d40ae6a24727184d70c"}
+{"level":"debug","message":"viewMenu attempt","timestamp":"2026-07-10 23:14:30","userId":"6a512d40ae6a24727184d70c"}
+{"count":1,"level":"info","message":"Menu fetched","timestamp":"2026-07-10 23:14:30","userId":"6a512d40ae6a24727184d70c"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 23:14:31","url":"/api/client/profile"}
+{"level":"debug","message":"Token verified","role":"client","timestamp":"2026-07-10 23:14:31","userId":"6a512d40ae6a24727184d70c"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 23:14:31","url":"/api/client/profile-data"}
+{"level":"debug","message":"Token verified","role":"client","timestamp":"2026-07-10 23:14:31","userId":"6a512d40ae6a24727184d70c"}
+{"level":"debug","message":"getProfile attempt","timestamp":"2026-07-10 23:14:31","userId":"6a512d40ae6a24727184d70c"}
+{"level":"info","message":"getProfile — success","timestamp":"2026-07-10 23:14:31","userId":"6a512d40ae6a24727184d70c"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 23:14:32","url":"/api/client/menu"}
+{"level":"debug","message":"Token verified","role":"client","timestamp":"2026-07-10 23:14:32","userId":"6a512d40ae6a24727184d70c"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 23:14:32","url":"/api/client/menu-data"}
+{"level":"debug","message":"Token verified","role":"client","timestamp":"2026-07-10 23:14:32","userId":"6a512d40ae6a24727184d70c"}
+{"level":"debug","message":"viewMenu attempt","timestamp":"2026-07-10 23:14:32","userId":"6a512d40ae6a24727184d70c"}
+{"count":1,"level":"info","message":"Menu fetched","timestamp":"2026-07-10 23:14:32","userId":"6a512d40ae6a24727184d70c"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 23:14:32","url":"/api/client/orders"}
+{"level":"debug","message":"Token verified","role":"client","timestamp":"2026-07-10 23:14:32","userId":"6a512d40ae6a24727184d70c"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 23:14:36","url":"/api/client/menu"}
+{"level":"debug","message":"Token verified","role":"client","timestamp":"2026-07-10 23:14:36","userId":"6a512d40ae6a24727184d70c"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 23:14:36","url":"/api/client/menu-data"}
+{"level":"debug","message":"Token verified","role":"client","timestamp":"2026-07-10 23:14:36","userId":"6a512d40ae6a24727184d70c"}
+{"level":"debug","message":"viewMenu attempt","timestamp":"2026-07-10 23:14:36","userId":"6a512d40ae6a24727184d70c"}
+{"count":1,"level":"info","message":"Menu fetched","timestamp":"2026-07-10 23:14:36","userId":"6a512d40ae6a24727184d70c"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 23:14:41","url":"/api/client/orders"}
+{"level":"debug","message":"Token verified","role":"client","timestamp":"2026-07-10 23:14:41","userId":"6a512d40ae6a24727184d70c"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 23:14:44","url":"/api/client/menu"}
+{"level":"debug","message":"Token verified","role":"client","timestamp":"2026-07-10 23:14:44","userId":"6a512d40ae6a24727184d70c"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 23:14:44","url":"/api/client/menu-data"}
+{"level":"debug","message":"Token verified","role":"client","timestamp":"2026-07-10 23:14:44","userId":"6a512d40ae6a24727184d70c"}
+{"level":"debug","message":"viewMenu attempt","timestamp":"2026-07-10 23:14:44","userId":"6a512d40ae6a24727184d70c"}
+{"count":1,"level":"info","message":"Menu fetched","timestamp":"2026-07-10 23:14:44","userId":"6a512d40ae6a24727184d70c"}
+{"level":"info","message":"mongoDb is connected 127.0.0.1","timestamp":"2026-07-10 23:15:18"}
+{"level":"info","message":"Server running in development mode on port 5000","timestamp":"2026-07-10 23:15:18"}
+{"level":"info","message":"mongoDb is connected 127.0.0.1","timestamp":"2026-07-10 23:16:02"}
+{"level":"info","message":"Server running in development mode on port 5000","timestamp":"2026-07-10 23:16:02"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 23:16:02","url":"/api/client/orders"}
+{"level":"debug","message":"Token verified","role":"client","timestamp":"2026-07-10 23:16:02","userId":"6a512d40ae6a24727184d70c"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 23:16:02","url":"/api/client/orders-data"}
+{"level":"debug","message":"Token verified","role":"client","timestamp":"2026-07-10 23:16:02","userId":"6a512d40ae6a24727184d70c"}
+{"level":"debug","message":"viewOrders attempt","timestamp":"2026-07-10 23:16:02","userId":"6a512d40ae6a24727184d70c"}
+{"count":0,"level":"info","message":"Orders fetched","timestamp":"2026-07-10 23:16:02","userId":"6a512d40ae6a24727184d70c"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 23:16:04","url":"/api/client/profile"}
+{"level":"debug","message":"Token verified","role":"client","timestamp":"2026-07-10 23:16:04","userId":"6a512d40ae6a24727184d70c"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 23:16:04","url":"/api/client/profile-data"}
+{"level":"debug","message":"Token verified","role":"client","timestamp":"2026-07-10 23:16:04","userId":"6a512d40ae6a24727184d70c"}
+{"level":"debug","message":"getProfile attempt","timestamp":"2026-07-10 23:16:04","userId":"6a512d40ae6a24727184d70c"}
+{"level":"info","message":"getProfile — success","timestamp":"2026-07-10 23:16:04","userId":"6a512d40ae6a24727184d70c"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 23:16:08","url":"/api/client/profile"}
+{"level":"debug","message":"Token verified","role":"client","timestamp":"2026-07-10 23:16:08","userId":"6a512d40ae6a24727184d70c"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 23:16:08","url":"/api/client/profile-data"}
+{"level":"debug","message":"Token verified","role":"client","timestamp":"2026-07-10 23:16:08","userId":"6a512d40ae6a24727184d70c"}
+{"level":"debug","message":"getProfile attempt","timestamp":"2026-07-10 23:16:08","userId":"6a512d40ae6a24727184d70c"}
+{"level":"info","message":"getProfile — success","timestamp":"2026-07-10 23:16:08","userId":"6a512d40ae6a24727184d70c"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 23:16:09","url":"/api/client/menu"}
+{"level":"debug","message":"Token verified","role":"client","timestamp":"2026-07-10 23:16:09","userId":"6a512d40ae6a24727184d70c"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 23:16:09","url":"/api/client/menu-data"}
+{"level":"debug","message":"Token verified","role":"client","timestamp":"2026-07-10 23:16:09","userId":"6a512d40ae6a24727184d70c"}
+{"level":"debug","message":"viewMenu attempt","timestamp":"2026-07-10 23:16:09","userId":"6a512d40ae6a24727184d70c"}
+{"count":1,"level":"info","message":"Menu fetched","timestamp":"2026-07-10 23:16:09","userId":"6a512d40ae6a24727184d70c"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 23:16:13","url":"/api/client/profile"}
+{"level":"debug","message":"Token verified","role":"client","timestamp":"2026-07-10 23:16:13","userId":"6a512d40ae6a24727184d70c"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 23:16:13","url":"/api/client/profile-data"}
+{"level":"debug","message":"Token verified","role":"client","timestamp":"2026-07-10 23:16:13","userId":"6a512d40ae6a24727184d70c"}
+{"level":"debug","message":"getProfile attempt","timestamp":"2026-07-10 23:16:13","userId":"6a512d40ae6a24727184d70c"}
+{"level":"info","message":"getProfile — success","timestamp":"2026-07-10 23:16:13","userId":"6a512d40ae6a24727184d70c"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 23:19:14","url":"/api/client/orders"}
+{"level":"debug","message":"Token verified","role":"client","timestamp":"2026-07-10 23:19:14","userId":"6a512d40ae6a24727184d70c"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 23:19:14","url":"/api/client/orders-data"}
+{"level":"debug","message":"Token verified","role":"client","timestamp":"2026-07-10 23:19:14","userId":"6a512d40ae6a24727184d70c"}
+{"level":"debug","message":"viewOrders attempt","timestamp":"2026-07-10 23:19:14","userId":"6a512d40ae6a24727184d70c"}
+{"count":0,"level":"info","message":"Orders fetched","timestamp":"2026-07-10 23:19:14","userId":"6a512d40ae6a24727184d70c"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 23:19:15","url":"/api/client/profile"}
+{"level":"debug","message":"Token verified","role":"client","timestamp":"2026-07-10 23:19:15","userId":"6a512d40ae6a24727184d70c"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 23:19:15","url":"/api/client/profile-data"}
+{"level":"debug","message":"Token verified","role":"client","timestamp":"2026-07-10 23:19:15","userId":"6a512d40ae6a24727184d70c"}
+{"level":"debug","message":"getProfile attempt","timestamp":"2026-07-10 23:19:15","userId":"6a512d40ae6a24727184d70c"}
+{"level":"info","message":"getProfile — success","timestamp":"2026-07-10 23:19:15","userId":"6a512d40ae6a24727184d70c"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 23:19:17","url":"/api/client/menu"}
+{"level":"debug","message":"Token verified","role":"client","timestamp":"2026-07-10 23:19:17","userId":"6a512d40ae6a24727184d70c"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 23:19:17","url":"/api/client/menu-data"}
+{"level":"debug","message":"Token verified","role":"client","timestamp":"2026-07-10 23:19:17","userId":"6a512d40ae6a24727184d70c"}
+{"level":"debug","message":"viewMenu attempt","timestamp":"2026-07-10 23:19:17","userId":"6a512d40ae6a24727184d70c"}
+{"count":1,"level":"info","message":"Menu fetched","timestamp":"2026-07-10 23:19:17","userId":"6a512d40ae6a24727184d70c"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 23:19:18","url":"/api/client/orders"}
+{"level":"debug","message":"Token verified","role":"client","timestamp":"2026-07-10 23:19:18","userId":"6a512d40ae6a24727184d70c"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-10 23:19:18","url":"/api/client/orders-data"}
+{"level":"debug","message":"Token verified","role":"client","timestamp":"2026-07-10 23:19:18","userId":"6a512d40ae6a24727184d70c"}
+{"level":"debug","message":"viewOrders attempt","timestamp":"2026-07-10 23:19:18","userId":"6a512d40ae6a24727184d70c"}
+{"count":0,"level":"info","message":"Orders fetched","timestamp":"2026-07-10 23:19:18","userId":"6a512d40ae6a24727184d70c"}

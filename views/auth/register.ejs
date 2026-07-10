@@ -72,7 +72,8 @@
             color: var(--dark);
         }
 
-        input, select {
+        input,
+        select {
             width: 100%;
             padding: 10px 12px;
             font-size: 15px;
@@ -83,7 +84,8 @@
             transition: border-color 0.2s ease, box-shadow 0.2s ease;
         }
 
-        input:focus, select:focus {
+        input:focus,
+        select:focus {
             outline: none;
             border-color: var(--accent);
             box-shadow: 0 0 0 3px rgba(109, 129, 150, 0.15);
@@ -151,29 +153,9 @@
                 <input type="password" name="password" required>
             </div>
 
-            <div class="form-group">
-                <label>Role</label>
-                <select name="role" id="role" required>
-                    <option value="">Select role</option>
-                    <option value="owner">Owner</option>
-                    <option value="client">Client</option>
-                    <option value="deliveryAgent">Delivery Agent</option>
-                </select>
-            </div>
-
-            <div id="companyWrapper" class="form-group" style="display:none;">
+            <div id="companyWrapper" class="form-group">
                 <label>Company Name</label>
-                <input type="text" name="companyName" id="companyField">
-            </div>
-
-            <div id="phoneWrapper" class="form-group" style="display:none;">
-                <label>Phone</label>
-                <input type="tel" name="phone" id="phoneField">
-            </div>
-
-            <div id="officeWrapper" class="form-group" style="display:none;">
-                <label>Office ID</label>
-                <input type="text" name="office" id="officeField">
+                <input type="text" name="companyName" id="companyField" required>
             </div>
 
             <button type="submit">Register</button>
@@ -183,37 +165,6 @@
     </div>
 
     <script>
-        const roleSelect = document.getElementById("role");
-        const companyWrapper = document.getElementById("companyWrapper");
-        const phoneWrapper = document.getElementById("phoneWrapper");
-        const officeWrapper = document.getElementById("officeWrapper");
-        const companyField = document.getElementById("companyField");
-        const phoneField = document.getElementById("phoneField");
-        const officeField = document.getElementById("officeField");
-
-        function toggleRoleFields() {
-            companyWrapper.style.display = "none";
-            phoneWrapper.style.display = "none";
-            officeWrapper.style.display = "none";
-
-            companyField.removeAttribute("required");
-            phoneField.removeAttribute("required");
-            officeField.removeAttribute("required");
-
-            if (roleSelect.value === "owner") {
-                companyWrapper.style.display = "block";
-                companyField.setAttribute("required", "");
-            } else if (roleSelect.value === "deliveryAgent") {
-                phoneWrapper.style.display = "block";
-                phoneField.setAttribute("required", "");
-            } else if (roleSelect.value === "client") {
-                officeWrapper.style.display = "block";
-                officeField.setAttribute("required", "");
-            }
-        }
-
-        roleSelect.addEventListener("change", toggleRoleFields);
-
         const form = document.getElementById("registerForm");
         const messageBox = document.getElementById("message");
 
@@ -240,9 +191,9 @@
 
                 // redirect based on role
                 if (data.user.role === "owner") {
-                    window.location.href = "/api/owner/profile";  
+                    window.location.href = "/api/owner/profile";
                 } else if (data.user.role === "client") {
-                    window.location.href = "/api/client/orders";
+                    window.location.href = "/api/client/profile";
                 } else {
                     window.location.href = "/api/agent/dashboard";
                 }

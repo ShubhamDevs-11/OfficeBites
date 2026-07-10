@@ -1,16 +1,76 @@
 <nav class="top-nav">
     <div class="nav-brand">OfficeBites</div>
-    <div class="nav-links">
-        <a href="/api/owner/profile">Profile</a>
-        <a href="/api/owner/menu">Menu</a>
-        <a href="/api/owner/offices">Offices</a>
-        <a href="/api/owner/agents">Agents</a>
-        <a href="/api/owner/bills">Bills</a>
-    </div>
+    <div id="portalLabel" class="portal-label">Owner Portal</div>
+    <div class="nav-links" id="navLinks"></div>
     <button type="button" onclick="logout()">Logout</button>
 </nav>
 
+<style>
+    .top-nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        padding: 14px 24px;
+        background: #ffffff;
+        border-bottom: 1px solid #dcdcdc;
+    }
+
+    .nav-brand {
+        font-size: 20px;
+        font-weight: 700;
+        color: #4A4A4A;
+    }
+
+    .portal-label {
+        font-size: 14px;
+        color: #6D8196;
+        font-weight: 600;
+        margin-left: auto;
+        margin-right: 12px;
+    }
+
+    .nav-links {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+    }
+
+    .nav-links a {
+        text-decoration: none;
+        color: #4A4A4A;
+        font-weight: 500;
+    }
+
+    .nav-links a:hover {
+        color: #6D8196;
+    }
+</style>
+
 <script>
+    const path = window.location.pathname;
+    const navLinks = document.getElementById("navLinks");
+    const portalLabel = document.getElementById("portalLabel");
+
+    if (path.startsWith("/api/client")) {
+        portalLabel.textContent = "Client Portal";
+        navLinks.innerHTML = `
+            <a href="/api/client/profile">Profile</a>
+            <a href="/api/client/menu">Menu</a>
+            <a href="/api/client/orders">Orders</a>
+            <a href="/api/client/bills">Bills</a>
+        `;
+    } else {
+        portalLabel.textContent = "Owner Portal";
+        navLinks.innerHTML = `
+            <a href="/api/owner/profile">Profile</a>
+            <a href="/api/owner/menu">Menu</a>
+            <a href="/api/owner/offices">Offices</a>
+            <a href="/api/owner/agents">Agents</a>
+            <a href="/api/owner/bills">Bills</a>
+        `;
+    }
+
     async function logout() {
         try {
             await fetch("/api/auth/logout", {

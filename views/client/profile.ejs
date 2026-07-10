@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head') %>
+</head>
+<body>
+
+    <%- include('../partials/nav') %>
+
+    <h2>My Profile</h2>
+
+    <div id="message"></div>
+
+    <div id="profileInfo">
+        <p>Loading...</p>
+    </div>
+
+    <h3>Change Password</h3>
+    <form id="passwordForm">
+        <div>
+            <label>Old Password</label>
+            <input type="password" name="oldPassword" required>
+        </div>
+        <div>
+            <label>New Password</label>
+            <input type="password" name="newPassword" required>
+        </div>
+        <button type="submit">Change Password</button>
+    </form>
+
+    <script>
+        const messageBox = document.getElementById("message");
+        const profileInfo = document.getElementById("profileInfo");
+
+        async function loadProfile() {
+            try {
+                const res = await fetch("/api/client/profile-data", {
+                    credentials: "include",
+                });
+                const data = await res.json();
+
+                if (!res.ok) {
+                    profileInfo.textContent = data.message;
+                    return;
+                }
+
+                const user = data.user;
+                profileInfo.innerHTML = `
+                    <p><strong>Username:</strong> ${user.userName}</p>
+                    <p><strong>Email:</strong> ${user.email}</p>
+                    <p><strong>Office:</strong> ${user.office ? user.office.officeName : "Not assigned"}</p>
+                `;
+
+            } catch (error) {
+                profileInfo.textContent = "Failed to load profile.";
+            }
+        }
+
+        loadProfile();
+
+        document.getElementById("passwordForm").addEventListener("submit", async (e) => {
+            e.preventDefault();
+            const formData = new FormData(e.target);
+            const body = Object.fromEntries(formData.entries());
+
+            try {
+                const res = await fetch("/api/client/profile/password", {
+                    method: "PATCH",
+                    headers: { "Content-Type": "application/json" },
+                    credentials: "include",
+                    body: JSON.stringify(body),
+                });
+                const data = await res.json();
+
+                messageBox.textContent = data.message;
+                if (res.ok) e.target.reset();
+
+            } catch (error) {
+                messageBox.textContent = "Failed to change password.";
+            }
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head') %>
+    <style>
+        :root {
+            --dark: #4A4A4A;
+            --light-gray: #CBCBCB;
+            --cream: #FFFFE3;
+            --accent: #6D8196;
+            --accent-hover: #556678;
+            --card-bg: #FFFFFF;
+            --success: #2E7D32;
+            --warning: #C98A1F;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--cream);
+            color: var(--dark);
+            min-height: 100vh;
+            padding: 0 0 40px 0;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        h2 {
+            font-size: 26px;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        #message {
+            margin-bottom: 20px;
+            padding: 12px;
+            background: #FFFFFF;
+            border: 1px solid var(--light-gray);
+            border-left: 4px solid var(--accent);
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        #message:empty {
+            display: none;
+        }
+
+        .bill-list {
+            display: grid;
+            gap: 14px;
+        }
+
+        .bill-card {
+            background: var(--card-bg);
+            border: 1px solid var(--light-gray);
+            border-radius: 6px;
+            padding: 18px;
+            box-shadow: 0 2px 6px rgba(74, 74, 74, 0.03);
+        }
+
+        .bill-card p {
+            margin-bottom: 6px;
+            font-size: 14px;
+        }
+
+        .bill-card strong {
+            color: var(--dark);
+        }
+
+        .status {
+            display: inline-block;
+            margin-top: 4px;
+            padding: 4px 8px;
+            border-radius: 999px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .status-paid {
+            background: rgba(46, 125, 50, 0.12);
+            color: var(--success);
+        }
+
+        .status-pending {
+            background: rgba(201, 138, 31, 0.12);
+            color: var(--warning);
+        }
+    </style>
+</head>
+<body>
+
+    <%- include('../partials/nav') %>
+
+    <div class="container">
+        <h2>My Bills</h2>
+        <div id="message"></div>
+        <div id="billList" class="bill-list">
+            <p>Loading...</p>
+        </div>
+    </div>
+
+    <script>
+        const messageBox = document.getElementById("message");
+        const billList = document.getElementById("billList");
+
+        async function loadBills() {
+            try {
+                const res = await fetch("/api/client/bills-data", {
+                    credentials: "include",
+                });
+                const data = await res.json();
+
+                if (!res.ok) {
+                    billList.innerHTML = `<p>${data.message}</p>`;
+                    return;
+                }
+
+                if (!data.bills || data.bills.length === 0) {
+                    billList.innerHTML = "<p>No bills available yet.</p>";
+                    return;
+                }
+
+                billList.innerHTML = data.bills.map(bill => {
+                    const statusClass = bill.status === "paid" ? "status-paid" : "status-pending";
+                    return `
+                        <div class="bill-card">
+                            <p><strong>Month:</strong> ${bill.month}/${bill.year}</p>
+                            <p><strong>Amount:</strong> ₹${bill.amount}</p>
+                            <p><strong>Status:</strong> <span class="status ${statusClass}">${bill.status}</span></p>
+                            ${bill.paidAt ? `<p><strong>Paid On:</strong> ${new Date(bill.paidAt).toLocaleDateString()}</p>` : ""}
+                        </div>
+                    `;
+                }).join("");
+
+            } catch (error) {
+                billList.innerHTML = "<p>Failed to load bills.</p>";
+            }
+        }
+
+        loadBills();
+    </script>
+
+</body>
+</html>

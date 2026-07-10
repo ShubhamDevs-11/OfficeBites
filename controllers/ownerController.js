@@ -263,7 +263,7 @@ const getOffices = async (req, res) => {
 // ─────────────────────────────────────────
 const addOffice = async (req, res) => {
   try {
-    const {officeName, address, contactNumber} = req.body;
+    const { officeName, address, contactNumber, clientPassword } = req.body;
 
     logger.debug("addOffice attempt", {userId: req.user.userId});
 
@@ -274,11 +274,28 @@ const addOffice = async (req, res) => {
       owner: req.user.userId,
     });
 
+    const initialPassword = clientPassword || contactNumber;
+    const existingClient = await User.findOne({ phone: contactNumber });
+    if (existingClient) {
+      logger.warn("addOffice — client already exists for this phone", { phone: contactNumber });
+      return res.status(409).json({ message: "A client account already exists for this contact number" });
+    }
+
+    const clientUser = await User.create({
+      userName: officeName || "Client",
+      email: undefined,
+      phone: contactNumber,
+      password: initialPassword,
+      role: "client",
+      office: office._id,
+    });
+
     logger.info("Office added", {
       officeId: office._id,
       userId: req.user.userId,
+      clientId: clientUser._id,
     });
-    return res.status(201).json({message: "Office added successfully", office});
+    return res.status(201).json({ message: "Office added successfully", office, client: { phone: clientUser.phone } });
   } catch (error) {
     logger.error("addOffice error", {error: error.message, stack: error.stack});
     return res.status(500).json({message: "Internal server error"});

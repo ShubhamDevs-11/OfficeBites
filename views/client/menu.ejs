@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head') %>
+</head>
+<body>
+
+    <%- include('../partials/nav') %>
+
+    <h2>Available Menu</h2>
+
+    <div id="message"></div>
+
+    <div id="itemList">
+        <p>Loading...</p>
+    </div>
+
+    <script>
+        const messageBox = document.getElementById("message");
+        const itemList = document.getElementById("itemList");
+
+        async function loadItems() {
+            try {
+                const res = await fetch("/api/client/menu-data", {
+                    credentials: "include",
+                });
+                const data = await res.json();
+
+                if (!res.ok) {
+                    itemList.textContent = data.message;
+                    return;
+                }
+
+                if (data.items.length === 0) {
+                    itemList.innerHTML = "<p>No items available right now.</p>";
+                    return;
+                }
+
+                itemList.innerHTML = data.items.map(item => `
+                    <div style="border:1px solid #ccc; padding:10px; margin-bottom:10px;">
+                        <img src="${item.itemPhoto}" width="80">
+                        <p><strong>${item.itemName}</strong> - ₹${item.itemPrice}</p>
+                    </div>
+                `).join("");
+
+            } catch (error) {
+                itemList.textContent = "Failed to load menu.";
+            }
+        }
+
+        loadItems();
+    </script>
+
+</body>
+</html>

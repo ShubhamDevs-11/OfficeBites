@@ -10,8 +10,9 @@ const userSchema = new mongoose.Schema(
         },
         email: {
             type: String,
-            required: true,
+            required: false,
             unique: true,
+            sparse: true,
             lowercase: true,
             trim: true,
             match: [/^[^\s@]+@[^\s@]+\.[^\s@]+$/, "Email must be proper"],
@@ -34,10 +35,12 @@ const userSchema = new mongoose.Schema(
             ref: "office",
             default: null,
         },
-        // deliveryAgent only
         phone: {
             type: String,
             default: null,
+            unique: true,
+            sparse: true,
+            trim: true,
         },
 
         // shared

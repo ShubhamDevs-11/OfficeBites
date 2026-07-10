@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head') %>
+</head>
+<body>
+
+    <%- include('../partials/nav') %>
+
+    <h2>Orders Delivered to My Office</h2>
+
+    <div id="message"></div>
+
+    <div id="orderList">
+        <p>Loading...</p>
+    </div>
+
+    <script>
+        const messageBox = document.getElementById("message");
+        const orderList = document.getElementById("orderList");
+
+        async function loadOrders() {
+            try {
+                const res = await fetch("/api/client/orders-data", {
+                    credentials: "include",
+                });
+                const data = await res.json();
+
+                if (!res.ok) {
+                    orderList.textContent = data.message;
+                    return;
+                }
+
+                if (data.orders.length === 0) {
+                    orderList.innerHTML = "<p>No orders delivered yet.</p>";
+                    return;
+                }
+
+                orderList.innerHTML = data.orders.map(order => `
+                    <div style="border:1px solid #ccc; padding:10px; margin-bottom:10px;">
+                        <p><strong>Delivered on:</strong> ${new Date(order.deliveredAt).toLocaleString()}</p>
+                        <p><strong>Delivery Agent:</strong> ${order.deliveryAgent ? order.deliveryAgent.userName : "Unknown"}</p>
+                        <ul>
+                            ${order.items.map(item => `
+                                <li>${item.itemName} x ${item.quantity} - ₹${item.price}</li>
+                            `).join("")}
+                        </ul>
+                        <p><strong>Total:</strong> ₹${order.totalAmount}</p>
+                    </div>
+                `).join("");
+
+            } catch (error) {
+                orderList.textContent = "Failed to load orders.";
+            }
+        }
+
+        loadOrders();
+    </script>
+
+</body>
+</html>

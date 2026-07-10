@@ -34,14 +34,14 @@ const renderLogin = (res, status, error, success, email = "") => {
 // ─────────────────────────────────────────
 const register = async (req, res) => {
   try {
-    const { userName, email, password, role, companyName, phone, office } = req.body;
+    const { userName, email, password, companyName, role } = req.body;
+    const ownerRole = "owner";
 
-    logger.debug("Register attempt", { email, role });
+    logger.debug("Register attempt", { email, role: ownerRole });
 
-    // validate role
-    if (!["owner", "client", "deliveryAgent"].includes(role)) {
-      logger.warn("Register failed — invalid role", { role });
-      return res.status(400).json({ message: "Invalid role" });
+    if (role && role !== ownerRole) {
+      logger.warn("Register failed — public registration restricted to owners", { requestedRole: role });
+      return res.status(400).json({ message: "Only owner registration is allowed" });
     }
 
     // check duplicate email
@@ -51,42 +51,29 @@ const register = async (req, res) => {
       return res.status(409).json({ message: "Email already registered" });
     }
 
-    // role based field validation
-    if (role === "deliveryAgent" && !phone) {
-      return res.status(400).json({ message: "Phone is required for delivery agents" });
-    }
-    if (role === "owner" && !companyName) {
+    if (!companyName) {
       return res.status(400).json({ message: "Company name is required" });
     }
-    if (role === "client" && !office) {
-      return res.status(400).json({ message: "Office is required for clients" });
-    }
 
-    // create user
+    // create owner user
     const userData = {
       userName,
       email,
       password,
-      role,
+      role: ownerRole,
+      companyName,
     };
-    if (role === "deliveryAgent") {
-      userData.phone = phone;
-    } else if (role === "owner") {
-      userData.companyName = companyName;
-    } else if (role === "client") {
-      userData.office = office;
-    }
-    // create user
+
     const user = await User.create(userData);
 
-    logger.info("User registered", { userId: user._id, email, role });
+    logger.info("User registered", { userId: user._id, email, role: ownerRole });
 
-    const token = generateToken(user._id, role);
+    const token = generateToken(user._id, ownerRole);
     sendCookie(res, token);
 
     return res.status(201).json({
       message: "Registered successfully",
-      user: { id: user._id, userName: user.userName, email: user.email, role },
+      user: { id: user._id, userName: user.userName, email: user.email, role: ownerRole },
     });
   } catch (error) {
     logger.error("Register error", { error: error.message, stack: error.stack });
@@ -99,26 +86,33 @@ const register = async (req, res) => {
 // ─────────────────────────────────────────
 const login = async (req, res) => {
     try {
-        const { email, password } = req.body;
+        const { identifier, password } = req.body;
+        const loginIdentifier = identifier?.trim();
 
-        logger.debug("Login attempt", { email });
+        logger.debug("Login attempt", { identifier: loginIdentifier });
 
-        const user = await User.findOne({ email });
+        if (!loginIdentifier || !password) {
+            return res.status(400).json({ message: "Email/phone and password are required" });
+        }
+
+        const user = await User.findOne({
+            $or: [{ email: loginIdentifier }, { phone: loginIdentifier }],
+        });
         if (!user) {
-            logger.warn("Login failed — user not found", { email });
+            logger.warn("Login failed — user not found", { identifier: loginIdentifier });
             return res.status(404).json({ message: "User not found" });
         }
 
         // check active
         if (!user.isActive) {
-            logger.warn("Login failed — account deactivated", { email });
+            logger.warn("Login failed — account deactivated", { identifier: loginIdentifier });
             return res.status(403).json({ message: "Account is deactivated" });
         }
 
         // check lock
         if (user.lockUntil && user.lockUntil > Date.now()) {
             const minutesLeft = Math.ceil((user.lockUntil - Date.now()) / 1000 / 60);
-            logger.warn("Login failed — account locked", { email, minutesLeft });
+            logger.warn("Login failed — account locked", { identifier: loginIdentifier, minutesLeft });
             return res.status(423).json({
                 message: `Account locked. Try again in ${minutesLeft} minute(s)`,
             });
@@ -132,12 +126,12 @@ const login = async (req, res) => {
             const message = attemptsLeft > 0
                 ? `Wrong password. ${attemptsLeft} attempt(s) left`
                 : "Account locked for 15 minutes";
-            logger.warn("Login failed — wrong password", { email, attemptsLeft });
+            logger.warn("Login failed — wrong password", { identifier: loginIdentifier, attemptsLeft });
             return res.status(401).json({ message });
         }
 
         await user.resetLoginAttempts();
-        logger.info("User logged in", { userId: user._id, email, role: user.role });
+        logger.info("User logged in", { userId: user._id, identifier: loginIdentifier, role: user.role });
 
         const token = generateToken(user._id, user.role);
         sendCookie(res, token);
