@@ -4,14 +4,16 @@
     <%- include('../partials/head') %>
     <style>
         :root {
-            --dark: #4A4A4A;
-            --light-gray: #CBCBCB;
-            --cream: #FFFFE3;
-            --accent: #6D8196;
-            --accent-hover: #556678;
-            --card-bg: #FFFFFF;
-            --success: #2E7D32;
-            --warning: #C98A1F;
+            --brand-dark: #222222;
+            --brand-darker: #1a1a1a;
+            --brand-accent: #89e900;
+            --brand-accent-hover: #9dff10;
+            --panel: #2a2a2a;
+            --border-col: #3a3a3a;
+            --text-light: #f2f2f2;
+            --text-muted: #a8a8a8;
+            --success: #6ee06e;
+            --warning: #ffb84d;
         }
 
         * {
@@ -22,8 +24,8 @@
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background-color: var(--cream);
-            color: var(--dark);
+            background: radial-gradient(circle at top, #2b2b2b 0%, var(--brand-darker) 70%);
+            color: var(--text-light);
             min-height: 100vh;
             padding: 0 0 40px 0;
         }
@@ -36,18 +38,33 @@
 
         h2 {
             font-size: 26px;
-            font-weight: 600;
+            font-weight: 800;
             margin-bottom: 20px;
+            letter-spacing: -0.5px;
+            position: relative;
+            padding-left: 14px;
+        }
+
+        h2::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 4px;
+            bottom: 4px;
+            width: 4px;
+            background: var(--brand-accent);
+            border-radius: 2px;
         }
 
         #message {
             margin-bottom: 20px;
-            padding: 12px;
-            background: #FFFFFF;
-            border: 1px solid var(--light-gray);
-            border-left: 4px solid var(--accent);
-            border-radius: 4px;
+            padding: 12px 14px;
+            background: var(--panel);
+            border: 1px solid var(--border-col);
+            border-left: 4px solid var(--brand-accent);
+            border-radius: 6px;
             font-size: 14px;
+            color: var(--text-light);
         }
 
         #message:empty {
@@ -60,39 +77,47 @@
         }
 
         .bill-card {
-            background: var(--card-bg);
-            border: 1px solid var(--light-gray);
-            border-radius: 6px;
+            background: var(--panel);
+            border: 1px solid var(--border-col);
+            border-radius: 10px;
             padding: 18px;
-            box-shadow: 0 2px 6px rgba(74, 74, 74, 0.03);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+            transition: border-color 0.2s ease, transform 0.15s ease;
+        }
+
+        .bill-card:hover {
+            border-color: rgba(137, 233, 0, 0.35);
+            transform: translateY(-2px);
         }
 
         .bill-card p {
             margin-bottom: 6px;
             font-size: 14px;
+            color: var(--text-light);
         }
 
         .bill-card strong {
-            color: var(--dark);
+            color: var(--text-muted);
         }
 
         .status {
             display: inline-block;
             margin-top: 4px;
-            padding: 4px 8px;
+            padding: 4px 10px;
             border-radius: 999px;
             font-size: 12px;
-            font-weight: 600;
+            font-weight: 700;
             text-transform: uppercase;
+            letter-spacing: 0.3px;
         }
 
         .status-paid {
-            background: rgba(46, 125, 50, 0.12);
+            background: rgba(110, 224, 110, 0.14);
             color: var(--success);
         }
 
         .status-pending {
-            background: rgba(201, 138, 31, 0.12);
+            background: rgba(255, 184, 77, 0.14);
             color: var(--warning);
         }
     </style>

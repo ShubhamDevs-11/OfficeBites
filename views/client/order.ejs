@@ -4,12 +4,14 @@
     <%- include('../partials/head') %>
     <style>
         :root {
-            --dark: #4A4A4A;
-            --light-gray: #CBCBCB;
-            --cream: #FFFFE3;
-            --accent: #6D8196;
-            --accent-hover: #556678;
-            --card-bg: #FFFFFF;
+            --brand-dark: #222222;
+            --brand-darker: #1a1a1a;
+            --brand-accent: #89e900;
+            --brand-accent-hover: #9dff10;
+            --panel: #2a2a2a;
+            --border-col: #3a3a3a;
+            --text-light: #f2f2f2;
+            --text-muted: #a8a8a8;
         }
 
         * {
@@ -20,8 +22,8 @@
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background-color: var(--cream);
-            color: var(--dark);
+            background: radial-gradient(circle at top, #2b2b2b 0%, var(--brand-darker) 70%);
+            color: var(--text-light);
             min-height: 100vh;
             padding: 0 0 40px 0;
         }
@@ -34,20 +36,34 @@
 
         h2 {
             font-size: 26px;
-            font-weight: 600;
+            font-weight: 800;
             margin-bottom: 24px;
             letter-spacing: -0.5px;
+            position: relative;
+            padding-left: 14px;
+        }
+
+        h2::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 4px;
+            bottom: 4px;
+            width: 4px;
+            background: var(--brand-accent);
+            border-radius: 2px;
         }
 
         #message {
             margin-bottom: 24px;
-            padding: 12px;
+            padding: 12px 14px;
             font-size: 14px;
             font-weight: 500;
-            background-color: #FFFFFF;
-            border: 1px solid var(--light-gray);
-            border-left: 4px solid var(--accent);
-            border-radius: 4px;
+            background-color: var(--panel);
+            border: 1px solid var(--border-col);
+            border-left: 4px solid var(--brand-accent);
+            border-radius: 6px;
+            color: var(--text-light);
         }
         #message:empty {
             display: none;
@@ -61,19 +77,25 @@
         }
 
         .order-card {
-            background: var(--card-bg) !important;
-            border: 1px solid var(--light-gray) !important;
-            border-radius: 6px !important;
+            background: var(--panel) !important;
+            border: 1px solid var(--border-col) !important;
+            border-radius: 10px !important;
             padding: 24px !important;
             margin-bottom: 0 !important;
-            box-shadow: 0 2px 6px rgba(74, 74, 74, 0.02) !important;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3) !important;
+            transition: border-color 0.2s ease, transform 0.15s ease;
+        }
+
+        .order-card:hover {
+            border-color: rgba(137, 233, 0, 0.35) !important;
+            transform: translateY(-2px);
         }
 
         .order-header {
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
-            border-bottom: 1px solid var(--light-gray);
+            border-bottom: 1px solid var(--border-col);
             padding-bottom: 12px;
             margin-bottom: 16px;
         }
@@ -88,6 +110,7 @@
         .order-card p {
             font-size: 14px;
             line-height: 1.5;
+            color: var(--text-light);
         }
 
         /* Clean styling for items list */
@@ -95,17 +118,18 @@
             list-style: none;
             padding: 0;
             margin: 12px 0 16px 0;
-            background-color: #FAFAFA;
-            border-radius: 4px;
-            border: 1px solid #EAEAEA;
+            background-color: #1f1f1f;
+            border-radius: 8px;
+            border: 1px solid var(--border-col);
         }
 
         .order-card li {
             font-size: 14px;
             padding: 10px 14px;
-            border-bottom: 1px solid #EAEAEA;
+            border-bottom: 1px solid var(--border-col);
             display: flex;
             justify-content: space-between;
+            color: var(--text-light);
         }
 
         .order-card li:last-child {
@@ -178,7 +202,7 @@
                         </ul>
                         
                         <div class="order-total-row">
-                            <p><strong>Total Paid:</strong> <span style="font-size: 18px; font-weight: 700; color: var(--dark); margin-left: 6px;">₹${order.totalAmount}</span></p>
+                            <p><strong>Total Paid:</strong> <span style="font-size: 18px; font-weight: 700; color: var(--brand-accent); margin-left: 6px;">₹${order.totalAmount}</span></p>
                         </div>
                     </div>
                 `).join("");

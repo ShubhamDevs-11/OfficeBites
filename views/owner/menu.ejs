@@ -5,15 +5,17 @@
     <%- include('../partials/head') %>
     <style>
         :root {
-            --dark: #4A4A4A;
-            --light-gray: #CBCBCB;
-            --cream: #FFFFE3;
-            --accent: #6D8196;
-            --accent-hover: #556678;
-            --card-bg: #FFFFFF;
-            --danger: #BA3C3C;
-            --danger-hover: #962E2E;
-            --success: #2E7D32;
+            --brand-dark: #222222;
+            --brand-darker: #1a1a1a;
+            --brand-accent: #89e900;
+            --brand-accent-hover: #9dff10;
+            --panel: #2a2a2a;
+            --border-col: #3a3a3a;
+            --text-light: #f2f2f2;
+            --text-muted: #a8a8a8;
+            --danger: #ff5c5c;
+            --danger-hover: #ff3d3d;
+            --success: #6ee06e;
         }
 
         * {
@@ -24,8 +26,8 @@
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background-color: var(--cream);
-            color: var(--dark);
+            background: radial-gradient(circle at top, #2b2b2b 0%, var(--brand-darker) 70%);
+            color: var(--text-light);
             min-height: 100vh;
             padding: 0 0 40px 0;
         }
@@ -38,28 +40,43 @@
 
         h2 {
             font-size: 26px;
-            font-weight: 600;
+            font-weight: 800;
             margin-bottom: 24px;
             letter-spacing: -0.5px;
+            position: relative;
+            padding-left: 14px;
+        }
+
+        h2::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 4px;
+            bottom: 4px;
+            width: 4px;
+            background: var(--brand-accent);
+            border-radius: 2px;
         }
 
         h3 {
-            font-size: 18px;
-            font-weight: 600;
+            font-size: 17px;
+            font-weight: 700;
             margin-bottom: 16px;
-            padding-bottom: 6px;
-            border-bottom: 1px solid var(--light-gray);
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--border-col);
+            color: var(--text-light);
         }
 
         #message {
             margin-bottom: 24px;
-            padding: 12px;
+            padding: 12px 14px;
             font-size: 14px;
             font-weight: 500;
-            background-color: #FFFFFF;
-            border: 1px solid var(--light-gray);
-            border-left: 4px solid var(--accent);
-            border-radius: 4px;
+            background-color: var(--panel);
+            border: 1px solid var(--border-col);
+            border-left: 4px solid var(--brand-accent);
+            border-radius: 6px;
+            color: var(--text-light);
         }
         #message:empty {
             display: none;
@@ -80,11 +97,11 @@
         }
 
         .form-card {
-            background: var(--card-bg);
-            border: 1px solid var(--light-gray);
-            border-radius: 6px;
+            background: var(--panel);
+            border: 1px solid var(--border-col);
+            border-radius: 10px;
             padding: 24px;
-            box-shadow: 0 2px 8px rgba(74, 74, 74, 0.02);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
         }
 
         .form-group {
@@ -93,19 +110,22 @@
 
         label {
             display: block;
-            font-size: 14px;
-            font-weight: 500;
+            font-size: 13px;
+            font-weight: 600;
             margin-bottom: 6px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.4px;
         }
 
         input {
             width: 100%;
             padding: 10px 12px;
             font-size: 15px;
-            border: 1px solid var(--light-gray);
-            border-radius: 4px;
-            color: var(--dark);
-            background-color: #FAFAFA;
+            border: 1px solid var(--border-col);
+            border-radius: 8px;
+            color: var(--text-light);
+            background-color: #1f1f1f;
             transition: border-color 0.2s ease, box-shadow 0.2s ease;
         }
 
@@ -114,33 +134,36 @@
             padding: 8px 10px;
             font-size: 14px;
             background: none;
-            border: 1px dashed var(--light-gray);
+            border: 1px dashed var(--border-col);
             cursor: pointer;
+            color: var(--text-muted);
         }
 
         input:focus {
             outline: none;
-            border-color: var(--accent);
-            box-shadow: 0 0 0 3px rgba(109, 129, 150, 0.15);
-            background-color: #FFFFFF;
+            border-color: var(--brand-accent);
+            box-shadow: 0 0 0 3px rgba(137, 233, 0, 0.18);
+            background-color: #232323;
         }
 
         button[type="submit"] {
             width: 100%;
             padding: 11px;
             font-size: 15px;
-            font-weight: 500;
-            color: #FFFFFF;
-            background-color: var(--accent);
+            font-weight: 700;
+            color: #111111;
+            background-color: var(--brand-accent);
             border: none;
-            border-radius: 4px;
+            border-radius: 8px;
             cursor: pointer;
             margin-top: 8px;
-            transition: background-color 0.2s ease;
+            transition: background-color 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
         }
 
         button[type="submit"]:hover {
-            background-color: var(--accent-hover);
+            background-color: var(--brand-accent-hover);
+            box-shadow: 0 0 20px rgba(137, 233, 0, 0.35);
+            transform: translateY(-1px);
         }
 
         /* Responsive Menu Card Grid Layout */
@@ -151,35 +174,42 @@
         }
 
         .menu-card {
-            background: var(--card-bg) !important;
-            border: 1px solid var(--light-gray) !important;
-            border-radius: 6px !important;
+            background: var(--panel) !important;
+            border: 1px solid var(--border-col) !important;
+            border-radius: 10px !important;
             padding: 18px !important;
             margin-bottom: 0 !important;
-            box-shadow: 0 2px 6px rgba(74, 74, 74, 0.02) !important;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3) !important;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+            transition: border-color 0.2s ease, transform 0.15s ease;
+        }
+
+        .menu-card:hover {
+            border-color: rgba(137, 233, 0, 0.35) !important;
+            transform: translateY(-2px);
         }
 
         .menu-card img {
             width: 100% !important;
             height: 160px !important;
             object-fit: cover !important;
-            border-radius: 4px !important;
+            border-radius: 8px !important;
             margin-bottom: 12px !important;
-            border: 1px solid var(--light-gray);
+            border: 1px solid var(--border-col);
         }
 
         .menu-card p {
             font-size: 14px;
             margin-bottom: 6px;
             line-height: 1.4;
+            color: var(--text-light);
         }
 
         .menu-card p strong {
             font-size: 16px;
-            color: var(--dark);
+            color: var(--text-light);
         }
 
         .menu-actions {
@@ -193,20 +223,20 @@
             width: 100%;
             padding: 8px;
             font-size: 13px;
-            font-weight: 500;
+            font-weight: 600;
             border: none;
-            border-radius: 4px;
+            border-radius: 6px;
             cursor: pointer;
             transition: background-color 0.2s ease;
         }
 
         .btn-toggle {
-            background-color: var(--accent);
-            color: #FFFFFF;
+            background-color: var(--brand-accent);
+            color: #111111;
         }
 
         .btn-toggle:hover {
-            background-color: var(--accent-hover);
+            background-color: var(--brand-accent-hover);
         }
 
         .btn-row {
@@ -215,18 +245,18 @@
         }
 
         .btn-edit {
-            background-color: #FAFAFA;
-            color: var(--dark);
-            border: 1px solid var(--light-gray) !important;
+            background-color: #1f1f1f;
+            color: var(--text-light);
+            border: 1px solid var(--border-col) !important;
         }
 
         .btn-edit:hover {
-            background-color: #EEEEE0;
+            background-color: #292929;
         }
 
         .btn-remove {
             background-color: var(--danger);
-            color: #FFFFFF;
+            color: #111111;
         }
 
         .btn-remove:hover {
