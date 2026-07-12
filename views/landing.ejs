@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OfficeBites</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg: #222222;
+            --bg-card: #2b2b2b;
+            --accent: #89e900;
+            --accent-dim: #5c9c0d;
+            --text: #F2F2F0;
+            --text-dim: #8f8f8c;
+            --line: #3a3a3a;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: "Space Grotesk", sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 48px 24px;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* faint grid texture, like ledger paper */
+        body::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-image: linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px);
+            background-size: 100% 32px;
+            pointer-events: none;
+        }
+
+        .eyebrow {
+            font-family: "JetBrains Mono", monospace;
+            font-size: 12px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 18px;
+        }
+
+        h1 {
+            font-size: clamp(36px, 6vw, 64px);
+            font-weight: 700;
+            letter-spacing: -1.5px;
+            line-height: 1.02;
+            text-align: center;
+            max-width: 780px;
+        }
+
+        h1 span {
+            color: var(--accent);
+        }
+
+        .subtitle {
+            margin-top: 18px;
+            max-width: 480px;
+            text-align: center;
+            color: var(--text-dim);
+            font-size: 15px;
+            line-height: 1.6;
+        }
+
+        /* ── Token / Coupon Row ───────────────────── */
+        .tokens {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 24px;
+            margin-top: 56px;
+            z-index: 1;
+        }
+
+        .token {
+            position: relative;
+            width: 220px;
+            background: var(--bg-card);
+            border: 1px dashed var(--line);
+            border-radius: 4px;
+            padding: 26px 22px 22px;
+            text-decoration: none;
+            color: var(--text);
+            transition: transform .25s ease, border-color .25s ease;
+        }
+
+        .token:hover {
+            transform: translateY(-6px);
+            border-color: var(--accent);
+        }
+
+        /* punch-hole notches, like a real ticket stub */
+        .token::before,
+        .token::after {
+            content: "";
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            background: var(--bg);
+            border: 1px dashed var(--line);
+            border-radius: 50%;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        .token::before { left: -9px; }
+        .token::after { right: -9px; }
+
+        .token-code {
+            font-family: "JetBrains Mono", monospace;
+            font-size: 11px;
+            color: var(--accent-dim);
+            letter-spacing: 1px;
+        }
+
+        .token-role {
+            font-size: 20px;
+            font-weight: 700;
+            margin-top: 10px;
+            margin-bottom: 6px;
+        }
+
+        .token-desc {
+            font-size: 13px;
+            color: var(--text-dim);
+            line-height: 1.5;
+        }
+
+        .token-arrow {
+            display: inline-block;
+            margin-top: 16px;
+            font-family: "JetBrains Mono", monospace;
+            font-size: 12px;
+            color: var(--accent);
+        }
+
+        /* ── Bottom actions ──────────────────────── */
+        .actions {
+            margin-top: 48px;
+            display: flex;
+            gap: 16px;
+            align-items: center;
+            z-index: 1;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: var(--bg);
+            font-weight: 700;
+            font-size: 14px;
+            padding: 13px 28px;
+            border-radius: 4px;
+            text-decoration: none;
+            transition: background .2s ease;
+        }
+
+        .btn-primary:hover {
+            background: #a0ff00;
+        }
+
+        .btn-ghost {
+            color: var(--text-dim);
+            font-size: 14px;
+            text-decoration: none;
+            border-bottom: 1px solid var(--line);
+            padding-bottom: 2px;
+            transition: color .2s ease, border-color .2s ease;
+        }
+
+        .btn-ghost:hover {
+            color: var(--text);
+            border-color: var(--text-dim);
+        }
+
+        footer {
+            margin-top: 64px;
+            font-family: "JetBrains Mono", monospace;
+            font-size: 11px;
+            color: var(--text-dim);
+            letter-spacing: 1px;
+            z-index: 1;
+        }
+
+        @media (max-width: 500px) {
+            .token { width: 100%; max-width: 280px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="eyebrow">/ canteen management, sorted /</div>
+
+    <h1>Every office lunch, <span>logged and settled.</span></h1>
+    <p class="subtitle">
+        OfficeBites keeps the canteen owner, the office, and the delivery run
+        on the same page — one menu, one ledger, no missed bills.
+    </p>
+
+    <div class="tokens">
+        <a href="/api/auth/login" class="token">
+            <div class="token-code">NO. 01 — OWNER</div>
+            <div class="token-role">Canteen</div>
+            <div class="token-desc">Manage the menu, offices, agents & bills.</div>
+            <div class="token-arrow">enter →</div>
+        </a>
+
+        <a href="/api/auth/login" class="token">
+            <div class="token-code">NO. 02 — CLIENT</div>
+            <div class="token-role">Office</div>
+            <div class="token-desc">Check what came in, and what's owed.</div>
+            <div class="token-arrow">enter →</div>
+        </a>
+
+        <a href="/api/auth/login" class="token">
+            <div class="token-code">NO. 03 — AGENT</div>
+            <div class="token-role">Delivery</div>
+            <div class="token-desc">Log every drop-off, office by office.</div>
+            <div class="token-arrow">enter →</div>
+        </a>
+    </div>
+
+    <div class="actions">
+        <a href="/api/auth/register" class="btn-primary">Register as Owner</a>
+        <a href="/api/auth/login" class="btn-ghost">Already have an account? Sign in</a>
+    </div>
+
+    <footer>OFFICEBITES — EST. 2026</footer>
+
+</body>
+</html>

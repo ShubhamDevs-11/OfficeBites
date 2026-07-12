@@ -41,6 +41,9 @@ const globalLimiter = rateLimit({
 app.use(globalLimiter);
 
 //Routes
+app.get("/", (req, res) => {
+    res.render("landing");
+});
 app.use("/api/auth", authRoutes);
 app.use("/api/owner", ownerRoutes);
 app.use("/api/client", clientRoutes);
