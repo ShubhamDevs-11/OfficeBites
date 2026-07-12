@@ -721,3 +721,320 @@
 {"level":"debug","message":"Token verified","role":"client","timestamp":"2026-07-12 19:16:53","userId":"6a5397dd42e8682e75d810f7"}
 {"level":"debug","message":"getProfile attempt","timestamp":"2026-07-12 19:16:53","userId":"6a5397dd42e8682e75d810f7"}
 {"level":"info","message":"getProfile — success","timestamp":"2026-07-12 19:16:53","userId":"6a5397dd42e8682e75d810f7"}
+{"level":"info","message":"mongoDb is connected 127.0.0.1","timestamp":"2026-07-12 19:17:12"}
+{"level":"info","message":"Server running in development mode on port 5000","timestamp":"2026-07-12 19:17:12"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-12 19:17:12","url":"/api/client/profile"}
+{"level":"debug","message":"Token verified","role":"client","timestamp":"2026-07-12 19:17:12","userId":"6a5397dd42e8682e75d810f7"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-12 19:17:12","url":"/api/client/profile-data"}
+{"level":"debug","message":"Token verified","role":"client","timestamp":"2026-07-12 19:17:12","userId":"6a5397dd42e8682e75d810f7"}
+{"level":"debug","message":"getProfile attempt","timestamp":"2026-07-12 19:17:12","userId":"6a5397dd42e8682e75d810f7"}
+{"level":"info","message":"getProfile — success","timestamp":"2026-07-12 19:17:12","userId":"6a5397dd42e8682e75d810f7"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-12 19:17:28","url":"/api/client/menu"}
+{"level":"debug","message":"Token verified","role":"client","timestamp":"2026-07-12 19:17:28","userId":"6a5397dd42e8682e75d810f7"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-12 19:17:28","url":"/api/client/menu-data"}
+{"level":"debug","message":"Token verified","role":"client","timestamp":"2026-07-12 19:17:28","userId":"6a5397dd42e8682e75d810f7"}
+{"level":"debug","message":"viewMenu attempt","timestamp":"2026-07-12 19:17:28","userId":"6a5397dd42e8682e75d810f7"}
+{"count":1,"level":"info","message":"Menu fetched","timestamp":"2026-07-12 19:17:28","userId":"6a5397dd42e8682e75d810f7"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-12 19:17:49","url":"/api/client/orders"}
+{"level":"debug","message":"Token verified","role":"client","timestamp":"2026-07-12 19:17:49","userId":"6a5397dd42e8682e75d810f7"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-12 19:17:49","url":"/api/client/orders-data"}
+{"level":"debug","message":"Token verified","role":"client","timestamp":"2026-07-12 19:17:49","userId":"6a5397dd42e8682e75d810f7"}
+{"level":"debug","message":"viewOrders attempt","timestamp":"2026-07-12 19:17:49","userId":"6a5397dd42e8682e75d810f7"}
+{"count":0,"level":"info","message":"Orders fetched","timestamp":"2026-07-12 19:17:49","userId":"6a5397dd42e8682e75d810f7"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-12 19:17:49","url":"/api/client/menu"}
+{"level":"debug","message":"Token verified","role":"client","timestamp":"2026-07-12 19:17:49","userId":"6a5397dd42e8682e75d810f7"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-12 19:17:49","url":"/api/client/menu-data"}
+{"level":"debug","message":"Token verified","role":"client","timestamp":"2026-07-12 19:17:49","userId":"6a5397dd42e8682e75d810f7"}
+{"level":"debug","message":"viewMenu attempt","timestamp":"2026-07-12 19:17:49","userId":"6a5397dd42e8682e75d810f7"}
+{"count":1,"level":"info","message":"Menu fetched","timestamp":"2026-07-12 19:17:49","userId":"6a5397dd42e8682e75d810f7"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-12 19:17:50","url":"/api/client/orders"}
+{"level":"debug","message":"Token verified","role":"client","timestamp":"2026-07-12 19:17:50","userId":"6a5397dd42e8682e75d810f7"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-12 19:17:50","url":"/api/client/orders-data"}
+{"level":"debug","message":"Token verified","role":"client","timestamp":"2026-07-12 19:17:50","userId":"6a5397dd42e8682e75d810f7"}
+{"level":"debug","message":"viewOrders attempt","timestamp":"2026-07-12 19:17:50","userId":"6a5397dd42e8682e75d810f7"}
+{"count":0,"level":"info","message":"Orders fetched","timestamp":"2026-07-12 19:17:50","userId":"6a5397dd42e8682e75d810f7"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-12 19:17:50","url":"/api/client/menu"}
+{"level":"debug","message":"Token verified","role":"client","timestamp":"2026-07-12 19:17:50","userId":"6a5397dd42e8682e75d810f7"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-12 19:17:50","url":"/api/client/menu-data"}
+{"level":"debug","message":"Token verified","role":"client","timestamp":"2026-07-12 19:17:50","userId":"6a5397dd42e8682e75d810f7"}
+{"level":"debug","message":"viewMenu attempt","timestamp":"2026-07-12 19:17:50","userId":"6a5397dd42e8682e75d810f7"}
+{"count":1,"level":"info","message":"Menu fetched","timestamp":"2026-07-12 19:17:50","userId":"6a5397dd42e8682e75d810f7"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-12 19:17:51","url":"/api/client/profile"}
+{"level":"debug","message":"Token verified","role":"client","timestamp":"2026-07-12 19:17:51","userId":"6a5397dd42e8682e75d810f7"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-12 19:17:51","url":"/api/client/profile-data"}
+{"level":"debug","message":"Token verified","role":"client","timestamp":"2026-07-12 19:17:51","userId":"6a5397dd42e8682e75d810f7"}
+{"level":"debug","message":"getProfile attempt","timestamp":"2026-07-12 19:17:51","userId":"6a5397dd42e8682e75d810f7"}
+{"level":"info","message":"getProfile — success","timestamp":"2026-07-12 19:17:51","userId":"6a5397dd42e8682e75d810f7"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-12 19:18:01","url":"/api/client/profile"}
+{"level":"debug","message":"Token verified","role":"client","timestamp":"2026-07-12 19:18:01","userId":"6a5397dd42e8682e75d810f7"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-12 19:18:01","url":"/api/client/profile-data"}
+{"level":"debug","message":"Token verified","role":"client","timestamp":"2026-07-12 19:18:01","userId":"6a5397dd42e8682e75d810f7"}
+{"level":"debug","message":"getProfile attempt","timestamp":"2026-07-12 19:18:01","userId":"6a5397dd42e8682e75d810f7"}
+{"level":"info","message":"getProfile — success","timestamp":"2026-07-12 19:18:01","userId":"6a5397dd42e8682e75d810f7"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-12 19:19:52","url":"/api/owner/profile-data"}
+{"level":"debug","message":"Token verified","role":"client","timestamp":"2026-07-12 19:19:52","userId":"6a5397dd42e8682e75d810f7"}
+{"level":"warn","message":"Unauthorized role","role":"client","timestamp":"2026-07-12 19:19:52","userId":"6a5397dd42e8682e75d810f7"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-12 19:19:58","url":"/api/auth/login"}
+{"level":"debug","message":"Incoming request","method":"POST","timestamp":"2026-07-12 19:20:05","url":"/api/auth/login"}
+{"identifier":"shubham@gmail.com","level":"debug","message":"Login attempt","timestamp":"2026-07-12 19:20:05"}
+{"identifier":"shubham@gmail.com","level":"info","message":"User logged in","role":"client","timestamp":"2026-07-12 19:20:05","userId":"6a5397dd42e8682e75d810f7"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-12 19:20:05","url":"/api/client/profile"}
+{"level":"debug","message":"Token verified","role":"client","timestamp":"2026-07-12 19:20:05","userId":"6a5397dd42e8682e75d810f7"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-12 19:20:05","url":"/api/client/profile-data"}
+{"level":"debug","message":"Token verified","role":"client","timestamp":"2026-07-12 19:20:05","userId":"6a5397dd42e8682e75d810f7"}
+{"level":"debug","message":"getProfile attempt","timestamp":"2026-07-12 19:20:05","userId":"6a5397dd42e8682e75d810f7"}
+{"level":"info","message":"getProfile — success","timestamp":"2026-07-12 19:20:05","userId":"6a5397dd42e8682e75d810f7"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-12 19:20:16","url":"/.well-known/appspecific/com.chrome.devtools.json"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-12 19:20:24","url":"/.well-known/appspecific/com.chrome.devtools.json"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-12 19:21:09","url":"/api/client/profile"}
+{"level":"warn","message":"No token found","timestamp":"2026-07-12 19:21:09","url":"/profile"}
+{"level":"debug","message":"Incoming request","method":"POST","timestamp":"2026-07-12 19:21:11","url":"/api/auth/login"}
+{"identifier":"shubham@gmail.com","level":"debug","message":"Login attempt","timestamp":"2026-07-12 19:21:11"}
+{"identifier":"shubham@gmail.com","level":"info","message":"User logged in","role":"client","timestamp":"2026-07-12 19:21:11","userId":"6a5397dd42e8682e75d810f7"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-12 19:21:11","url":"/api/client/profile"}
+{"level":"debug","message":"Token verified","role":"client","timestamp":"2026-07-12 19:21:11","userId":"6a5397dd42e8682e75d810f7"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-12 19:21:11","url":"/api/client/profile-data"}
+{"level":"debug","message":"Token verified","role":"client","timestamp":"2026-07-12 19:21:11","userId":"6a5397dd42e8682e75d810f7"}
+{"level":"debug","message":"getProfile attempt","timestamp":"2026-07-12 19:21:11","userId":"6a5397dd42e8682e75d810f7"}
+{"level":"info","message":"getProfile — success","timestamp":"2026-07-12 19:21:11","userId":"6a5397dd42e8682e75d810f7"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-12 19:23:39","url":"/api/client/profile"}
+{"level":"debug","message":"Token verified","role":"client","timestamp":"2026-07-12 19:23:39","userId":"6a5397dd42e8682e75d810f7"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-12 19:23:39","url":"/api/client/profile-data"}
+{"level":"debug","message":"Token verified","role":"client","timestamp":"2026-07-12 19:23:39","userId":"6a5397dd42e8682e75d810f7"}
+{"level":"debug","message":"getProfile attempt","timestamp":"2026-07-12 19:23:39","userId":"6a5397dd42e8682e75d810f7"}
+{"level":"info","message":"getProfile — success","timestamp":"2026-07-12 19:23:39","userId":"6a5397dd42e8682e75d810f7"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-12 19:23:40","url":"/api/client/profile"}
+{"level":"debug","message":"Token verified","role":"client","timestamp":"2026-07-12 19:23:40","userId":"6a5397dd42e8682e75d810f7"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-12 19:23:40","url":"/api/client/profile-data"}
+{"level":"debug","message":"Token verified","role":"client","timestamp":"2026-07-12 19:23:40","userId":"6a5397dd42e8682e75d810f7"}
+{"level":"debug","message":"getProfile attempt","timestamp":"2026-07-12 19:23:40","userId":"6a5397dd42e8682e75d810f7"}
+{"level":"info","message":"getProfile — success","timestamp":"2026-07-12 19:23:40","userId":"6a5397dd42e8682e75d810f7"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-12 19:23:40","url":"/api/client/profile"}
+{"level":"debug","message":"Token verified","role":"client","timestamp":"2026-07-12 19:23:40","userId":"6a5397dd42e8682e75d810f7"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-12 19:23:40","url":"/api/client/profile-data"}
+{"level":"debug","message":"Token verified","role":"client","timestamp":"2026-07-12 19:23:40","userId":"6a5397dd42e8682e75d810f7"}
+{"level":"debug","message":"getProfile attempt","timestamp":"2026-07-12 19:23:40","userId":"6a5397dd42e8682e75d810f7"}
+{"level":"info","message":"getProfile — success","timestamp":"2026-07-12 19:23:40","userId":"6a5397dd42e8682e75d810f7"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-12 19:23:40","url":"/api/client/profile"}
+{"level":"debug","message":"Token verified","role":"client","timestamp":"2026-07-12 19:23:40","userId":"6a5397dd42e8682e75d810f7"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-12 19:23:40","url":"/api/client/profile-data"}
+{"level":"debug","message":"Token verified","role":"client","timestamp":"2026-07-12 19:23:40","userId":"6a5397dd42e8682e75d810f7"}
+{"level":"debug","message":"getProfile attempt","timestamp":"2026-07-12 19:23:40","userId":"6a5397dd42e8682e75d810f7"}
+{"level":"info","message":"getProfile — success","timestamp":"2026-07-12 19:23:40","userId":"6a5397dd42e8682e75d810f7"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-12 19:23:40","url":"/api/client/profile"}
+{"level":"debug","message":"Token verified","role":"client","timestamp":"2026-07-12 19:23:40","userId":"6a5397dd42e8682e75d810f7"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-12 19:23:40","url":"/api/client/profile-data"}
+{"level":"debug","message":"Token verified","role":"client","timestamp":"2026-07-12 19:23:40","userId":"6a5397dd42e8682e75d810f7"}
+{"level":"debug","message":"getProfile attempt","timestamp":"2026-07-12 19:23:40","userId":"6a5397dd42e8682e75d810f7"}
+{"level":"info","message":"getProfile — success","timestamp":"2026-07-12 19:23:40","userId":"6a5397dd42e8682e75d810f7"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-12 19:23:41","url":"/api/client/profile"}
+{"level":"debug","message":"Token verified","role":"client","timestamp":"2026-07-12 19:23:41","userId":"6a5397dd42e8682e75d810f7"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-12 19:23:41","url":"/api/client/profile-data"}
+{"level":"debug","message":"Token verified","role":"client","timestamp":"2026-07-12 19:23:41","userId":"6a5397dd42e8682e75d810f7"}
+{"level":"debug","message":"getProfile attempt","timestamp":"2026-07-12 19:23:41","userId":"6a5397dd42e8682e75d810f7"}
+{"level":"info","message":"getProfile — success","timestamp":"2026-07-12 19:23:41","userId":"6a5397dd42e8682e75d810f7"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-12 19:23:42","url":"/api/client/menu"}
+{"level":"debug","message":"Token verified","role":"client","timestamp":"2026-07-12 19:23:42","userId":"6a5397dd42e8682e75d810f7"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-12 19:23:42","url":"/api/client/menu-data"}
+{"level":"debug","message":"Token verified","role":"client","timestamp":"2026-07-12 19:23:42","userId":"6a5397dd42e8682e75d810f7"}
+{"level":"debug","message":"viewMenu attempt","timestamp":"2026-07-12 19:23:42","userId":"6a5397dd42e8682e75d810f7"}
+{"count":1,"level":"info","message":"Menu fetched","timestamp":"2026-07-12 19:23:42","userId":"6a5397dd42e8682e75d810f7"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-12 19:23:44","url":"/api/client/orders"}
+{"level":"debug","message":"Token verified","role":"client","timestamp":"2026-07-12 19:23:44","userId":"6a5397dd42e8682e75d810f7"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-12 19:23:44","url":"/api/client/orders-data"}
+{"level":"debug","message":"Token verified","role":"client","timestamp":"2026-07-12 19:23:44","userId":"6a5397dd42e8682e75d810f7"}
+{"level":"debug","message":"viewOrders attempt","timestamp":"2026-07-12 19:23:44","userId":"6a5397dd42e8682e75d810f7"}
+{"count":0,"level":"info","message":"Orders fetched","timestamp":"2026-07-12 19:23:44","userId":"6a5397dd42e8682e75d810f7"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-12 19:23:44","url":"/api/client/bills"}
+{"level":"debug","message":"Token verified","role":"client","timestamp":"2026-07-12 19:23:44","userId":"6a5397dd42e8682e75d810f7"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-12 19:23:44","url":"/api/client/bills-data"}
+{"level":"debug","message":"Token verified","role":"client","timestamp":"2026-07-12 19:23:44","userId":"6a5397dd42e8682e75d810f7"}
+{"level":"debug","message":"viewBills attempt","timestamp":"2026-07-12 19:23:44","userId":"6a5397dd42e8682e75d810f7"}
+{"count":2,"level":"info","message":"Bills fetched","timestamp":"2026-07-12 19:23:44","userId":"6a5397dd42e8682e75d810f7"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-12 19:23:45","url":"/api/client/profile"}
+{"level":"debug","message":"Token verified","role":"client","timestamp":"2026-07-12 19:23:45","userId":"6a5397dd42e8682e75d810f7"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-12 19:23:45","url":"/api/client/profile-data"}
+{"level":"debug","message":"Token verified","role":"client","timestamp":"2026-07-12 19:23:45","userId":"6a5397dd42e8682e75d810f7"}
+{"level":"debug","message":"getProfile attempt","timestamp":"2026-07-12 19:23:45","userId":"6a5397dd42e8682e75d810f7"}
+{"level":"info","message":"getProfile — success","timestamp":"2026-07-12 19:23:45","userId":"6a5397dd42e8682e75d810f7"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-12 19:24:26","url":"/.well-known/appspecific/com.chrome.devtools.json"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-12 19:28:22","url":"/api/client/menu"}
+{"level":"debug","message":"Token verified","role":"client","timestamp":"2026-07-12 19:28:22","userId":"6a5397dd42e8682e75d810f7"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-12 19:28:22","url":"/api/client/menu-data"}
+{"level":"debug","message":"Token verified","role":"client","timestamp":"2026-07-12 19:28:22","userId":"6a5397dd42e8682e75d810f7"}
+{"level":"debug","message":"viewMenu attempt","timestamp":"2026-07-12 19:28:22","userId":"6a5397dd42e8682e75d810f7"}
+{"count":1,"level":"info","message":"Menu fetched","timestamp":"2026-07-12 19:28:22","userId":"6a5397dd42e8682e75d810f7"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-12 19:28:28","url":"/api/client/orders"}
+{"level":"debug","message":"Token verified","role":"client","timestamp":"2026-07-12 19:28:28","userId":"6a5397dd42e8682e75d810f7"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-12 19:28:28","url":"/api/client/orders-data"}
+{"level":"debug","message":"Token verified","role":"client","timestamp":"2026-07-12 19:28:28","userId":"6a5397dd42e8682e75d810f7"}
+{"level":"debug","message":"viewOrders attempt","timestamp":"2026-07-12 19:28:28","userId":"6a5397dd42e8682e75d810f7"}
+{"count":0,"level":"info","message":"Orders fetched","timestamp":"2026-07-12 19:28:28","userId":"6a5397dd42e8682e75d810f7"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-12 19:28:31","url":"/api/client/bills"}
+{"level":"debug","message":"Token verified","role":"client","timestamp":"2026-07-12 19:28:31","userId":"6a5397dd42e8682e75d810f7"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-12 19:28:31","url":"/api/client/bills-data"}
+{"level":"debug","message":"Token verified","role":"client","timestamp":"2026-07-12 19:28:31","userId":"6a5397dd42e8682e75d810f7"}
+{"level":"debug","message":"viewBills attempt","timestamp":"2026-07-12 19:28:31","userId":"6a5397dd42e8682e75d810f7"}
+{"count":2,"level":"info","message":"Bills fetched","timestamp":"2026-07-12 19:28:31","userId":"6a5397dd42e8682e75d810f7"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-12 19:28:57","url":"/api/client/menu"}
+{"level":"debug","message":"Token verified","role":"client","timestamp":"2026-07-12 19:28:57","userId":"6a5397dd42e8682e75d810f7"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-12 19:28:57","url":"/api/client/menu-data"}
+{"level":"debug","message":"Token verified","role":"client","timestamp":"2026-07-12 19:28:57","userId":"6a5397dd42e8682e75d810f7"}
+{"level":"debug","message":"viewMenu attempt","timestamp":"2026-07-12 19:28:57","userId":"6a5397dd42e8682e75d810f7"}
+{"count":1,"level":"info","message":"Menu fetched","timestamp":"2026-07-12 19:28:57","userId":"6a5397dd42e8682e75d810f7"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-12 19:32:16","url":"/api/client/menu"}
+{"level":"debug","message":"Token verified","role":"client","timestamp":"2026-07-12 19:32:16","userId":"6a5397dd42e8682e75d810f7"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-12 19:32:16","url":"/api/client/menu-data"}
+{"level":"debug","message":"Token verified","role":"client","timestamp":"2026-07-12 19:32:16","userId":"6a5397dd42e8682e75d810f7"}
+{"level":"debug","message":"viewMenu attempt","timestamp":"2026-07-12 19:32:16","userId":"6a5397dd42e8682e75d810f7"}
+{"count":1,"level":"info","message":"Menu fetched","timestamp":"2026-07-12 19:32:16","userId":"6a5397dd42e8682e75d810f7"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-12 19:32:18","url":"/api/client/profile"}
+{"level":"debug","message":"Token verified","role":"client","timestamp":"2026-07-12 19:32:18","userId":"6a5397dd42e8682e75d810f7"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-12 19:32:18","url":"/api/client/profile-data"}
+{"level":"debug","message":"Token verified","role":"client","timestamp":"2026-07-12 19:32:18","userId":"6a5397dd42e8682e75d810f7"}
+{"level":"debug","message":"getProfile attempt","timestamp":"2026-07-12 19:32:18","userId":"6a5397dd42e8682e75d810f7"}
+{"level":"info","message":"getProfile — success","timestamp":"2026-07-12 19:32:18","userId":"6a5397dd42e8682e75d810f7"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-12 19:32:19","url":"/api/client/profile"}
+{"level":"debug","message":"Token verified","role":"client","timestamp":"2026-07-12 19:32:19","userId":"6a5397dd42e8682e75d810f7"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-12 19:32:19","url":"/api/client/profile-data"}
+{"level":"debug","message":"Token verified","role":"client","timestamp":"2026-07-12 19:32:19","userId":"6a5397dd42e8682e75d810f7"}
+{"level":"debug","message":"getProfile attempt","timestamp":"2026-07-12 19:32:19","userId":"6a5397dd42e8682e75d810f7"}
+{"level":"info","message":"getProfile — success","timestamp":"2026-07-12 19:32:19","userId":"6a5397dd42e8682e75d810f7"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-12 19:32:19","url":"/api/client/profile"}
+{"level":"debug","message":"Token verified","role":"client","timestamp":"2026-07-12 19:32:19","userId":"6a5397dd42e8682e75d810f7"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-12 19:32:19","url":"/api/client/profile-data"}
+{"level":"debug","message":"Token verified","role":"client","timestamp":"2026-07-12 19:32:19","userId":"6a5397dd42e8682e75d810f7"}
+{"level":"debug","message":"getProfile attempt","timestamp":"2026-07-12 19:32:19","userId":"6a5397dd42e8682e75d810f7"}
+{"level":"info","message":"getProfile — success","timestamp":"2026-07-12 19:32:19","userId":"6a5397dd42e8682e75d810f7"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-12 19:32:19","url":"/api/client/profile"}
+{"level":"debug","message":"Token verified","role":"client","timestamp":"2026-07-12 19:32:19","userId":"6a5397dd42e8682e75d810f7"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-12 19:32:19","url":"/api/client/profile-data"}
+{"level":"debug","message":"Token verified","role":"client","timestamp":"2026-07-12 19:32:19","userId":"6a5397dd42e8682e75d810f7"}
+{"level":"debug","message":"getProfile attempt","timestamp":"2026-07-12 19:32:19","userId":"6a5397dd42e8682e75d810f7"}
+{"level":"info","message":"getProfile — success","timestamp":"2026-07-12 19:32:19","userId":"6a5397dd42e8682e75d810f7"}
+{"level":"info","message":"mongoDb is connected 127.0.0.1","timestamp":"2026-07-12 19:32:26"}
+{"level":"info","message":"Server running in development mode on port 5000","timestamp":"2026-07-12 19:32:26"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-12 19:32:26","url":"/api/client/profile"}
+{"level":"debug","message":"Token verified","role":"client","timestamp":"2026-07-12 19:32:26","userId":"6a5397dd42e8682e75d810f7"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-12 19:32:26","url":"/api/client/profile-data"}
+{"level":"debug","message":"Token verified","role":"client","timestamp":"2026-07-12 19:32:26","userId":"6a5397dd42e8682e75d810f7"}
+{"level":"debug","message":"getProfile attempt","timestamp":"2026-07-12 19:32:26","userId":"6a5397dd42e8682e75d810f7"}
+{"level":"info","message":"getProfile — success","timestamp":"2026-07-12 19:32:26","userId":"6a5397dd42e8682e75d810f7"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-12 19:33:15","url":"/api/client/profile"}
+{"level":"debug","message":"Token verified","role":"client","timestamp":"2026-07-12 19:33:15","userId":"6a5397dd42e8682e75d810f7"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-12 19:33:15","url":"/api/client/profile-data"}
+{"level":"debug","message":"Token verified","role":"client","timestamp":"2026-07-12 19:33:15","userId":"6a5397dd42e8682e75d810f7"}
+{"level":"debug","message":"getProfile attempt","timestamp":"2026-07-12 19:33:15","userId":"6a5397dd42e8682e75d810f7"}
+{"level":"info","message":"getProfile — success","timestamp":"2026-07-12 19:33:15","userId":"6a5397dd42e8682e75d810f7"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-12 19:33:16","url":"/api/client/menu"}
+{"level":"debug","message":"Token verified","role":"client","timestamp":"2026-07-12 19:33:16","userId":"6a5397dd42e8682e75d810f7"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-12 19:33:16","url":"/api/client/menu-data"}
+{"level":"debug","message":"Token verified","role":"client","timestamp":"2026-07-12 19:33:16","userId":"6a5397dd42e8682e75d810f7"}
+{"level":"debug","message":"viewMenu attempt","timestamp":"2026-07-12 19:33:16","userId":"6a5397dd42e8682e75d810f7"}
+{"count":1,"level":"info","message":"Menu fetched","timestamp":"2026-07-12 19:33:16","userId":"6a5397dd42e8682e75d810f7"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-12 19:33:17","url":"/api/client/orders"}
+{"level":"debug","message":"Token verified","role":"client","timestamp":"2026-07-12 19:33:17","userId":"6a5397dd42e8682e75d810f7"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-12 19:33:17","url":"/api/client/orders-data"}
+{"level":"debug","message":"Token verified","role":"client","timestamp":"2026-07-12 19:33:17","userId":"6a5397dd42e8682e75d810f7"}
+{"level":"debug","message":"viewOrders attempt","timestamp":"2026-07-12 19:33:17","userId":"6a5397dd42e8682e75d810f7"}
+{"count":0,"level":"info","message":"Orders fetched","timestamp":"2026-07-12 19:33:17","userId":"6a5397dd42e8682e75d810f7"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-12 19:33:17","url":"/api/client/bills"}
+{"level":"debug","message":"Token verified","role":"client","timestamp":"2026-07-12 19:33:17","userId":"6a5397dd42e8682e75d810f7"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-12 19:33:18","url":"/api/client/bills-data"}
+{"level":"debug","message":"Token verified","role":"client","timestamp":"2026-07-12 19:33:18","userId":"6a5397dd42e8682e75d810f7"}
+{"level":"debug","message":"viewBills attempt","timestamp":"2026-07-12 19:33:18","userId":"6a5397dd42e8682e75d810f7"}
+{"count":2,"level":"info","message":"Bills fetched","timestamp":"2026-07-12 19:33:18","userId":"6a5397dd42e8682e75d810f7"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-12 19:33:18","url":"/api/client/profile"}
+{"level":"debug","message":"Token verified","role":"client","timestamp":"2026-07-12 19:33:18","userId":"6a5397dd42e8682e75d810f7"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-12 19:33:18","url":"/api/client/profile-data"}
+{"level":"debug","message":"Token verified","role":"client","timestamp":"2026-07-12 19:33:18","userId":"6a5397dd42e8682e75d810f7"}
+{"level":"debug","message":"getProfile attempt","timestamp":"2026-07-12 19:33:18","userId":"6a5397dd42e8682e75d810f7"}
+{"level":"info","message":"getProfile — success","timestamp":"2026-07-12 19:33:18","userId":"6a5397dd42e8682e75d810f7"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-12 19:35:22","url":"/api/client/profile"}
+{"level":"debug","message":"Token verified","role":"client","timestamp":"2026-07-12 19:35:22","userId":"6a5397dd42e8682e75d810f7"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-12 19:35:22","url":"/api/client/profile-data"}
+{"level":"debug","message":"Token verified","role":"client","timestamp":"2026-07-12 19:35:22","userId":"6a5397dd42e8682e75d810f7"}
+{"level":"debug","message":"getProfile attempt","timestamp":"2026-07-12 19:35:22","userId":"6a5397dd42e8682e75d810f7"}
+{"level":"info","message":"getProfile — success","timestamp":"2026-07-12 19:35:22","userId":"6a5397dd42e8682e75d810f7"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-12 19:35:22","url":"/api/client/profile"}
+{"level":"debug","message":"Token verified","role":"client","timestamp":"2026-07-12 19:35:22","userId":"6a5397dd42e8682e75d810f7"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-12 19:35:22","url":"/api/client/profile-data"}
+{"level":"debug","message":"Token verified","role":"client","timestamp":"2026-07-12 19:35:22","userId":"6a5397dd42e8682e75d810f7"}
+{"level":"debug","message":"getProfile attempt","timestamp":"2026-07-12 19:35:22","userId":"6a5397dd42e8682e75d810f7"}
+{"level":"info","message":"getProfile — success","timestamp":"2026-07-12 19:35:22","userId":"6a5397dd42e8682e75d810f7"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-12 19:35:22","url":"/api/client/profile"}
+{"level":"debug","message":"Token verified","role":"client","timestamp":"2026-07-12 19:35:22","userId":"6a5397dd42e8682e75d810f7"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-12 19:35:22","url":"/api/client/profile-data"}
+{"level":"debug","message":"Token verified","role":"client","timestamp":"2026-07-12 19:35:22","userId":"6a5397dd42e8682e75d810f7"}
+{"level":"debug","message":"getProfile attempt","timestamp":"2026-07-12 19:35:22","userId":"6a5397dd42e8682e75d810f7"}
+{"level":"info","message":"getProfile — success","timestamp":"2026-07-12 19:35:22","userId":"6a5397dd42e8682e75d810f7"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-12 19:35:22","url":"/api/client/profile"}
+{"level":"debug","message":"Token verified","role":"client","timestamp":"2026-07-12 19:35:22","userId":"6a5397dd42e8682e75d810f7"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-12 19:35:22","url":"/api/client/profile-data"}
+{"level":"debug","message":"Token verified","role":"client","timestamp":"2026-07-12 19:35:22","userId":"6a5397dd42e8682e75d810f7"}
+{"level":"debug","message":"getProfile attempt","timestamp":"2026-07-12 19:35:22","userId":"6a5397dd42e8682e75d810f7"}
+{"level":"info","message":"getProfile — success","timestamp":"2026-07-12 19:35:22","userId":"6a5397dd42e8682e75d810f7"}
+{"level":"info","message":"mongoDb is connected 127.0.0.1","timestamp":"2026-07-12 19:35:56"}
+{"level":"info","message":"Server running in development mode on port 5000","timestamp":"2026-07-12 19:35:56"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-12 19:35:56","url":"/api/client/profile"}
+{"level":"debug","message":"Token verified","role":"client","timestamp":"2026-07-12 19:35:56","userId":"6a5397dd42e8682e75d810f7"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-12 19:35:56","url":"/api/client/profile-data"}
+{"level":"debug","message":"Token verified","role":"client","timestamp":"2026-07-12 19:35:56","userId":"6a5397dd42e8682e75d810f7"}
+{"level":"debug","message":"getProfile attempt","timestamp":"2026-07-12 19:35:56","userId":"6a5397dd42e8682e75d810f7"}
+{"level":"info","message":"getProfile — success","timestamp":"2026-07-12 19:35:56","userId":"6a5397dd42e8682e75d810f7"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-12 19:36:06","url":"/api/client/menu"}
+{"level":"debug","message":"Token verified","role":"client","timestamp":"2026-07-12 19:36:06","userId":"6a5397dd42e8682e75d810f7"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-12 19:36:06","url":"/api/client/menu-data"}
+{"level":"debug","message":"Token verified","role":"client","timestamp":"2026-07-12 19:36:06","userId":"6a5397dd42e8682e75d810f7"}
+{"level":"debug","message":"viewMenu attempt","timestamp":"2026-07-12 19:36:06","userId":"6a5397dd42e8682e75d810f7"}
+{"count":1,"level":"info","message":"Menu fetched","timestamp":"2026-07-12 19:36:06","userId":"6a5397dd42e8682e75d810f7"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-12 19:36:06","url":"/api/client/profile"}
+{"level":"debug","message":"Token verified","role":"client","timestamp":"2026-07-12 19:36:06","userId":"6a5397dd42e8682e75d810f7"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-12 19:36:07","url":"/api/client/profile-data"}
+{"level":"debug","message":"Token verified","role":"client","timestamp":"2026-07-12 19:36:07","userId":"6a5397dd42e8682e75d810f7"}
+{"level":"debug","message":"getProfile attempt","timestamp":"2026-07-12 19:36:07","userId":"6a5397dd42e8682e75d810f7"}
+{"level":"info","message":"getProfile — success","timestamp":"2026-07-12 19:36:07","userId":"6a5397dd42e8682e75d810f7"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-12 19:36:08","url":"/api/client/orders"}
+{"level":"debug","message":"Token verified","role":"client","timestamp":"2026-07-12 19:36:08","userId":"6a5397dd42e8682e75d810f7"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-12 19:36:08","url":"/api/client/orders-data"}
+{"level":"debug","message":"Token verified","role":"client","timestamp":"2026-07-12 19:36:08","userId":"6a5397dd42e8682e75d810f7"}
+{"level":"debug","message":"viewOrders attempt","timestamp":"2026-07-12 19:36:08","userId":"6a5397dd42e8682e75d810f7"}
+{"count":0,"level":"info","message":"Orders fetched","timestamp":"2026-07-12 19:36:08","userId":"6a5397dd42e8682e75d810f7"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-12 19:36:09","url":"/api/client/bills"}
+{"level":"debug","message":"Token verified","role":"client","timestamp":"2026-07-12 19:36:09","userId":"6a5397dd42e8682e75d810f7"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-12 19:36:09","url":"/api/client/bills-data"}
+{"level":"debug","message":"Token verified","role":"client","timestamp":"2026-07-12 19:36:09","userId":"6a5397dd42e8682e75d810f7"}
+{"level":"debug","message":"viewBills attempt","timestamp":"2026-07-12 19:36:09","userId":"6a5397dd42e8682e75d810f7"}
+{"count":2,"level":"info","message":"Bills fetched","timestamp":"2026-07-12 19:36:09","userId":"6a5397dd42e8682e75d810f7"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-12 19:36:09","url":"/api/client/menu"}
+{"level":"debug","message":"Token verified","role":"client","timestamp":"2026-07-12 19:36:09","userId":"6a5397dd42e8682e75d810f7"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-12 19:36:09","url":"/api/client/menu-data"}
+{"level":"debug","message":"Token verified","role":"client","timestamp":"2026-07-12 19:36:09","userId":"6a5397dd42e8682e75d810f7"}
+{"level":"debug","message":"viewMenu attempt","timestamp":"2026-07-12 19:36:09","userId":"6a5397dd42e8682e75d810f7"}
+{"count":1,"level":"info","message":"Menu fetched","timestamp":"2026-07-12 19:36:09","userId":"6a5397dd42e8682e75d810f7"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-12 19:37:35","url":"/api/client/menu"}
+{"level":"debug","message":"Token verified","role":"client","timestamp":"2026-07-12 19:37:35","userId":"6a5397dd42e8682e75d810f7"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-12 19:37:35","url":"/api/client/menu-data"}
+{"level":"debug","message":"Token verified","role":"client","timestamp":"2026-07-12 19:37:35","userId":"6a5397dd42e8682e75d810f7"}
+{"level":"debug","message":"viewMenu attempt","timestamp":"2026-07-12 19:37:35","userId":"6a5397dd42e8682e75d810f7"}
+{"count":1,"level":"info","message":"Menu fetched","timestamp":"2026-07-12 19:37:35","userId":"6a5397dd42e8682e75d810f7"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-12 19:37:39","url":"/api/client/profile"}
+{"level":"debug","message":"Token verified","role":"client","timestamp":"2026-07-12 19:37:39","userId":"6a5397dd42e8682e75d810f7"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-12 19:37:39","url":"/api/client/profile-data"}
+{"level":"debug","message":"Token verified","role":"client","timestamp":"2026-07-12 19:37:39","userId":"6a5397dd42e8682e75d810f7"}
+{"level":"debug","message":"getProfile attempt","timestamp":"2026-07-12 19:37:39","userId":"6a5397dd42e8682e75d810f7"}
+{"level":"info","message":"getProfile — success","timestamp":"2026-07-12 19:37:39","userId":"6a5397dd42e8682e75d810f7"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-12 19:37:41","url":"/api/client/orders"}
+{"level":"debug","message":"Token verified","role":"client","timestamp":"2026-07-12 19:37:41","userId":"6a5397dd42e8682e75d810f7"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-12 19:37:41","url":"/api/client/orders-data"}
+{"level":"debug","message":"Token verified","role":"client","timestamp":"2026-07-12 19:37:41","userId":"6a5397dd42e8682e75d810f7"}
+{"level":"debug","message":"viewOrders attempt","timestamp":"2026-07-12 19:37:41","userId":"6a5397dd42e8682e75d810f7"}
+{"count":0,"level":"info","message":"Orders fetched","timestamp":"2026-07-12 19:37:41","userId":"6a5397dd42e8682e75d810f7"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-12 19:37:43","url":"/api/client/bills"}
+{"level":"debug","message":"Token verified","role":"client","timestamp":"2026-07-12 19:37:43","userId":"6a5397dd42e8682e75d810f7"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-12 19:37:43","url":"/api/client/bills-data"}
+{"level":"debug","message":"Token verified","role":"client","timestamp":"2026-07-12 19:37:43","userId":"6a5397dd42e8682e75d810f7"}
+{"level":"debug","message":"viewBills attempt","timestamp":"2026-07-12 19:37:43","userId":"6a5397dd42e8682e75d810f7"}
+{"count":2,"level":"info","message":"Bills fetched","timestamp":"2026-07-12 19:37:43","userId":"6a5397dd42e8682e75d810f7"}
+{"level":"info","message":"mongoDb is connected 127.0.0.1","timestamp":"2026-07-12 19:38:30"}
+{"level":"info","message":"Server running in development mode on port 5000","timestamp":"2026-07-12 19:38:30"}
