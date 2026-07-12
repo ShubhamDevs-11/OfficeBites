@@ -34,15 +34,10 @@ const renderLogin = (res, status, error, success, email = "") => {
 // ─────────────────────────────────────────
 const register = async (req, res) => {
   try {
-    const { userName, email, password, companyName, role } = req.body;
+    const { userName, email, password, companyName } = req.body;
     const ownerRole = "owner";
 
-    logger.debug("Register attempt", { email, role: ownerRole });
-
-    if (role && role !== ownerRole) {
-      logger.warn("Register failed — public registration restricted to owners", { requestedRole: role });
-      return res.status(400).json({ message: "Only owner registration is allowed" });
-    }
+    logger.debug("Register attempt", { email });
 
     // check duplicate email
     const existing = await User.findOne({ email });

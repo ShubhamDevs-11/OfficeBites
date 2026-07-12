@@ -17,6 +17,8 @@ const {
   addAgent,
   removeAgent,
   getAgents,
+  addClient,
+  getClients,
   createBill,
   getBills,
   getOfficeBills,
@@ -66,6 +68,10 @@ router.patch("/offices/:id/status", verifyToken, authorizeRoles("owner"), toggle
 router.get("/agents-data", verifyToken, authorizeRoles("owner"), getAgents);
 router.post("/agents", verifyToken, authorizeRoles("owner"), addAgent);
 router.delete("/agents/:id", verifyToken, authorizeRoles("owner"), removeAgent);
+
+// Client API
+router.post("/clients", verifyToken, authorizeRoles("owner"), addClient);
+router.get("/clients-data", verifyToken, authorizeRoles("owner"), getClients);
 
 // Billing API
 router.get("/bills-data", verifyToken, authorizeRoles("owner"), getBills);

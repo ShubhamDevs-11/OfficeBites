@@ -1,293 +1,292 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <%- include('../partials/head') %>
-    <style>
-        :root {
-            --dark: #4A4A4A;
-            --light-gray: #CBCBCB;
-            --cream: #FFFFE3;
-            --accent: #6D8196;
-            --accent-hover: #556678;
-            --card-bg: #FFFFFF;
-            --danger: #BA3C3C;
-            --danger-hover: #962E2E;
-            --success: #2E7D32;
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background-color: var(--cream);
-            color: var(--dark);
-            min-height: 100vh;
-            padding: 0 0 40px 0;
-        }
-
-        .container {
-            max-width: 1000px;
-            margin: 40px auto;
-            padding: 0 20px;
-        }
-
-        h2 {
-            font-size: 26px;
-            font-weight: 600;
-            margin-bottom: 24px;
-            letter-spacing: -0.5px;
-        }
-
-        h3 {
-            font-size: 18px;
-            font-weight: 600;
-            margin-bottom: 16px;
-            padding-bottom: 6px;
-            border-bottom: 1px solid var(--light-gray);
-        }
-
-        #message {
-            margin-bottom: 24px;
-            padding: 12px;
-            font-size: 14px;
-            font-weight: 500;
-            background-color: #FFFFFF;
-            border: 1px solid var(--light-gray);
-            border-left: 4px solid var(--accent);
-            border-radius: 4px;
-        }
-        #message:empty {
-            display: none;
-        }
-
-        /* Responsive Split Layout */
-        .management-grid {
-            display: grid;
-            grid-template-columns: 360px 1fr;
-            gap: 32px;
-            align-items: start;
-        }
-
-        @media (max-width: 850px) {
-            .management-grid {
-                grid-template-columns: 1fr;
+        <style>
+            :root {
+                --dark: #4A4A4A;
+                --light-gray: #CBCBCB;
+                --cream: #FFFFE3;
+                --accent: #6D8196;
+                --accent-hover: #556678;
+                --card-bg: #FFFFFF;
+                --danger: #BA3C3C;
+                --danger-hover: #962E2E;
+                --success: #2E7D32;
             }
-        }
 
-        .form-card {
-            background: var(--card-bg);
-            border: 1px solid var(--light-gray);
-            border-radius: 6px;
-            padding: 24px;
-            box-shadow: 0 2px 8px rgba(74, 74, 74, 0.02);
-        }
+            * {
+                box-sizing: border-box;
+                margin: 0;
+                padding: 0;
+            }
 
-        .form-group {
-            margin-bottom: 16px;
-        }
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+                background-color: var(--cream);
+                color: var(--dark);
+                min-height: 100vh;
+                padding: 0 0 40px 0;
+            }
 
-        label {
-            display: block;
-            font-size: 14px;
-            font-weight: 500;
-            margin-bottom: 6px;
-        }
+            .container {
+                max-width: 1000px;
+                margin: 40px auto;
+                padding: 0 20px;
+            }
 
-        input {
-            width: 100%;
-            padding: 10px 12px;
-            font-size: 15px;
-            border: 1px solid var(--light-gray);
-            border-radius: 4px;
-            color: var(--dark);
-            background-color: #FAFAFA;
-            transition: border-color 0.2s ease, box-shadow 0.2s ease;
-        }
+            h2 {
+                font-size: 26px;
+                font-weight: 600;
+                margin-bottom: 24px;
+                letter-spacing: -0.5px;
+            }
 
-        input:focus {
-            outline: none;
-            border-color: var(--accent);
-            box-shadow: 0 0 0 3px rgba(109, 129, 150, 0.15);
-            background-color: #FFFFFF;
-        }
+            h3 {
+                font-size: 18px;
+                font-weight: 600;
+                margin-bottom: 16px;
+                padding-bottom: 6px;
+                border-bottom: 1px solid var(--light-gray);
+            }
 
-        button[type="submit"] {
-            width: 100%;
-            padding: 11px;
-            font-size: 15px;
-            font-weight: 500;
-            color: #FFFFFF;
-            background-color: var(--accent);
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            margin-top: 8px;
-            transition: background-color 0.2s ease;
-        }
+            #message {
+                margin-bottom: 24px;
+                padding: 12px;
+                font-size: 14px;
+                font-weight: 500;
+                background-color: #FFFFFF;
+                border: 1px solid var(--light-gray);
+                border-left: 4px solid var(--accent);
+                border-radius: 4px;
+            }
 
-        button[type="submit"]:hover {
-            background-color: var(--accent-hover);
-        }
+            #message:empty {
+                display: none;
+            }
 
-        /* Office Item List & Dynamic Cards */
-        .office-list-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 16px;
-        }
+            /* Responsive Split Layout */
+            .management-grid {
+                display: grid;
+                grid-template-columns: 360px 1fr;
+                gap: 32px;
+                align-items: start;
+            }
 
-        .office-card {
-            background: var(--card-bg) !important;
-            border: 1px solid var(--light-gray) !important;
-            border-radius: 6px !important;
-            padding: 20px !important;
-            margin-bottom: 0 !important;
-            box-shadow: 0 2px 6px rgba(74, 74, 74, 0.02) !important;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
+            @media (max-width: 850px) {
+                .management-grid {
+                    grid-template-columns: 1fr;
+                }
+            }
 
-        .office-card p {
-            font-size: 14px;
-            margin-bottom: 6px;
-            line-height: 1.4;
-        }
+            .form-card {
+                background: var(--card-bg);
+                border: 1px solid var(--light-gray);
+                border-radius: 6px;
+                padding: 24px;
+                box-shadow: 0 2px 8px rgba(74, 74, 74, 0.02);
+            }
 
-        .office-card p strong {
-            font-size: 16px;
-            color: var(--dark);
-            display: block;
-            margin-bottom: 4px;
-        }
+            .form-group {
+                margin-bottom: 16px;
+            }
 
-        .office-actions {
-            margin-top: 16px;
-            display: flex;
-            flex-direction: column;
-            gap: 6px;
-        }
+            label {
+                display: block;
+                font-size: 14px;
+                font-weight: 500;
+                margin-bottom: 6px;
+            }
 
-        .office-card button {
-            width: 100%;
-            padding: 8px;
-            font-size: 13px;
-            font-weight: 500;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            transition: background-color 0.2s ease;
-        }
+            input {
+                width: 100%;
+                padding: 10px 12px;
+                font-size: 15px;
+                border: 1px solid var(--light-gray);
+                border-radius: 4px;
+                color: var(--dark);
+                background-color: #FAFAFA;
+                transition: border-color 0.2s ease, box-shadow 0.2s ease;
+            }
 
-        .btn-toggle {
-            background-color: var(--accent);
-            color: #FFFFFF;
-        }
+            input:focus {
+                outline: none;
+                border-color: var(--accent);
+                box-shadow: 0 0 0 3px rgba(109, 129, 150, 0.15);
+                background-color: #FFFFFF;
+            }
 
-        .btn-toggle:hover {
-            background-color: var(--accent-hover);
-        }
+            button[type="submit"] {
+                width: 100%;
+                padding: 11px;
+                font-size: 15px;
+                font-weight: 500;
+                color: #FFFFFF;
+                background-color: var(--accent);
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+                margin-top: 8px;
+                transition: background-color 0.2s ease;
+            }
 
-        .btn-row {
-            display: flex;
-            gap: 6px;
-        }
+            button[type="submit"]:hover {
+                background-color: var(--accent-hover);
+            }
 
-        .btn-edit {
-            background-color: #FAFAFA;
-            color: var(--dark);
-            border: 1px solid var(--light-gray) !important;
-        }
+            /* Office Item List & Dynamic Cards */
+            .office-list-container {
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+                gap: 16px;
+            }
 
-        .btn-edit:hover {
-            background-color: #EEEEE0;
-        }
+            .office-card {
+                background: var(--card-bg) !important;
+                border: 1px solid var(--light-gray) !important;
+                border-radius: 6px !important;
+                padding: 20px !important;
+                margin-bottom: 0 !important;
+                box-shadow: 0 2px 6px rgba(74, 74, 74, 0.02) !important;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+            }
 
-        .btn-remove {
-            background-color: var(--danger);
-            color: #FFFFFF;
-        }
+            .office-card p {
+                font-size: 14px;
+                margin-bottom: 6px;
+                line-height: 1.4;
+            }
 
-        .btn-remove:hover {
-            background-color: var(--danger-hover);
-        }
-    </style>
+            .office-card p strong {
+                font-size: 16px;
+                color: var(--dark);
+                display: block;
+                margin-bottom: 4px;
+            }
+
+            .office-actions {
+                margin-top: 16px;
+                display: flex;
+                flex-direction: column;
+                gap: 6px;
+            }
+
+            .office-card button {
+                width: 100%;
+                padding: 8px;
+                font-size: 13px;
+                font-weight: 500;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+                transition: background-color 0.2s ease;
+            }
+
+            .btn-toggle {
+                background-color: var(--accent);
+                color: #FFFFFF;
+            }
+
+            .btn-toggle:hover {
+                background-color: var(--accent-hover);
+            }
+
+            .btn-row {
+                display: flex;
+                gap: 6px;
+            }
+
+            .btn-edit {
+                background-color: #FAFAFA;
+                color: var(--dark);
+                border: 1px solid var(--light-gray) !important;
+            }
+
+            .btn-edit:hover {
+                background-color: #EEEEE0;
+            }
+
+            .btn-remove {
+                background-color: var(--danger);
+                color: #FFFFFF;
+            }
+
+            .btn-remove:hover {
+                background-color: var(--danger-hover);
+            }
+        </style>
 </head>
+
 <body>
 
     <%- include('../partials/nav') %>
 
-    <div class="container">
-        <h2>Offices</h2>
+        <div class="container">
+            <h2>Offices</h2>
 
-        <div id="message"></div>
+            <div id="message"></div>
 
-        <div class="management-grid">
-            <!-- Left Panel: Form Control -->
-            <div class="form-card">
-                <h3>Add New Office</h3>
-                <form id="addForm">
-                    <div class="form-group">
-                        <label>Office Name</label>
-                        <input type="text" name="officeName" required>
-                    </div>
-                    <div class="form-group">
-                        <label>Address</label>
-                        <input type="text" name="address" required>
-                    </div>
-                    <div class="form-group">
-                        <label>Contact Number</label>
-                        <input type="text" name="contactNumber" required>
-                    </div>
-                    <div class="form-group">
-                        <label>Client Password</label>
-                        <input type="password" name="clientPassword" required>
-                    </div>
-                    <button type="submit">Add Office</button>
-                </form>
-            </div>
+            <div class="management-grid">
+                <!-- Left Panel: Form Control -->
+                <div class="form-card">
+                    <h3>Add New Office</h3>
+                    <form id="addForm">
+                        <div class="form-group">
+                            <label>Office Name</label>
+                            <input type="text" name="officeName" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Address</label>
+                            <input type="text" name="address" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Contact Number</label>
+                            <input type="text" name="contactNumber" required>
+                        </div>
+                        <button type="submit">Add Office</button>
+                    </form>
+                </div>
 
-            <!-- Right Panel: Grid Cards -->
-            <div>
-                <h3>All Offices</h3>
-                <div id="officeList" class="office-list-container">
-                    <p>Loading...</p>
+                <!-- Right Panel: Grid Cards -->
+                <div>
+                    <h3>All Offices</h3>
+                    <div id="officeList" class="office-list-container">
+                        <p>Loading...</p>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <script>
-        const messageBox = document.getElementById("message");
-        const officeList = document.getElementById("officeList");
+        <script>
+            const messageBox = document.getElementById("message");
+            const officeList = document.getElementById("officeList");
 
-        // ─────────────────────────────────
-        // LOAD ALL OFFICES
-        // ─────────────────────────────────
-        async function loadOffices() {
-            try {
-                const res = await fetch("/api/owner/offices-data", {
-                    credentials: "include",
-                });
-                const data = await res.json();
+            // ─────────────────────────────────
+            // LOAD ALL OFFICES
+            // ─────────────────────────────────
+            async function loadOffices() {
+                try {
+                    const res = await fetch("/api/owner/offices-data", {
+                        credentials: "include",
+                    });
+                    const data = await res.json();
 
-                if (!res.ok) {
-                    officeList.textContent = data.message;
-                    return;
-                }
+                    if (!res.ok) {
+                        officeList.textContent = data.message;
+                        return;
+                    }
 
-                if (data.offices.length === 0) {
-                    officeList.innerHTML = "<p>No offices yet.</p>";
-                    return;
-                }
+                    if (data.offices.length === 0) {
+                        officeList.innerHTML = "<p>No offices yet.</p>";
+                        return;
+                    }
 
-                officeList.innerHTML = data.offices.map(office => {
-                    const statusColor = office.isActive ? "var(--success)" : "var(--danger)";
-                    return `
+                    officeList.innerHTML = data.offices.map(office => {
+                        const statusColor = office.isActive ? "var(--success)" : "var(--danger)";
+                        return `
                     <div class="office-card">
                         <div>
                             <p><strong>${office.officeName}</strong></p>
@@ -297,6 +296,9 @@
                                 Status: <span style="color: ${statusColor}; font-weight: 600;">${office.isActive ? "Active" : "Inactive"}</span>
                             </p>
                             <p style="font-size: 13px; opacity: 0.8;">Assigned Agent: <span style="font-weight: 500;">${office.assignedAgent ? office.assignedAgent.userName : "None"}</span></p>
+                            <p style="font-size: 12px; opacity: 0.6; margin-top: 8px;">
+                             ID: <code onclick="copyId('${office._id}')" style="background:#F0F0F0; padding:2px 6px; border-radius:3px; cursor:pointer;" title="Click to copy">${office._id}</code>
+                            </p>
                         </div>
 
                         <div class="office-actions">
@@ -308,114 +310,163 @@
                                 <button class="btn-remove" onclick="removeOffice('${office._id}')">Remove</button>
                             </div>
                         </div>
+
+                        <div style="margin-top: 16px; border-top: 1px solid #E0E0E0; padding-top: 14px;">
+                            <p style="font-weight: 600; margin-bottom: 10px;">Add Client for this office</p>
+                            <form onsubmit="createClient(event, '${office._id}')">
+                                <div style="margin-bottom: 10px;">
+                                    <input type="text" name="userName" placeholder="Client username" required style="width:100%; padding:8px; border:1px solid var(--light-gray); border-radius:4px;" />
+                                </div>
+                                <div style="margin-bottom: 10px;">
+                                    <input type="email" name="email" placeholder="Client email" required style="width:100%; padding:8px; border:1px solid var(--light-gray); border-radius:4px;" />
+                                </div>
+                                <div style="margin-bottom: 10px;">
+                                    <input type="password" name="password" placeholder="Password" required style="width:100%; padding:8px; border:1px solid var(--light-gray); border-radius:4px;" />
+                                </div>
+                                <button type="submit" style="width:100%; padding:10px; font-size:14px;">Add Client</button>
+                            </form>
+                        </div>
                     </div>
                 `}).join("");
 
-            } catch (error) {
-                officeList.textContent = "Failed to load offices.";
-            }
-        }
-
-        loadOffices();
-
-        // ─────────────────────────────────
-        // ADD OFFICE
-        // ─────────────────────────────────
-        document.getElementById("addForm").addEventListener("submit", async (e) => {
-            e.preventDefault();
-            const formData = new FormData(e.target);
-            const body = Object.fromEntries(formData.entries());
-
-            try {
-                const res = await fetch("/api/owner/offices", {
-                    method: "POST",
-                    headers: { "Content-Type": "application/json" },
-                    credentials: "include",
-                    body: JSON.stringify(body),
-                });
-                const data = await res.json();
-
-                messageBox.textContent = data.message;
-                if (res.ok) {
-                    e.target.reset();
-                    loadOffices();
+                } catch (error) {
+                    officeList.textContent = "Failed to load offices.";
                 }
-
-            } catch (error) {
-                messageBox.textContent = "Failed to add office.";
             }
-        });
 
-        // ─────────────────────────────────
-        // TOGGLE STATUS
-        // ─────────────────────────────────
-        async function toggleOffice(id) {
-            try {
-                const res = await fetch(`/api/owner/offices/${id}/status`, {
-                    method: "PATCH",
-                    credentials: "include",
-                });
-                const data = await res.json();
-
-                messageBox.textContent = data.message;
-                if (res.ok) loadOffices();
-
-            } catch (error) {
-                messageBox.textContent = "Failed to toggle office status.";
+            loadOffices();
+            // ─────────────────────────────────
+            // COPY OFFICE ID
+            // ─────────────────────────────────
+            function copyId(id) {
+                navigator.clipboard.writeText(id);
+                messageBox.textContent = "Office ID copied to clipboard!";
             }
-        }
+            // ─────────────────────────────────
+            // ADD OFFICE
+            // ─────────────────────────────────
+            document.getElementById("addForm").addEventListener("submit", async (e) => {
+                e.preventDefault();
+                const formData = new FormData(e.target);
+                const body = Object.fromEntries(formData.entries());
 
-        // ─────────────────────────────────
-        // EDIT OFFICE
-        // ─────────────────────────────────
-        async function editOffice(id, currentName, currentAddress, currentContact) {
-            const officeName = prompt("Office name:", currentName);
-            if (officeName === null) return;
+                try {
+                    const res = await fetch("/api/owner/offices", {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json" },
+                        credentials: "include",
+                        body: JSON.stringify(body),
+                    });
+                    const data = await res.json();
 
-            const address = prompt("Address:", currentAddress);
-            if (address === null) return;
+                    messageBox.textContent = data.message;
+                    if (res.ok) {
+                        e.target.reset();
+                        loadOffices();
+                    }
 
-            const contactNumber = prompt("Contact number:", currentContact);
-            if (contactNumber === null) return;
+                } catch (error) {
+                    messageBox.textContent = "Failed to add office.";
+                }
+            });
 
-            try {
-                const res = await fetch(`/api/owner/offices/${id}`, {
-                    method: "PATCH",
-                    headers: { "Content-Type": "application/json" },
-                    credentials: "include",
-                    body: JSON.stringify({ officeName, address, contactNumber }),
-                });
-                const data = await res.json();
+            // ─────────────────────────────────
+            // TOGGLE STATUS
+            // ─────────────────────────────────
+            async function toggleOffice(id) {
+                try {
+                    const res = await fetch(`/api/owner/offices/${id}/status`, {
+                        method: "PATCH",
+                        credentials: "include",
+                    });
+                    const data = await res.json();
 
-                messageBox.textContent = data.message;
-                if (res.ok) loadOffices();
+                    messageBox.textContent = data.message;
+                    if (res.ok) loadOffices();
 
-            } catch (error) {
-                messageBox.textContent = "Failed to update office.";
+                } catch (error) {
+                    messageBox.textContent = "Failed to toggle office status.";
+                }
             }
-        }
 
-        // ─────────────────────────────────
-        // REMOVE OFFICE
-        // ─────────────────────────────────
-        async function removeOffice(id) {
-            if (!confirm("Are you sure you want to remove this office?")) return;
+            // ─────────────────────────────────
+            // EDIT OFFICE
+            // ─────────────────────────────────
+            async function editOffice(id, currentName, currentAddress, currentContact) {
+                const officeName = prompt("Office name:", currentName);
+                if (officeName === null) return;
 
-            try {
-                const res = await fetch(`/api/owner/offices/${id}`, {
-                    method: "DELETE",
-                    credentials: "include",
-                });
-                const data = await res.json();
+                const address = prompt("Address:", currentAddress);
+                if (address === null) return;
 
-                messageBox.textContent = data.message;
-                if (res.ok) loadOffices();
+                const contactNumber = prompt("Contact number:", currentContact);
+                if (contactNumber === null) return;
 
-            } catch (error) {
-                messageBox.textContent = "Failed to remove office.";
+                try {
+                    const res = await fetch(`/api/owner/offices/${id}`, {
+                        method: "PATCH",
+                        headers: { "Content-Type": "application/json" },
+                        credentials: "include",
+                        body: JSON.stringify({ officeName, address, contactNumber }),
+                    });
+                    const data = await res.json();
+
+                    messageBox.textContent = data.message;
+                    if (res.ok) loadOffices();
+
+                } catch (error) {
+                    messageBox.textContent = "Failed to update office.";
+                }
             }
-        }
-    </script>
+
+            // ─────────────────────────────────
+            // REMOVE OFFICE
+            // ─────────────────────────────────
+            async function removeOffice(id) {
+                if (!confirm("Are you sure you want to remove this office?")) return;
+
+                try {
+                    const res = await fetch(`/api/owner/offices/${id}`, {
+                        method: "DELETE",
+                        credentials: "include",
+                    });
+                    const data = await res.json();
+
+                    messageBox.textContent = data.message;
+                    if (res.ok) loadOffices();
+
+                } catch (error) {
+                    messageBox.textContent = "Failed to remove office.";
+                }
+            }
+
+            async function createClient(event, officeId) {
+                event.preventDefault();
+                const form = event.target;
+                const formData = new FormData(form);
+                const body = Object.fromEntries(formData.entries());
+                body.office = officeId;
+
+                try {
+                    const res = await fetch("/api/owner/clients", {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json" },
+                        credentials: "include",
+                        body: JSON.stringify(body),
+                    });
+                    const data = await res.json();
+
+                    messageBox.textContent = data.message;
+                    if (res.ok) {
+                        form.reset();
+                        loadOffices();
+                    }
+                } catch (error) {
+                    messageBox.textContent = "Failed to add client.";
+                }
+            }
+        </script>
 
 </body>
+
 </html>

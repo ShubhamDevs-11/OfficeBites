@@ -262,46 +262,26 @@ const getOffices = async (req, res) => {
 // ADD OFFICE
 // ─────────────────────────────────────────
 const addOffice = async (req, res) => {
-  try {
-    const { officeName, address, contactNumber, clientPassword } = req.body;
+    try {
+        const { officeName, address, contactNumber } = req.body;
 
-    logger.debug("addOffice attempt", {userId: req.user.userId});
+        logger.debug("addOffice attempt", { userId: req.user.userId });
 
-    const office = await Office.create({
-      officeName,
-      address,
-      contactNumber,
-      owner: req.user.userId,
-    });
+        const office = await Office.create({
+            officeName,
+            address,
+            contactNumber,
+            owner: req.user.userId,
+        });
 
-    const initialPassword = clientPassword || contactNumber;
-    const existingClient = await User.findOne({ phone: contactNumber });
-    if (existingClient) {
-      logger.warn("addOffice — client already exists for this phone", { phone: contactNumber });
-      return res.status(409).json({ message: "A client account already exists for this contact number" });
+        logger.info("Office added", { officeId: office._id, userId: req.user.userId });
+        return res.status(201).json({ message: "Office added successfully", office });
+
+    } catch (error) {
+        logger.error("addOffice error", { error: error.message, stack: error.stack });
+        return res.status(500).json({ message: "Internal server error" });
     }
-
-    const clientUser = await User.create({
-      userName: officeName || "Client",
-      email: undefined,
-      phone: contactNumber,
-      password: initialPassword,
-      role: "client",
-      office: office._id,
-    });
-
-    logger.info("Office added", {
-      officeId: office._id,
-      userId: req.user.userId,
-      clientId: clientUser._id,
-    });
-    return res.status(201).json({ message: "Office added successfully", office, client: { phone: clientUser.phone } });
-  } catch (error) {
-    logger.error("addOffice error", {error: error.message, stack: error.stack});
-    return res.status(500).json({message: "Internal server error"});
-  }
 };
-
 // ─────────────────────────────────────────
 // EDIT OFFICE
 // ─────────────────────────────────────────
@@ -487,6 +467,86 @@ const getAgents = async (req, res) => {
         return res.status(500).json({ message: "Internal server error" });
     }
 };
+
+// ─────────────────────────────────────────
+// ADD CLIENT
+// ─────────────────────────────────────────
+const addClient = async (req, res) => {
+    try {
+        const { userName, email, password, office } = req.body;
+
+        logger.debug("addClient attempt", { userId: req.user.userId, office });
+
+        if (!userName || !email || !password || !office) {
+            return res.status(400).json({ message: "Username, email, password, and office are required" });
+        }
+
+        const officeDoc = await Office.findOne({ _id: office, owner: req.user.userId });
+        if (!officeDoc) {
+            logger.warn("addClient — office not found or unauthorized", { office, userId: req.user.userId });
+            return res.status(404).json({ message: "Office not found" });
+        }
+
+        const existing = await User.findOne({ email });
+        if (existing) {
+            logger.warn("addClient — email already exists", { email });
+            return res.status(409).json({ message: "Email already registered" });
+        }
+
+        const client = await User.create({
+            userName,
+            email,
+            password,
+            role: "client",
+            office: officeDoc._id,
+        });
+
+        logger.info("Client added", {
+            clientId: client._id,
+            userId: req.user.userId,
+            officeId: officeDoc._id,
+        });
+
+        return res.status(201).json({
+            message: "Client added successfully",
+            client: {
+                id: client._id,
+                userName: client.userName,
+                email: client.email,
+                office: client.office,
+            },
+        });
+    } catch (error) {
+        logger.error("addClient error", { error: error.message, stack: error.stack });
+        return res.status(500).json({ message: "Internal server error" });
+    }
+};
+
+// ─────────────────────────────────────────
+// GET ALL CLIENTS
+// ─────────────────────────────────────────
+const getClients = async (req, res) => {
+    try {
+        logger.debug("getClients attempt", { userId: req.user.userId });
+
+        const ownerOffices = await Office.find({ owner: req.user.userId }).select("_id");
+        const officeIds = ownerOffices.map((office) => office._id);
+
+        const clients = await User.find({
+            role: "client",
+            office: { $in: officeIds },
+        })
+            .select("-password -loginAttempts -lockUntil")
+            .populate("office", "officeName address");
+
+        logger.info("Clients fetched", { count: clients.length, userId: req.user.userId });
+        return res.status(200).json({ clients });
+    } catch (error) {
+        logger.error("getClients error", { error: error.message, stack: error.stack });
+        return res.status(500).json({ message: "Internal server error" });
+    }
+};
+
 //─────────────────────────────────────────
 //BILL
 //─────────────────────────────────────────
@@ -626,8 +686,9 @@ const deleteBill = async (req, res) => {
 
 module.exports = { 
     getProfile, editProfile, changePassword,
-    addItem, editItem, removeItem, toggleAvailability, getItems,      
-    addOffice, editOffice, removeOffice, toggleOfficeStatus, getOffices, 
+    addItem, editItem, removeItem, toggleAvailability, getItems,
+    addOffice, editOffice, removeOffice, toggleOfficeStatus, getOffices,
     addAgent, removeAgent, getAgents,
+    addClient, getClients,
     createBill, getBills, getOfficeBills, markBillPaid, deleteBill,
 };
