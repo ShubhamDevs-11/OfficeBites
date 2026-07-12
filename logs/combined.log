@@ -1038,3 +1038,62 @@
 {"count":2,"level":"info","message":"Bills fetched","timestamp":"2026-07-12 19:37:43","userId":"6a5397dd42e8682e75d810f7"}
 {"level":"info","message":"mongoDb is connected 127.0.0.1","timestamp":"2026-07-12 19:38:30"}
 {"level":"info","message":"Server running in development mode on port 5000","timestamp":"2026-07-12 19:38:30"}
+{"level":"info","message":"mongoDb is connected 127.0.0.1","timestamp":"2026-07-13 01:52:41"}
+{"level":"info","message":"Server running in development mode on port 5000","timestamp":"2026-07-13 01:52:41"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-13 01:53:23","url":"/api/auth/register"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-13 01:53:23","url":"/favicon.ico"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-13 01:53:36","url":"/"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-13 01:53:48","url":"/api/auth/register"}
+{"level":"debug","message":"Incoming request","method":"POST","timestamp":"2026-07-13 01:54:10","url":"/api/auth/register"}
+{"email":"owner@gmail.com","level":"debug","message":"Register attempt","timestamp":"2026-07-13 01:54:10"}
+{"email":"owner@gmail.com","level":"info","message":"User registered","role":"owner","timestamp":"2026-07-13 01:54:10","userId":"6a53f7eaa8494b91cd3b5123"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-13 01:54:11","url":"/api/owner/profile"}
+{"level":"debug","message":"Token verified","role":"owner","timestamp":"2026-07-13 01:54:11","userId":"6a53f7eaa8494b91cd3b5123"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-13 01:54:11","url":"/api/owner/profile-data"}
+{"level":"debug","message":"Token verified","role":"owner","timestamp":"2026-07-13 01:54:11","userId":"6a53f7eaa8494b91cd3b5123"}
+{"level":"info","message":"getProfile — success","timestamp":"2026-07-13 01:54:11","userId":"6a53f7eaa8494b91cd3b5123"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-13 01:54:29","url":"/api/owner/offices"}
+{"level":"debug","message":"Token verified","role":"owner","timestamp":"2026-07-13 01:54:29","userId":"6a53f7eaa8494b91cd3b5123"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-13 01:54:29","url":"/api/owner/offices-data"}
+{"level":"debug","message":"Token verified","role":"owner","timestamp":"2026-07-13 01:54:29","userId":"6a53f7eaa8494b91cd3b5123"}
+{"level":"debug","message":"getOffices attempt","timestamp":"2026-07-13 01:54:29","userId":"6a53f7eaa8494b91cd3b5123"}
+{"count":0,"level":"info","message":"Offices fetched","timestamp":"2026-07-13 01:54:29","userId":"6a53f7eaa8494b91cd3b5123"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-13 01:54:37","url":"/api/owner/profile"}
+{"level":"debug","message":"Token verified","role":"owner","timestamp":"2026-07-13 01:54:37","userId":"6a53f7eaa8494b91cd3b5123"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-13 01:54:37","url":"/api/owner/profile-data"}
+{"level":"debug","message":"Token verified","role":"owner","timestamp":"2026-07-13 01:54:37","userId":"6a53f7eaa8494b91cd3b5123"}
+{"level":"info","message":"getProfile — success","timestamp":"2026-07-13 01:54:37","userId":"6a53f7eaa8494b91cd3b5123"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-13 01:54:42","url":"/api/owner/menu"}
+{"level":"debug","message":"Token verified","role":"owner","timestamp":"2026-07-13 01:54:42","userId":"6a53f7eaa8494b91cd3b5123"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-13 01:54:42","url":"/api/owner/items-data"}
+{"level":"debug","message":"Token verified","role":"owner","timestamp":"2026-07-13 01:54:42","userId":"6a53f7eaa8494b91cd3b5123"}
+{"level":"debug","message":"getItems attempt","timestamp":"2026-07-13 01:54:42","userId":"6a53f7eaa8494b91cd3b5123"}
+{"count":0,"level":"info","message":"Items fetched","timestamp":"2026-07-13 01:54:42","userId":"6a53f7eaa8494b91cd3b5123"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-13 01:54:47","url":"/api/owner/offices"}
+{"level":"debug","message":"Token verified","role":"owner","timestamp":"2026-07-13 01:54:47","userId":"6a53f7eaa8494b91cd3b5123"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-13 01:54:47","url":"/api/owner/offices-data"}
+{"level":"debug","message":"Token verified","role":"owner","timestamp":"2026-07-13 01:54:47","userId":"6a53f7eaa8494b91cd3b5123"}
+{"level":"debug","message":"getOffices attempt","timestamp":"2026-07-13 01:54:47","userId":"6a53f7eaa8494b91cd3b5123"}
+{"count":0,"level":"info","message":"Offices fetched","timestamp":"2026-07-13 01:54:47","userId":"6a53f7eaa8494b91cd3b5123"}
+{"level":"debug","message":"Incoming request","method":"POST","timestamp":"2026-07-13 01:55:08","url":"/api/owner/offices"}
+{"level":"debug","message":"Token verified","role":"owner","timestamp":"2026-07-13 01:55:08","userId":"6a53f7eaa8494b91cd3b5123"}
+{"level":"debug","message":"addOffice attempt","timestamp":"2026-07-13 01:55:08","userId":"6a53f7eaa8494b91cd3b5123"}
+{"level":"info","message":"Office added","officeId":"6a53f824a8494b91cd3b5124","timestamp":"2026-07-13 01:55:08","userId":"6a53f7eaa8494b91cd3b5123"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-13 01:55:08","url":"/api/owner/offices-data"}
+{"level":"debug","message":"Token verified","role":"owner","timestamp":"2026-07-13 01:55:08","userId":"6a53f7eaa8494b91cd3b5123"}
+{"level":"debug","message":"getOffices attempt","timestamp":"2026-07-13 01:55:08","userId":"6a53f7eaa8494b91cd3b5123"}
+{"count":1,"level":"info","message":"Offices fetched","timestamp":"2026-07-13 01:55:08","userId":"6a53f7eaa8494b91cd3b5123"}
+{"level":"debug","message":"Incoming request","method":"POST","timestamp":"2026-07-13 01:55:27","url":"/api/owner/clients"}
+{"level":"debug","message":"Token verified","role":"owner","timestamp":"2026-07-13 01:55:27","userId":"6a53f7eaa8494b91cd3b5123"}
+{"level":"debug","message":"addClient attempt","office":"6a53f824a8494b91cd3b5124","timestamp":"2026-07-13 01:55:27","userId":"6a53f7eaa8494b91cd3b5123"}
+{"error":"E11000 duplicate key error collection: officebites.users index: phone_1 dup key: { phone: null }","level":"error","message":"addClient error","stack":"MongoServerError: E11000 duplicate key error collection: officebites.users index: phone_1 dup key: { phone: null }\n    at InsertOneOperation.handleOk (D:\\My code\\OfficeBites\\node_modules\\mongodb\\lib\\operations\\insert.js:51:19)\n    at executeOperationWithRetries (D:\\My code\\OfficeBites\\node_modules\\mongodb\\lib\\operations\\execute_operation.js:194:34)\n    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at async executeOperation (D:\\My code\\OfficeBites\\node_modules\\mongodb\\lib\\operations\\execute_operation.js:83:16)\n    at async Collection.insertOne (D:\\My code\\OfficeBites\\node_modules\\mongodb\\lib\\collection.js:154:16)\n    at async model.$__save (D:\\My code\\OfficeBites\\node_modules\\mongoose\\lib\\model.js:433:16)\n    at async maybeTracedSave (D:\\My code\\OfficeBites\\node_modules\\mongoose\\lib\\model.js:674:7)\n    at async model.create (D:\\My code\\OfficeBites\\node_modules\\mongoose\\lib\\model.js:2762:5)\n    at async addClient (D:\\My code\\OfficeBites\\controllers\\ownerController.js:496:24)","timestamp":"2026-07-13 01:55:27"}
+{"level":"debug","message":"Incoming request","method":"POST","timestamp":"2026-07-13 01:55:28","url":"/api/owner/clients"}
+{"level":"debug","message":"Token verified","role":"owner","timestamp":"2026-07-13 01:55:28","userId":"6a53f7eaa8494b91cd3b5123"}
+{"level":"debug","message":"addClient attempt","office":"6a53f824a8494b91cd3b5124","timestamp":"2026-07-13 01:55:28","userId":"6a53f7eaa8494b91cd3b5123"}
+{"error":"E11000 duplicate key error collection: officebites.users index: phone_1 dup key: { phone: null }","level":"error","message":"addClient error","stack":"MongoServerError: E11000 duplicate key error collection: officebites.users index: phone_1 dup key: { phone: null }\n    at InsertOneOperation.handleOk (D:\\My code\\OfficeBites\\node_modules\\mongodb\\lib\\operations\\insert.js:51:19)\n    at executeOperationWithRetries (D:\\My code\\OfficeBites\\node_modules\\mongodb\\lib\\operations\\execute_operation.js:194:34)\n    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at async executeOperation (D:\\My code\\OfficeBites\\node_modules\\mongodb\\lib\\operations\\execute_operation.js:83:16)\n    at async Collection.insertOne (D:\\My code\\OfficeBites\\node_modules\\mongodb\\lib\\collection.js:154:16)\n    at async model.$__save (D:\\My code\\OfficeBites\\node_modules\\mongoose\\lib\\model.js:433:16)\n    at async maybeTracedSave (D:\\My code\\OfficeBites\\node_modules\\mongoose\\lib\\model.js:674:7)\n    at async model.create (D:\\My code\\OfficeBites\\node_modules\\mongoose\\lib\\model.js:2762:5)\n    at async addClient (D:\\My code\\OfficeBites\\controllers\\ownerController.js:496:24)","timestamp":"2026-07-13 01:55:28"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-13 01:57:48","url":"/api/owner/agents"}
+{"level":"debug","message":"Token verified","role":"owner","timestamp":"2026-07-13 01:57:48","userId":"6a53f7eaa8494b91cd3b5123"}
+{"level":"debug","message":"Incoming request","method":"GET","timestamp":"2026-07-13 01:57:48","url":"/api/owner/agents-data"}
+{"level":"debug","message":"Token verified","role":"owner","timestamp":"2026-07-13 01:57:48","userId":"6a53f7eaa8494b91cd3b5123"}
+{"level":"debug","message":"getAgents attempt","timestamp":"2026-07-13 01:57:48","userId":"6a53f7eaa8494b91cd3b5123"}
+{"count":0,"level":"info","message":"Agents fetched","timestamp":"2026-07-13 01:57:48","userId":"6a53f7eaa8494b91cd3b5123"}
